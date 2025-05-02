@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'we_learn_greek', 
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
-    'django_filters',
 ]
 
 # Remove or comment out these sections:
@@ -97,12 +96,12 @@ CORS_ALLOW_HEADERS = ['*']
 # Database configuration
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'we_learn_greek',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': 'REMOVED',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
