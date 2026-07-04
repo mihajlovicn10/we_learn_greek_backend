@@ -23,20 +23,18 @@ class UserSerializer(serializers.ModelSerializer):
 
 
     
-class LoginSerializer(serializers.ModelSerializer): 
-    email = serializers.EmailField() 
-    password = serializers.CharField(write_only = True) 
-    
-    def validate(self, data): 
-        email = data.get('email') 
-        password = data.get('password') 
-        
-        user = authenticate(
-            email = data.authenticate['email'], 
-            password = data.authenticate['password'],  
-        )
-        if not user: 
-            raise serializers.ValidationError("Invalid credentials. Please try again") 
-        if not user.is_active: 
-            raise serializers.ValidationError("User account is disabled") 
-        return user  
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        email = data.get('email')
+        password = data.get('password')
+
+        user = authenticate(username=email, password=password)
+        if not user:
+            raise serializers.ValidationError("Invalid credentials. Please try again.")
+        if not user.is_active:
+            raise serializers.ValidationError("User account is disabled.")
+        data['user'] = user
+        return data

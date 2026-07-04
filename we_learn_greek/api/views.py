@@ -28,7 +28,7 @@ class LoginAPIView(APIView):
     def post(self, request):
         email = request.data.get("email")
         password = request.data.get("password")
-        user = authenticate(email=email, password=password)
+        user = authenticate(username=email, password=password)
         
         if user:
             if not user.is_active:

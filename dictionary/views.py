@@ -37,7 +37,12 @@ def add_word(request):
         if Dictionary.objects.filter(user = request.user , greek_word = greek_word).exists(): 
             messages.error(request, 'This word is already in the dictionary')
         else: 
-            Dictionary.objects.create(greek_word = greek_word, pronounciation = pronounciation, translation = translation) 
+            Dictionary.objects.create(
+                greek_word=greek_word,
+                pronounciation=pronounciation,
+                translation=translation,
+                user=request.user,
+            )
             messages.success(request, "A word has been added successfully!") 
         return redirect('add_word') 
     

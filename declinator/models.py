@@ -21,9 +21,4 @@ class Noun(models.Model):
     vocative_plural = models.CharField(max_length= 100) 
     
     def __str__(self):
-        return self.basic_noun 
-    
-    # Add a print statement to check if model is loaded
-    print("Noun model loaded")
-    
-    
+        return self.basic_noun
