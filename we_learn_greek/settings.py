@@ -88,19 +88,30 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_ALL_ORIGINS = DEBUG and not CORS_ALLOWED_ORIGINS
 CORS_ALLOW_CREDENTIALS = True
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=(
-            f"postgres://{os.environ.get('DB_USER', 'postgres')}:"
-            f"{os.environ.get('DB_PASSWORD', 'postgres')}@"
-            f"{os.environ.get('DB_HOST', 'localhost')}:"
-            f"{os.environ.get('DB_PORT', '5432')}/"
-            f"{os.environ.get('DB_NAME', 'we_learn_greek')}"
-        ),
-        conn_max_age=600,
-        ssl_require=bool(os.environ.get('DATABASE_URL')),
-    )
-}
+def _postgres_ssl_required(database_url: str) -> bool:
+    """Hosted Postgres (Render, Neon) needs SSL; local Docker does not."""
+    local_markers = ('@localhost', '@127.0.0.1', '@db:')
+    if any(marker in database_url for marker in local_markers):
+        return False
+    return os.environ.get('DATABASE_SSL_REQUIRE', 'true').lower() in ('true', '1', 'yes')
+
+
+_database_url = os.environ.get('DATABASE_URL')
+if _database_url:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=_database_url,
+            conn_max_age=600,
+            ssl_require=_postgres_ssl_required(_database_url),
+        )
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),

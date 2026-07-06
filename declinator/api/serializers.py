@@ -16,11 +16,4 @@ class NounSerializer(serializers.ModelSerializer):
             'accusative_plural',
             'vocative_singular',
             'vocative_plural',
-        ] 
-        
-    def to_representation(self, instance):
-        # Add debug print
-        print("Serializing fields:", self.Meta.fields)
-        return super().to_representation(instance)
-        
-        
+        ]

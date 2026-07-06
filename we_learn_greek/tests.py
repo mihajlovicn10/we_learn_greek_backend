@@ -3,6 +3,7 @@ from rest_framework import status
 from django.urls import reverse
 from .models import User
 
+
 class UserAuthenticationTests(APITestCase):
     def setUp(self):
         self.register_url = reverse("register")
@@ -33,11 +34,7 @@ class UserAuthenticationTests(APITestCase):
         self.assertEqual(User.objects.filter(email=self.invalid_user_data["email"]).count(), 0)
 
     def test_login_valid_user(self):
-        # Create and save a user first
-        user = User.objects.create_user(**self.valid_user_data)
-        user.set_password(self.valid_user_data["password"])
-        user.save()
-
+        User.objects.create_user(**self.valid_user_data)
         response = self.client.post(self.login_url, {
             "email": self.valid_user_data["email"],
             "password": self.valid_user_data["password"],
@@ -55,10 +52,7 @@ class UserAuthenticationTests(APITestCase):
         self.assertEqual(response["Content-Type"], "application/json")
 
     def test_login_disabled_user(self):
-        user = User.objects.create_user(**self.valid_user_data, is_active=False)
-        user.set_password(self.valid_user_data["password"])
-        user.save()
-
+        User.objects.create_user(**self.valid_user_data, is_active=False)
         response = self.client.post(self.login_url, {
             "email": self.valid_user_data["email"],
             "password": self.valid_user_data["password"],
@@ -66,14 +60,12 @@ class UserAuthenticationTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
         self.assertEqual(response["Content-Type"], "application/json")
 
-
     def test_create_superuser(self):
-        """Test creating a superuser."""
         superuser = User.objects.create_superuser(
             email="admin@example.com",
             password="supersafepassword123",
             first_name="Admin",
-            last_name="User"
+            last_name="User",
         )
         self.assertTrue(superuser.is_superuser)
         self.assertTrue(superuser.is_staff)

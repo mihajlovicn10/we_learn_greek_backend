@@ -1,4 +1,3 @@
-# declinator/tests.py
 from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APIClient
@@ -7,18 +6,18 @@ from .models import Noun
 
 User = get_user_model()
 
+
 class NounAPITestCase(TestCase):
     def setUp(self):
-        # Create a test user and authenticate
         self.user = User.objects.create_user(
-            username="testuser",
             email="testuser@example.com",
-            password="password123"
+            password="password123",
+            first_name="Test",
+            last_name="User",
         )
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
 
-        # Sample noun data
         self.noun_data = {
             "basic_noun": "λόγος",
             "nominative_singular": "λόγος",
@@ -29,7 +28,7 @@ class NounAPITestCase(TestCase):
             "genitive_plural": "λόγων",
             "accusative_plural": "λόγους",
             "vocative_plural": "λόγοι",
-            "gender": "masculine"
+            "gender": "masculine",
         }
 
         self.noun = Noun.objects.create(**self.noun_data)
@@ -38,6 +37,7 @@ class NounAPITestCase(TestCase):
     def test_create_noun(self):
         new_data = self.noun_data.copy()
         new_data["basic_noun"] = "ἄνθρωπος"
+        new_data["nominative_singular"] = "ἄνθρωπος"
         response = self.client.post(self.api_url, new_data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Noun.objects.count(), 2)

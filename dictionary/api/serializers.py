@@ -6,8 +6,8 @@ class DictionarySerializer(serializers.ModelSerializer):
     greek_word = serializers.CharField(
         validators=[
             RegexValidator(
-                regex='^[α-ωΑ-Ωίϊΐόάέύϋΰήώ\s]+$',
-                message='Only Greek characters are allowed'
+                regex=r'^[α-ωΑ-Ωίϊΐόάέύϋΰήώ\s]+$',
+                message='Only Greek characters are allowed',
             )
         ]
     )

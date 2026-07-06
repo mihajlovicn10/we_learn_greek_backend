@@ -6,21 +6,18 @@ from .models import Verb
 
 User = get_user_model()
 
-class VerbAPITestCase(TestCase):
-    """Test case for CRUD operations on Verb API"""
 
+class VerbAPITestCase(TestCase):
     def setUp(self):
-        # Create a test user and get an API token
         self.user = User.objects.create_user(
-            username="testuser",
             email="testuser@example.com",
-            password="password123"
+            password="password123",
+            first_name="Test",
+            last_name="User",
         )
-        
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
-        
-        # Sample verb data
+
         self.verb_data = {
             "infinitive": "λύω",
             "verb_type": "A1",
@@ -62,28 +59,24 @@ class VerbAPITestCase(TestCase):
             "future_third_plural": "λύσουσι",
         }
 
-        # Create a verb for retrieve/update/delete tests
         self.verb = Verb.objects.create(**self.verb_data)
         self.api_url = "/api/conjugator/"
+        self.conjugation_url = f"/api/verbs/{self.verb.id}/conjugation/"
 
     def test_create_verb(self):
-        """Test creating a new verb."""
         new_verb_data = self.verb_data.copy()
         new_verb_data["infinitive"] = "γράφω"
-
         response = self.client.post(self.api_url, new_verb_data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Verb.objects.count(), 2)
         self.assertEqual(Verb.objects.last().infinitive, "γράφω")
 
     def test_retrieve_verb(self):
-        """Test retrieving a verb."""
         response = self.client.get(f"{self.api_url}{self.verb.id}/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["infinitive"], self.verb_data["infinitive"])
 
     def test_update_verb(self):
-        """Test updating a verb."""
         updated_data = self.verb_data.copy()
         updated_data["infinitive"] = "παιδεύω"
         response = self.client.put(f"{self.api_url}{self.verb.id}/", updated_data, format="json")
@@ -92,16 +85,19 @@ class VerbAPITestCase(TestCase):
         self.assertEqual(self.verb.infinitive, "παιδεύω")
 
     def test_delete_verb(self):
-        """Test deleting a verb."""
         response = self.client.delete(f"{self.api_url}{self.verb.id}/")
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Verb.objects.count(), 0)
 
     def test_create_verb_invalid_data(self):
-        """Test creating a verb with invalid data."""
         invalid_data = self.verb_data.copy()
-        invalid_data.pop("infinitive")  # Remove required field
-
+        invalid_data.pop("infinitive")
         response = self.client.post(self.api_url, invalid_data, format="json")
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn("infinitive", response.data)
+
+    def test_verb_conjugation_endpoint(self):
+        response = self.client.get(self.conjugation_url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data["infinitive"], self.verb_data["infinitive"])
+        self.assertIn("present_first_singular", response.data)

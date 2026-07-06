@@ -18,13 +18,20 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-3. Create the PostgreSQL database and run migrations:
+## Database (Neon)
+
+This project uses **PostgreSQL via Neon**. See **[docs/NEON_SETUP.md](docs/NEON_SETUP.md)** for the full checklist.
+
+**Quick local setup:**
 
 ```bash
-createdb we_learn_greek
-python manage.py migrate
-python manage.py createsuperuser
+cp .env.example .env
+# Paste your Neon pooled connection string into DATABASE_URL
+chmod +x scripts/setup_neon.sh
+./scripts/setup_neon.sh
 ```
+
+Without `DATABASE_URL`, Django falls back to SQLite for quick local runs only — **not** for production.
 
 4. Start the server:
 
@@ -40,33 +47,37 @@ API docs: http://127.0.0.1:8000/swagger/
 - Login: `POST /api/token/` or `POST /api/login/` with `email` and `password`
 - Use the returned JWT as `Authorization: Bearer <access_token>`
 
+## Database options
+
+| Where | Option | Notes |
+|-------|--------|-------|
+| **Local** | `docker compose up -d` | Easiest; no Postgres install needed |
+| **Local** | SQLite | Automatic fallback if `DATABASE_URL` is unset |
+| **Production** | [Neon](https://neon.tech) | Free, does not expire (recommended) |
+| **Production** | [Render Postgres](https://render.com/docs/free#free-postgres) | Free, but **expires after 30 days** |
+
+**Does Render support PostgreSQL?** Yes. Render offers managed Postgres and can auto-wire `DATABASE_URL` via `render.yaml`. For a long-lived demo, use Neon for the database and Render only for the web service.
+
 ## Deploy backend (free demo)
 
 ### Recommended: Render + Neon
 
-Best free combo for a demo that lasts longer than 30 days:
+| Piece | Service | Notes |
+|-------|---------|-------|
+| Backend | Render Web Service | Free; cold start ~30–60s |
+| Database | **Neon** (you already have this) | Paste pooled `DATABASE_URL` into Render |
+| Frontend | Vercel or Netlify | When ready |
 
-| Piece | Service | Cost | Notes |
-|-------|---------|------|-------|
-| Backend | Render Web Service | Free | Sleeps after 15 min idle; cold start ~30-60s |
-| Database | Neon PostgreSQL | Free | Does not expire after 30 days |
-| Frontend | Vercel or Netlify | Free | For React/Next/Vue apps |
+Full steps: **[docs/NEON_SETUP.md](docs/NEON_SETUP.md)**
 
-**Backend on Render**
+**Render env vars** (minimum):
 
-1. Push this repo to GitHub.
-2. Create a free PostgreSQL database on Neon and copy the connection string.
-3. On Render: New Web Service, connect the repo.
-4. Set environment variables:
-   - `DATABASE_URL` = Neon connection string
-   - `SECRET_KEY` = random string
-   - `DEBUG` = false
-   - `ALLOWED_HOSTS` = .onrender.com
-   - `CORS_ALLOWED_ORIGINS` = your frontend URL
-5. Build command: `./build.sh`
-6. Start command: `gunicorn we_learn_greek.wsgi --log-file -`
-
-Or use the included `render.yaml` blueprint. Swap Render free Postgres for Neon if you need the demo up longer than 30 days.
+```
+DATABASE_URL=<neon pooled connection string>
+SECRET_KEY=<random string>
+DEBUG=false
+ALLOWED_HOSTS=.onrender.com
+```
 
 **Frontend on Vercel / Netlify**
 

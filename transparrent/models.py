@@ -19,6 +19,7 @@ class TransparentWord(models.Model):
     
     class Meta:
         unique_together = ('language', 'greek_word')
+        ordering = ['language', 'greek_word']
     
     def __str__(self):
         return f"{self.greek_word} → {self.language_word} ({self.language})" 
