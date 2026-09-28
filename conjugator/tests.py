@@ -109,3 +109,11 @@ class VerbAPITestCase(TestCase):
         with mock.patch.dict(ContentBurstThrottle.THROTTLE_RATES, {"content_burst": "3/min"}):
             statuses = [self.client.get("/api/verbs/").status_code for _ in range(4)]
         self.assertEqual(statuses, [200, 200, 200, 429])
+
+    def test_search_is_accent_insensitive_and_accepts_latin(self):
+        Verb.objects.create(**{**self.verb_data, "infinitive": "γράφω"})
+        for term in ["γραφω", "grafo", "ΓΡΆΦΩ"]:
+            with self.subTest(term=term):
+                response = self.client.get("/api/verbs/", {"search": term})
+                self.assertEqual(response.status_code, status.HTTP_200_OK)
+                self.assertEqual([v["infinitive"] for v in response.data["results"]], ["γράφω"])

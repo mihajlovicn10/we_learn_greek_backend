@@ -170,3 +170,27 @@ class DictionaryAPITestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.data["greek_word"][0], "You already have this word in your dictionary")
         self.assertEqual(Dictionary.objects.count(), 1)
+
+
+class DictionarySearchTests(APITestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(email="learner@example.com", password="testpass")
+        other = User.objects.create_user(email="other@example.com", password="testpass")
+        Dictionary.objects.create(user=self.user, greek_word="Καλημέρα", pronounciation="Kaliméra", translation="Good morning")
+        Dictionary.objects.create(user=self.user, greek_word="Ευχαριστώ", pronounciation="Efcharistó", translation="Thank you")
+        Dictionary.objects.create(user=other, greek_word="Καληνύχτα", pronounciation="Kaliníhta", translation="Good night")
+        token = RefreshToken.for_user(self.user)
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token.access_token}")
+
+    def search(self, term):
+        response = self.client.get(reverse("dictionary-list"), {"search": term})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        return [w["greek_word"] for w in response.data["results"]]
+
+    def test_search_is_accent_insensitive_and_accepts_latin(self):
+        self.assertEqual(self.search("καλημερα"), ["Καλημέρα"])
+        self.assertEqual(self.search("kalimera"), ["Καλημέρα"])
+        self.assertEqual(self.search("thank"), ["Ευχαριστώ"])
+
+    def test_search_stays_scoped_to_the_user(self):
+        self.assertEqual(self.search("καλη"), ["Καλημέρα"])

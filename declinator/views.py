@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets, filters
 from rest_framework.permissions import AllowAny
 
+from we_learn_greek.search import GreekSearchFilter
 from we_learn_greek.throttling import CONTENT_THROTTLES
 
 from .models import Noun
@@ -29,7 +30,7 @@ class NounViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = NounSerializer
     permission_classes = [AllowAny]
     throttle_classes = CONTENT_THROTTLES
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    filter_backends = [GreekSearchFilter, filters.OrderingFilter]
     search_fields = ['nominative_singular', 'nominative_plural', 'gender', 'basic_noun']
     ordering_fields = ['nominative_singular', 'nominative_plural', 'gender', 'basic_noun']
     ordering = ['nominative_singular']

@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
+from we_learn_greek.search import GreekSearchFilter
 from we_learn_greek.throttling import CONTENT_THROTTLES
 
 from .models import GreekToGreek
@@ -30,3 +31,5 @@ class GreekToGreekViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GreekToGreekSerializer
     permission_classes = [AllowAny]
     throttle_classes = CONTENT_THROTTLES
+    filter_backends = [GreekSearchFilter]
+    search_fields = ['word', 'explanation']
