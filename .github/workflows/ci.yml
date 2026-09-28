@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays: re-audit pinned dependencies for newly published advisories
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Checks and tests (Postgres, production settings)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    services:
+      postgres:
+        image: postgres:16-alpine # matches docker-compose.yml
+        env:
+          POSTGRES_DB: we_learn_greek
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d we_learn_greek"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    # Production settings: there is no .env in CI, so DEBUG defaults to off.
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/we_learn_greek
+      DEBUG: "false"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate throwaway SECRET_KEY
+        run: echo "SECRET_KEY=$(python -c 'import secrets; print(secrets.token_urlsafe(50))')" >> "$GITHUB_ENV"
+
+      - name: Migrations are up to date
+        run: python manage.py makemigrations --check --dry-run
+
+      - name: Deploy checklist (fails on warnings)
+        run: python manage.py check --deploy --fail-level WARNING
+
+      - name: Collect static files
+        run: python manage.py collectstatic --no-input
+
+      - name: Run tests
+        env:
+          SECURE_SSL_REDIRECT: "false" # the test client speaks plain HTTP
+        run: python manage.py test --verbosity 2
+
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+
+      - name: pip-audit
+        run: |
+          pip install pip-audit
+          pip-audit -r requirements.txt
