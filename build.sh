@@ -10,3 +10,5 @@ if [ -z "${DATABASE_URL:-}" ]; then
 fi
 
 python manage.py migrate --no-input
+# Drop expired entries from the JWT blacklist tables so they don't grow forever.
+python manage.py flushexpiredtokens

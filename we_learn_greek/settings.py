@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'we_learn_greek',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
@@ -98,7 +99,8 @@ REST_FRAMEWORK = {
     # Scoped per view via throttle_scope. Counters live in the process-local cache,
     # so each gunicorn worker counts separately.
     'DEFAULT_THROTTLE_RATES': {
-        'auth': os.environ.get('AUTH_THROTTLE_RATE', '10/min'),
+        'auth': os.environ.get('AUTH_THROTTLE_RATE', '10/min'),                 # login, register
+        'token': os.environ.get('TOKEN_THROTTLE_RATE', '30/min'),               # refresh, logout
     },
     # Number of proxies in front of the app that append to X-Forwarded-For. Leave unset
     # until verified on the host; a wrong value makes all clients share one IP bucket.
@@ -157,8 +159,16 @@ else:
     }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    # Short-lived access tokens: a blacklisted refresh token stops new ones being issued,
+    # but an access token already handed out stays valid until it expires.
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    # Every refresh returns a new refresh token and blacklists the old one.
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    # Tokens carry a password hash claim, so changing the password revokes them all.
+    'CHECK_REVOKE_TOKEN': True,
+    'UPDATE_LAST_LOGIN': True,
 }
 
 TIME_ZONE = 'UTC'

@@ -162,3 +162,52 @@ class ApiDocsTests(APITestCase):
         for url in ["/swagger/", "/redoc/", "/swagger/?format=openapi"]:
             response = self.client.get(url)
             self.assertEqual(response.status_code, status.HTTP_200_OK, url)
+
+
+class TokenLifecycleTests(APITestCase):
+    def setUp(self):
+        cache.clear()
+        self.password = "correct-horse-battery"
+        self.user = User.objects.create_user(email="jwt@example.com", password=self.password)
+        response = self.client.post(reverse("login"), {"email": "jwt@example.com", "password": self.password})
+        self.access = response.data["access"]
+        self.refresh = response.data["refresh"]
+
+    def _refresh(self, token):
+        return self.client.post(reverse("token_refresh"), {"refresh": token})
+
+    def _get_dictionary(self, access):
+        return self.client.get(reverse("dictionary-list"), HTTP_AUTHORIZATION=f"Bearer {access}")
+
+    def test_refresh_rotates_and_old_token_is_rejected(self):
+        first = self._refresh(self.refresh)
+        self.assertEqual(first.status_code, status.HTTP_200_OK)
+        self.assertIn("refresh", first.data)
+        self.assertNotEqual(first.data["refresh"], self.refresh)
+
+        reused = self._refresh(self.refresh)
+        self.assertEqual(reused.status_code, status.HTTP_401_UNAUTHORIZED)
+
+        second = self._refresh(first.data["refresh"])
+        self.assertEqual(second.status_code, status.HTTP_200_OK)
+
+    def test_logout_blacklists_refresh_token(self):
+        response = self.client.post(reverse("logout"), {"refresh": self.refresh})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(self._refresh(self.refresh).status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_logout_with_invalid_token(self):
+        response = self.client.post(reverse("logout"), {"refresh": "not-a-token"})
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_password_change_revokes_existing_tokens(self):
+        self.assertEqual(self._get_dictionary(self.access).status_code, status.HTTP_200_OK)
+        self.user.set_password("another-strong-password")
+        self.user.save()
+        self.assertEqual(self._get_dictionary(self.access).status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(self._refresh(self.refresh).status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_tokens_from_token_endpoint_also_work(self):
+        response = self.client.post(reverse("token_obtain_pair"), {"email": "jwt@example.com", "password": self.password})
+        self.assertEqual(self._get_dictionary(response.data["access"]).status_code, status.HTTP_200_OK)
+        self.assertEqual(self._refresh(response.data["refresh"]).status_code, status.HTTP_200_OK)
