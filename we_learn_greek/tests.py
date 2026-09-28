@@ -27,6 +27,22 @@ class UserAuthenticationTests(APITestCase):
         self.assertEqual(response["Content-Type"], "application/json")
         self.assertTrue(User.objects.filter(email=self.valid_user_data["email"]).exists())
 
+    def test_register_multiple_users(self):
+        first = self.client.post(self.register_url, self.valid_user_data)
+        second = self.client.post(self.register_url, {
+            **self.valid_user_data,
+            "email": "second@example.com",
+        })
+        self.assertEqual(first.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(second.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(User.objects.count(), 2)
+
+    def test_register_duplicate_email(self):
+        self.client.post(self.register_url, self.valid_user_data)
+        response = self.client.post(self.register_url, self.valid_user_data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("email", response.data)
+
     def test_register_invalid_user(self):
         response = self.client.post(self.register_url, self.invalid_user_data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
