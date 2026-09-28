@@ -4,10 +4,13 @@ from rest_framework import status
 from .serializers import UserSerializer, LoginSerializer
 from django.contrib.auth import authenticate, get_user_model
 from rest_framework.permissions import AllowAny
+from rest_framework.throttling import ScopedRateThrottle
 from rest_framework_simplejwt.tokens import RefreshToken 
 
 class RegisterAPIView(APIView):
     permission_classes = [AllowAny]
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'auth'
 
     def post(self, request):
         serializer = UserSerializer(data=request.data)
@@ -24,6 +27,8 @@ class RegisterAPIView(APIView):
     
 class LoginAPIView(APIView):
     permission_classes = [AllowAny]
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'auth'
 
     def post(self, request):
         email = request.data.get("email")

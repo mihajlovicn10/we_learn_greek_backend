@@ -1,5 +1,6 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
+from django.core.cache import cache
 from django.test import override_settings
 from django.urls import reverse
 from .models import User
@@ -7,6 +8,7 @@ from .models import User
 
 class UserAuthenticationTests(APITestCase):
     def setUp(self):
+        cache.clear()  # throttle counters live in the cache
         self.register_url = reverse("register")
         self.login_url = reverse("login")
         self.valid_user_data = {
@@ -43,6 +45,55 @@ class UserAuthenticationTests(APITestCase):
         response = self.client.post(self.register_url, self.valid_user_data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn("email", response.data)
+
+    def test_register_duplicate_email_different_case(self):
+        self.client.post(self.register_url, self.valid_user_data)
+        response = self.client.post(self.register_url, {
+            **self.valid_user_data,
+            "email": "TestUser@Example.com",
+        })
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("email", response.data)
+
+    def test_register_stores_lowercased_email(self):
+        response = self.client.post(self.register_url, {
+            **self.valid_user_data,
+            "email": "Mixed.Case@Example.COM",
+        })
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.data["email"], "mixed.case@example.com")
+
+    def test_register_without_names(self):
+        response = self.client.post(self.register_url, {
+            "email": self.valid_user_data["email"],
+            "password": self.valid_user_data["password"],
+        })
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_register_weak_passwords_rejected(self):
+        for password in ["short", "12345678901", "password", "testuser@example.com"]:
+            response = self.client.post(self.register_url, {
+                **self.valid_user_data,
+                "password": password,
+            })
+            self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST, password)
+            self.assertIn("password", response.data, password)
+        self.assertEqual(User.objects.count(), 0)
+
+    def test_login_email_is_case_insensitive(self):
+        User.objects.create_user(**self.valid_user_data)
+        for url in [self.login_url, reverse("token_obtain_pair")]:
+            response = self.client.post(url, {
+                "email": "TESTUSER@example.com",
+                "password": self.valid_user_data["password"],
+            })
+            self.assertEqual(response.status_code, status.HTTP_200_OK, url)
+
+    def test_auth_endpoints_are_throttled(self):
+        payload = {"email": "nobody@example.com", "password": "wrongpassword"}
+        statuses = [self.client.post(self.login_url, payload).status_code for _ in range(11)]
+        self.assertEqual(statuses[:10], [status.HTTP_401_UNAUTHORIZED] * 10)
+        self.assertEqual(statuses[10], status.HTTP_429_TOO_MANY_REQUESTS)
 
     def test_register_invalid_user(self):
         response = self.client.post(self.register_url, self.invalid_user_data)
