@@ -120,6 +120,10 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = int(os.environ.get('SECURE_HSTS_SECONDS', '3600'))
     SECURE_REFERRER_POLICY = 'same-origin'
 
+# HSTS includeSubDomains/preload are for a domain we own; on *.onrender.com the parent
+# domain belongs to Render. Revisit when moving to a custom domain.
+SILENCED_SYSTEM_CHECKS = ['security.W005', 'security.W021']
+
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
