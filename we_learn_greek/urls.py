@@ -19,7 +19,7 @@ from django.urls import path, include
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from .auth import EmailTokenObtainPairView, ThrottledTokenRefreshView
+from .auth import EmailTokenObtainPairView, LogoutView, ThrottledTokenRefreshView
 from .api.views import RegisterAPIView, LoginAPIView
 
 schema_view = get_schema_view(
@@ -39,6 +39,7 @@ urlpatterns = [
     path('api/token/refresh/', ThrottledTokenRefreshView.as_view(), name='token_refresh'),
     path('api/register/', RegisterAPIView.as_view(), name='register'),
     path('api/login/', LoginAPIView.as_view(), name='login'),
+    path('api/logout/', LogoutView.as_view(), name='logout'),
     
     # App URLs
     path('api/', include('declinator.urls')),
