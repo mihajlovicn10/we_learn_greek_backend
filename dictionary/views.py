@@ -2,9 +2,12 @@ from rest_framework import viewsets, permissions, status, filters
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.decorators import action
-from dictionary.api.serializers import DictionarySerializer
-from django.db.models import Q
+from rest_framework.exceptions import ValidationError
+from dictionary.api.serializers import BulkDeleteSerializer, DictionarySerializer
+from django.db import IntegrityError, transaction
 from .models import Dictionary
+
+DUPLICATE_WORD_ERROR = {"greek_word": ["You already have this word in your dictionary"]}
 
 
 class DictionaryPagination(PageNumberPagination):
@@ -23,10 +26,25 @@ class DictionaryViewSet(viewsets.ModelViewSet):
     ordering = ['-date_added']
 
     def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):  # drf-yasg schema generation, no user
+            return Dictionary.objects.none()
         return Dictionary.objects.filter(user=self.request.user)
 
+    # The serializer's duplicate check can race with a concurrent request; the
+    # (user, greek_word) unique constraint is the backstop.
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        try:
+            with transaction.atomic():
+                serializer.save(user=self.request.user)
+        except IntegrityError:
+            raise ValidationError(DUPLICATE_WORD_ERROR)
+
+    def perform_update(self, serializer):
+        try:
+            with transaction.atomic():
+                serializer.save()
+        except IntegrityError:
+            raise ValidationError(DUPLICATE_WORD_ERROR)
 
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
@@ -48,15 +66,11 @@ class DictionaryViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['post'])
     def bulk_delete(self, request):
-        ids = request.data.get('ids', [])
-        if not ids:
-            return Response(
-                {"error": "No IDs provided"},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
+        serializer = BulkDeleteSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
         deleted_count = Dictionary.objects.filter(
-            id__in=ids,
+            id__in=serializer.validated_data['ids'],
             user=request.user,
         ).delete()[0]
 

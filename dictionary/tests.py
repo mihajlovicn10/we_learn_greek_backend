@@ -1,8 +1,13 @@
+from unittest import mock, skipUnless
+
+from django.db import connection
+
 from rest_framework.test import APITestCase
 from rest_framework import status
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
+from dictionary.api.serializers import DictionarySerializer
 from dictionary.models import Dictionary
 
 User = get_user_model()
@@ -78,6 +83,15 @@ class DictionaryAPITestCase(APITestCase):
         response = self.client.post(self.list_url, new_entry)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
+    def test_create_entry_too_long(self):
+        response = self.client.post(self.list_url, {
+            "greek_word": "α" * 31,
+            "pronounciation": "a",
+            "translation": "too long",
+        })
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("greek_word", response.data)
+
     def test_bulk_delete(self):
         second = Dictionary.objects.create(
             greek_word="φωνή",
@@ -92,3 +106,67 @@ class DictionaryAPITestCase(APITestCase):
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(Dictionary.objects.count(), 0)
+
+    def test_bulk_delete_rejects_malformed_ids(self):
+        url = reverse("dictionary-bulk-delete")
+        for payload in [{}, {"ids": []}, {"ids": "abc"}, {"ids": 5}, {"ids": ["x"]},
+                        {"ids": [{"a": 1}]}, {"ids": [0]}, {"ids": [None]}]:
+            response = self.client.post(url, payload, format="json")
+            self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST, payload)
+            self.assertIn("ids", response.data, payload)
+        self.assertEqual(Dictionary.objects.count(), 1)
+
+    def test_bulk_delete_only_deletes_own_entries(self):
+        other = User.objects.create_user(email="other@example.com", password="testpass")
+        foreign = Dictionary.objects.create(
+            greek_word="φως", pronounciation="fos", translation="light", user=other,
+        )
+        response = self.client.post(
+            reverse("dictionary-bulk-delete"),
+            {"ids": [self.dictionary_entry.pk, foreign.pk]},
+            format="json",
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(Dictionary.objects.filter(pk=foreign.pk).exists())
+        self.assertFalse(Dictionary.objects.filter(pk=self.dictionary_entry.pk).exists())
+
+    def test_greek_word_validation(self):
+        accepted = {
+            "ΟΥΡΑΝΌΣ": "ΟΥΡΑΝΌΣ",          # capitals with tonos
+            "ο άνθρωπος": "ο άνθρωπος",     # article + noun
+            "καλή   τύχη": "καλή τύχη",     # whitespace collapsed
+            "ἄνθρωπος": "ἄνθρωπος",         # polytonic
+            "Ϊσως": "Ϊσως",                 # capital with dialytika
+        }
+        for word, stored in accepted.items():
+            response = self.client.post(self.list_url, {
+                "greek_word": word, "pronounciation": "xx", "translation": "t",
+            })
+            self.assertEqual(response.status_code, status.HTTP_201_CREATED, word)
+            self.assertEqual(response.data["greek_word"], stored, word)
+
+        for word in ["logos", "λόγος1", "λόγος!", "λόγοs"]:
+            response = self.client.post(self.list_url, {
+                "greek_word": word, "pronounciation": "xx", "translation": "t",
+            })
+            self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST, word)
+            self.assertIn("greek_word", response.data, word)
+
+    # SQLite's case-insensitive matching is ASCII-only, so this only holds on Postgres.
+    @skipUnless(connection.vendor == "postgresql", "needs Unicode-aware iexact")
+    def test_duplicate_check_ignores_greek_case(self):
+        response = self.client.post(self.list_url, {
+            "greek_word": "ΛΌΓΟΣ", "pronounciation": "logos", "translation": "word",
+        })
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("greek_word", response.data)
+
+    def test_concurrent_duplicate_returns_400(self):
+        # Skip the serializer's duplicate check, as when two requests race past it.
+        with mock.patch.object(DictionarySerializer, "validate_greek_word", lambda self, value: value):
+            response = self.client.post(self.list_url, {
+                "greek_word": "λόγος", "pronounciation": "logos", "translation": "word",
+            })
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(response.data["greek_word"][0], "You already have this word in your dictionary")
+        self.assertEqual(Dictionary.objects.count(), 1)
