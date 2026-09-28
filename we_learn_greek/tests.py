@@ -1,5 +1,6 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
+from django.test import override_settings
 from django.urls import reverse
 from .models import User
 
@@ -59,6 +60,16 @@ class UserAuthenticationTests(APITestCase):
         self.assertEqual(response["Content-Type"], "application/json")
         self.assertIn("access", response.data)
 
+    def test_token_endpoint_returns_token_pair(self):
+        User.objects.create_user(**self.valid_user_data)
+        response = self.client.post(reverse("token_obtain_pair"), {
+            "email": self.valid_user_data["email"],
+            "password": self.valid_user_data["password"],
+        })
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn("access", response.data)
+        self.assertIn("refresh", response.data)
+
     def test_login_invalid_user(self):
         response = self.client.post(self.login_url, {
             "email": self.valid_user_data["email"],
@@ -85,3 +96,18 @@ class UserAuthenticationTests(APITestCase):
         )
         self.assertTrue(superuser.is_superuser)
         self.assertTrue(superuser.is_staff)
+
+
+# The manifest storage used in production needs collectstatic to have run.
+PLAIN_STATIC_STORAGE = override_settings(STORAGES={
+    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+    "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
+})
+
+
+@PLAIN_STATIC_STORAGE
+class ApiDocsTests(APITestCase):
+    def test_docs_pages_render(self):
+        for url in ["/swagger/", "/redoc/", "/swagger/?format=openapi"]:
+            response = self.client.get(url)
+            self.assertEqual(response.status_code, status.HTTP_200_OK, url)
