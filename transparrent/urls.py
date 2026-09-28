@@ -6,13 +6,8 @@ from .views import TransparentWordViewSet
 router = DefaultRouter()
 router.register('transparent-words', TransparentWordViewSet, basename='transparent-words')
 
-transparent_list = TransparentWordViewSet.as_view({'get': 'list', 'post': 'create'})
-transparent_detail = TransparentWordViewSet.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy',
-})
+transparent_list = TransparentWordViewSet.as_view({'get': 'list'})
+transparent_detail = TransparentWordViewSet.as_view({'get': 'retrieve'})
 
 urlpatterns = router.urls + [
     path('transparent-words-entries/', transparent_list, name='transparent_word_list_create'),

@@ -19,16 +19,19 @@ class TransparentWordAPITestCase(APITestCase):
         self.detail_url = reverse("transparent-words-detail", kwargs={"pk": self.transparent_word.pk})
         self.language_url = reverse("transparent_word_by_language", kwargs={"language": "en"})
 
-    def test_create_transparent_word(self):
-        data = {
-            "language": "fr",
-            "greek_word": "φιλοσοφία",
-            "language_word": "philosophie",
-            "category": "Philosophy",
-        }
-        response = self.client.post(self.list_url, data)
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(TransparentWord.objects.count(), 2)
+    def test_write_methods_not_allowed(self):
+        data = {"language": "fr", "greek_word": "φιλοσοφία", "category": "Philosophy"}
+        for url in [self.list_url, "/api/transparent-words-entries/"]:
+            response = self.client.post(url, data)
+            self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        detail_urls = [self.detail_url, f"/api/transparent-words-entries/{self.transparent_word.pk}/"]
+        for url in detail_urls:
+            for method in (self.client.put, self.client.patch, self.client.delete):
+                response = method(url, data)
+                self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        self.transparent_word.refresh_from_db()
+        self.assertEqual(self.transparent_word.category, "Science")
+        self.assertEqual(TransparentWord.objects.count(), 1)
 
     def test_list_transparent_words(self):
         response = self.client.get(self.list_url)
@@ -39,23 +42,6 @@ class TransparentWordAPITestCase(APITestCase):
         response = self.client.get(self.detail_url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["greek_word"], "πρόβλημα")
-
-    def test_update_transparent_word(self):
-        updated_data = {
-            "language": "en",
-            "greek_word": "πρόβλημα",
-            "language_word": "problem",
-            "category": "Education",
-        }
-        response = self.client.put(self.detail_url, updated_data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.transparent_word.refresh_from_db()
-        self.assertEqual(self.transparent_word.category, "Education")
-
-    def test_delete_transparent_word(self):
-        response = self.client.delete(self.detail_url)
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertEqual(TransparentWord.objects.count(), 0)
 
     def test_filter_by_language_path(self):
         TransparentWord.objects.create(

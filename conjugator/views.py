@@ -25,7 +25,7 @@ def verb_detail(request, pk):
     return render(request, 'verb_detail.html', {'verb': verb})
 
 
-class VerbViewSet(viewsets.ModelViewSet):
+class VerbViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Verb.objects.all()
     serializer_class = VerbSerializer
     permission_classes = [AllowAny]
