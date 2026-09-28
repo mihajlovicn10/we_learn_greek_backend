@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets, filters
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny
+
+from we_learn_greek.throttling import CONTENT_THROTTLES
 
 from .models import Noun
 from .api.serializers import NounSerializer
@@ -23,17 +24,11 @@ def noun_detail(request, pk):
     return render(request, 'noun_detail.html', {'noun': noun})
 
 
-class NounPagination(PageNumberPagination):
-    page_size = 12
-    page_size_query_param = 'page_size'
-    max_page_size = 100
-
-
 class NounViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Noun.objects.all()
     serializer_class = NounSerializer
     permission_classes = [AllowAny]
-    pagination_class = NounPagination
+    throttle_classes = CONTENT_THROTTLES
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['nominative_singular', 'nominative_plural', 'gender', 'basic_noun']
     ordering_fields = ['nominative_singular', 'nominative_plural', 'gender', 'basic_noun']

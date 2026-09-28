@@ -1,4 +1,19 @@
-from rest_framework.throttling import SimpleRateThrottle
+from rest_framework.throttling import SimpleRateThrottle, UserRateThrottle
+
+
+class ContentBurstThrottle(UserRateThrottle):
+    """Per user (or per IP when anonymous) short-window limit on word-content endpoints."""
+
+    scope = 'content_burst'
+
+
+class ContentSustainedThrottle(UserRateThrottle):
+    """Per user (or per IP when anonymous) daily limit on word-content endpoints."""
+
+    scope = 'content_sustained'
+
+
+CONTENT_THROTTLES = [ContentBurstThrottle, ContentSustainedThrottle]
 
 
 class AdminLoginThrottle(SimpleRateThrottle):

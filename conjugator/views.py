@@ -4,6 +4,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
+
+from we_learn_greek.throttling import CONTENT_THROTTLES
 from rest_framework.response import Response
 
 from .models import Verb
@@ -29,6 +31,7 @@ class VerbViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Verb.objects.all()
     serializer_class = VerbSerializer
     permission_classes = [AllowAny]
+    throttle_classes = CONTENT_THROTTLES
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     search_fields = ['infinitive']
     filterset_fields = ['verb_type']

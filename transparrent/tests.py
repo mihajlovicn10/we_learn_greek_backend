@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from rest_framework.test import APITestCase
 from rest_framework import status
 from django.urls import reverse
@@ -6,6 +7,7 @@ from .models import TransparentWord
 
 class TransparentWordAPITestCase(APITestCase):
     def setUp(self):
+        cache.clear()  # content endpoints are rate limited
         self.transparent_word = TransparentWord.objects.create(
             language="en",
             greek_word="πρόβλημα",
@@ -63,4 +65,26 @@ class TransparentWordAPITestCase(APITestCase):
     def test_by_language_action(self):
         response = self.client.get("/api/transparent-words/by-language/en/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(response.data["count"], 1)
+        self.assertEqual(len(response.data["results"]), 1)
+
+    def test_by_language_search_category_and_pagination(self):
+        for greek, word, category in [
+            ("θέατρο", "theatre", "Arts"),
+            ("μουσική", "music", "Arts"),
+            ("φυσική", "physics", "Science"),
+        ]:
+            TransparentWord.objects.create(
+                language="en", greek_word=greek, language_word=word, category=category,
+            )
+        url = "/api/transparent-words/by-language/en/"
+
+        response = self.client.get(url, {"category": "arts"})
+        self.assertEqual(response.data["count"], 2)
+
+        response = self.client.get(url, {"search": "music"})
+        self.assertEqual([w["greek_word"] for w in response.data["results"]], ["μουσική"])
+
+        response = self.client.get(url, {"page_size": 2, "page": 2})
+        self.assertEqual(response.data["count"], 4)
+        self.assertEqual(len(response.data["results"]), 2)

@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
+from we_learn_greek.throttling import CONTENT_THROTTLES
+
 from .models import GreekToGreek
 from .api.serializers import GreekToGreekSerializer
 
@@ -27,3 +29,4 @@ class GreekToGreekViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = GreekToGreek.objects.all()
     serializer_class = GreekToGreekSerializer
     permission_classes = [AllowAny]
+    throttle_classes = CONTENT_THROTTLES
