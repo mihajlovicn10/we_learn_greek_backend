@@ -29,7 +29,7 @@ class NounPagination(PageNumberPagination):
     max_page_size = 100
 
 
-class NounViewSet(viewsets.ModelViewSet):
+class NounViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Noun.objects.all()
     serializer_class = NounSerializer
     permission_classes = [AllowAny]

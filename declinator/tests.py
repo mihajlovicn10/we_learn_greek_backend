@@ -34,34 +34,20 @@ class NounAPITestCase(TestCase):
         self.noun = Noun.objects.create(**self.noun_data)
         self.api_url = "/api/declinator/"
 
-    def test_create_noun(self):
-        new_data = self.noun_data.copy()
-        new_data["basic_noun"] = "ἄνθρωπος"
-        new_data["nominative_singular"] = "ἄνθρωπος"
-        response = self.client.post(self.api_url, new_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(Noun.objects.count(), 2)
+    def test_write_methods_not_allowed(self):
+        detail_urls = [f"{self.api_url}{self.noun.id}/", f"/api/nouns/{self.noun.id}/"]
+        for url in [self.api_url, "/api/nouns/"]:
+            response = self.client.post(url, self.noun_data, format="json")
+            self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        for url in detail_urls:
+            for method in (self.client.put, self.client.patch, self.client.delete):
+                response = method(url, self.noun_data, format="json")
+                self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        self.noun.refresh_from_db()
+        self.assertEqual(self.noun.basic_noun, "λόγος")
+        self.assertEqual(Noun.objects.count(), 1)
 
     def test_retrieve_noun(self):
         response = self.client.get(f"{self.api_url}{self.noun.id}/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["basic_noun"], self.noun_data["basic_noun"])
-
-    def test_update_noun(self):
-        updated_data = self.noun_data.copy()
-        updated_data["basic_noun"] = "θεός"
-        response = self.client.put(f"{self.api_url}{self.noun.id}/", updated_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.noun.refresh_from_db()
-        self.assertEqual(self.noun.basic_noun, "θεός")
-
-    def test_delete_noun(self):
-        response = self.client.delete(f"{self.api_url}{self.noun.id}/")
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertEqual(Noun.objects.count(), 0)
-
-    def test_create_noun_invalid_data(self):
-        invalid_data = self.noun_data.copy()
-        invalid_data.pop("basic_noun")
-        response = self.client.post(self.api_url, invalid_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

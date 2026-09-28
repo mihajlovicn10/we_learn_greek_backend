@@ -26,7 +26,7 @@ def words_by_language(request, language):
     return render(request, "transparent_words.html", {"words": words, "language": language})
 
 
-class TransparentWordViewSet(viewsets.ModelViewSet):
+class TransparentWordViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TransparentWord.objects.all()
     serializer_class = TransparentWordSerializer
     permission_classes = [AllowAny]

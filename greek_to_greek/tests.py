@@ -13,11 +13,19 @@ class GreekToGreekAPITestCase(APITestCase):
         self.list_url = reverse("greek-to-greek-list")
         self.detail_url = reverse("greek-to-greek-detail", kwargs={"pk": self.greek_to_greek.pk})
 
-    def test_create_greek_to_greek_entry(self):
+    def test_write_methods_not_allowed(self):
         data = {"word": "φως", "explanation": "Light"}
-        response = self.client.post(self.list_url, data)
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(GreekToGreek.objects.count(), 2)
+        for url in [self.list_url, "/api/greek-to-greek-entries/"]:
+            response = self.client.post(url, data)
+            self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        detail_urls = [self.detail_url, f"/api/greek-to-greek-entries/{self.greek_to_greek.pk}/"]
+        for url in detail_urls:
+            for method in (self.client.put, self.client.patch, self.client.delete):
+                response = method(url, data)
+                self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        self.greek_to_greek.refresh_from_db()
+        self.assertEqual(self.greek_to_greek.explanation, "Speech or reason")
+        self.assertEqual(GreekToGreek.objects.count(), 1)
 
     def test_list_greek_to_greek_entries(self):
         response = self.client.get(self.list_url)
@@ -28,15 +36,3 @@ class GreekToGreekAPITestCase(APITestCase):
         response = self.client.get(self.detail_url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["word"], "λόγος")
-
-    def test_update_greek_to_greek_entry(self):
-        updated_data = {"word": "λόγος", "explanation": "Updated explanation"}
-        response = self.client.put(self.detail_url, updated_data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.greek_to_greek.refresh_from_db()
-        self.assertEqual(self.greek_to_greek.explanation, "Updated explanation")
-
-    def test_delete_greek_to_greek_entry(self):
-        response = self.client.delete(self.detail_url)
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertEqual(GreekToGreek.objects.count(), 0)

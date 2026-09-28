@@ -63,38 +63,23 @@ class VerbAPITestCase(TestCase):
         self.api_url = "/api/conjugator/"
         self.conjugation_url = f"/api/verbs/{self.verb.id}/conjugation/"
 
-    def test_create_verb(self):
-        new_verb_data = self.verb_data.copy()
-        new_verb_data["infinitive"] = "γράφω"
-        response = self.client.post(self.api_url, new_verb_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(Verb.objects.count(), 2)
-        self.assertEqual(Verb.objects.last().infinitive, "γράφω")
+    def test_write_methods_not_allowed(self):
+        detail_urls = [f"{self.api_url}{self.verb.id}/", f"/api/verbs/{self.verb.id}/"]
+        for url in [self.api_url, "/api/verbs/"]:
+            response = self.client.post(url, self.verb_data, format="json")
+            self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        for url in detail_urls:
+            for method in (self.client.put, self.client.patch, self.client.delete):
+                response = method(url, self.verb_data, format="json")
+                self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED, url)
+        self.verb.refresh_from_db()
+        self.assertEqual(self.verb.infinitive, "λύω")
+        self.assertEqual(Verb.objects.count(), 1)
 
     def test_retrieve_verb(self):
         response = self.client.get(f"{self.api_url}{self.verb.id}/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["infinitive"], self.verb_data["infinitive"])
-
-    def test_update_verb(self):
-        updated_data = self.verb_data.copy()
-        updated_data["infinitive"] = "παιδεύω"
-        response = self.client.put(f"{self.api_url}{self.verb.id}/", updated_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.verb.refresh_from_db()
-        self.assertEqual(self.verb.infinitive, "παιδεύω")
-
-    def test_delete_verb(self):
-        response = self.client.delete(f"{self.api_url}{self.verb.id}/")
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertEqual(Verb.objects.count(), 0)
-
-    def test_create_verb_invalid_data(self):
-        invalid_data = self.verb_data.copy()
-        invalid_data.pop("infinitive")
-        response = self.client.post(self.api_url, invalid_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertIn("infinitive", response.data)
 
     def test_verb_conjugation_endpoint(self):
         response = self.client.get(self.conjugation_url)

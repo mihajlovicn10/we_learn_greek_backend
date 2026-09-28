@@ -23,7 +23,7 @@ def greek_to_greek_detail(request, pk):
     return render(request, "greek_to_greek_detail.html", {"word": word})
 
 
-class GreekToGreekViewSet(viewsets.ModelViewSet):
+class GreekToGreekViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = GreekToGreek.objects.all()
     serializer_class = GreekToGreekSerializer
     permission_classes = [AllowAny]
