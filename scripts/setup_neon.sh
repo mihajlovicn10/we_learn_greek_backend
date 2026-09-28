@@ -24,6 +24,7 @@ fi
 echo "DATABASE_URL is set."
 echo "Running migrations..."
 python manage.py migrate
+python manage.py createcachetable
 echo ""
 echo "Database is ready."
 echo "Optional: python manage.py createsuperuser"

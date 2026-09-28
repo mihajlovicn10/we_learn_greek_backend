@@ -37,7 +37,7 @@ if not SECRET_KEY:
 ALLOWED_HOSTS = _env_list('ALLOWED_HOSTS', 'localhost,127.0.0.1')
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'we_learn_greek.admin_site.ThrottledAdminConfig',  # replaces django.contrib.admin
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -96,11 +96,11 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 12,
-    # Scoped per view via throttle_scope. Counters live in the process-local cache,
-    # so each gunicorn worker counts separately.
+    # Counters live in the default cache (shared via Postgres in production, see CACHES).
     'DEFAULT_THROTTLE_RATES': {
         'auth': os.environ.get('AUTH_THROTTLE_RATE', '10/min'),                 # login, register
         'token': os.environ.get('TOKEN_THROTTLE_RATE', '30/min'),               # refresh, logout
+        'admin_login': os.environ.get('ADMIN_LOGIN_THROTTLE_RATE', '5/min'),
     },
     # Number of proxies in front of the app that append to X-Forwarded-For. Leave unset
     # until verified on the host; a wrong value makes all clients share one IP bucket.
@@ -157,6 +157,24 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+if DEBUG:
+    CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}
+else:
+    # Shared across gunicorn workers so rate limits hold globally. Requires
+    # `manage.py createcachetable` (build.sh runs it; the test runner does it itself).
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+            'LOCATION': 'django_cache',
+            'OPTIONS': {'MAX_ENTRIES': 50000},
+        }
+    }
+
+# Admin is needed to manage content until word data moves to JSON. Set ADMIN_ENABLED=false
+# to remove it entirely, and ADMIN_URL to move it off the well-known path.
+ADMIN_ENABLED = _env_bool('ADMIN_ENABLED', True)
+ADMIN_URL = os.environ.get('ADMIN_URL', 'admin/').strip('/') + '/'
 
 SIMPLE_JWT = {
     # Short-lived access tokens: a blacklisted refresh token stops new ones being issued,
