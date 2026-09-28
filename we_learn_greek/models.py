@@ -1,8 +1,17 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, AbstractUser
 from django.db import models
+from django.db.models.functions import Lower
 
 
 class CustomUserManager(BaseUserManager):
+    @classmethod
+    def normalize_email(cls, email):
+        # Emails are the login identifier, so store them fully lowercased.
+        return (email or '').strip().lower()
+
+    def get_by_natural_key(self, email):
+        return self.get(email__iexact=email)
+
     def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError("The Email field must be set")
@@ -57,3 +66,6 @@ class User(AbstractUser):
 
     class Meta:
         db_table = 'auth_user'
+        constraints = [
+            models.UniqueConstraint(Lower('email'), name='user_email_ci_unique'),
+        ]
