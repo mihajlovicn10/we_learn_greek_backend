@@ -94,13 +94,16 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'we_learn_greek.pagination.StandardPagination',
     'PAGE_SIZE': 12,
     # Counters live in the default cache (shared via Postgres in production, see CACHES).
     'DEFAULT_THROTTLE_RATES': {
         'auth': os.environ.get('AUTH_THROTTLE_RATE', '10/min'),                 # login, register
         'token': os.environ.get('TOKEN_THROTTLE_RATE', '30/min'),               # refresh, logout
         'admin_login': os.environ.get('ADMIN_LOGIN_THROTTLE_RATE', '5/min'),
+        # Word content is the product: slow down bulk copying without bothering learners.
+        'content_burst': os.environ.get('CONTENT_BURST_THROTTLE_RATE', '120/min'),
+        'content_sustained': os.environ.get('CONTENT_SUSTAINED_THROTTLE_RATE', '2000/day'),
     },
     # Number of proxies in front of the app that append to X-Forwarded-For. Leave unset
     # until verified on the host; a wrong value makes all clients share one IP bucket.

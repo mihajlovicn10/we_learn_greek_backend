@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from rest_framework import viewsets
+from rest_framework import filters, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
+
+from we_learn_greek.throttling import CONTENT_THROTTLES
 
 from .models import TransparentWord
 from .api.serializers import TransparentWordSerializer
@@ -30,16 +31,22 @@ class TransparentWordViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TransparentWord.objects.all()
     serializer_class = TransparentWordSerializer
     permission_classes = [AllowAny]
+    throttle_classes = CONTENT_THROTTLES
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['greek_word', 'language_word']
 
     def get_queryset(self):
         queryset = TransparentWord.objects.all()
         language = self.kwargs.get('language') or self.request.query_params.get('language')
         if language:
             queryset = queryset.filter(language=language)
+        category = self.request.query_params.get('category')
+        if category:
+            queryset = queryset.filter(category__iexact=category)
         return queryset
 
+    # Same filtering and pagination as the list; the frontend sends ?search, ?category,
+    # ?page and ?page_size here and handles the paginated {count, results} shape.
     @action(detail=False, methods=['get'], url_path='by-language/(?P<language>[^/.]+)')
     def by_language(self, request, language=None):
-        words = TransparentWord.objects.filter(language=language)
-        serializer = self.get_serializer(words, many=True)
-        return Response(serializer.data)
+        return self.list(request)

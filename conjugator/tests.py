@@ -1,7 +1,12 @@
+from unittest import mock
+
+from django.core.cache import cache
 from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APIClient
 from django.contrib.auth import get_user_model
+from we_learn_greek.throttling import ContentBurstThrottle
+
 from .models import Verb
 
 User = get_user_model()
@@ -9,6 +14,7 @@ User = get_user_model()
 
 class VerbAPITestCase(TestCase):
     def setUp(self):
+        cache.clear()  # content endpoints are rate limited
         self.user = User.objects.create_user(
             email="testuser@example.com",
             password="password123",
@@ -86,3 +92,20 @@ class VerbAPITestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["infinitive"], self.verb_data["infinitive"])
         self.assertIn("present_first_singular", response.data)
+
+    def _create_verbs(self, count):
+        for i in range(count):
+            Verb.objects.create(**{**self.verb_data, "infinitive": f"ρήμα{i}"})
+
+    def test_page_size_is_honoured_and_capped(self):
+        self._create_verbs(60)
+        response = self.client.get("/api/verbs/", {"page_size": 5})
+        self.assertEqual(len(response.data["results"]), 5)
+        response = self.client.get("/api/verbs/", {"page_size": 1000})
+        self.assertEqual(len(response.data["results"]), 50)
+
+    def test_content_endpoints_are_throttled(self):
+        self.client.force_authenticate(user=None)
+        with mock.patch.dict(ContentBurstThrottle.THROTTLE_RATES, {"content_burst": "3/min"}):
+            statuses = [self.client.get("/api/verbs/").status_code for _ in range(4)]
+        self.assertEqual(statuses, [200, 200, 200, 429])
