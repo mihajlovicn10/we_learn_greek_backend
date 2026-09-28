@@ -211,3 +211,40 @@ class TokenLifecycleTests(APITestCase):
         response = self.client.post(reverse("token_obtain_pair"), {"email": "jwt@example.com", "password": self.password})
         self.assertEqual(self._get_dictionary(response.data["access"]).status_code, status.HTTP_200_OK)
         self.assertEqual(self._refresh(response.data["refresh"]).status_code, status.HTTP_200_OK)
+
+
+@PLAIN_STATIC_STORAGE
+class AdminHardeningTests(APITestCase):
+    def setUp(self):
+        cache.clear()
+
+    def test_admin_uses_throttled_site(self):
+        from django.contrib import admin
+        from .admin_site import ThrottledAdminSite
+        self.assertIsInstance(admin.site, ThrottledAdminSite)
+
+    def test_admin_login_is_throttled(self):
+        url = reverse("admin:login")
+        payload = {"username": "nobody@example.com", "password": "wrong"}
+        statuses = [self.client.post(url, payload).status_code for _ in range(6)]
+        self.assertEqual(statuses[:5], [200] * 5)  # failed login re-renders the form
+        self.assertEqual(statuses[5], 429)
+        self.assertEqual(self.client.get(url).status_code, 200)  # viewing the form is not limited
+
+    def _reload_urls(self):
+        import importlib
+        from django.urls import clear_url_caches
+        from . import urls
+        clear_url_caches()
+        importlib.reload(urls)
+
+    def test_admin_url_and_toggle(self):
+        try:
+            with override_settings(ADMIN_URL="hidden-admin/"):
+                self._reload_urls()
+                self.assertEqual(reverse("admin:index"), "/hidden-admin/")
+            with override_settings(ADMIN_ENABLED=False):
+                self._reload_urls()
+                self.assertEqual(self.client.get("/admin/").status_code, 404)
+        finally:
+            self._reload_urls()
