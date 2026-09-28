@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, filters
+from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
 
+from we_learn_greek.search import GreekSearchFilter
 from we_learn_greek.throttling import CONTENT_THROTTLES
 from rest_framework.response import Response
 
@@ -28,11 +29,12 @@ def verb_detail(request, pk):
 
 
 class VerbViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Verb.objects.all()
+    # Ordered so pagination is stable (unordered pages can repeat or skip verbs).
+    queryset = Verb.objects.order_by('infinitive')
     serializer_class = VerbSerializer
     permission_classes = [AllowAny]
     throttle_classes = CONTENT_THROTTLES
-    filter_backends = [filters.SearchFilter, DjangoFilterBackend]
+    filter_backends = [GreekSearchFilter, DjangoFilterBackend]
     search_fields = ['infinitive']
     filterset_fields = ['verb_type']
 

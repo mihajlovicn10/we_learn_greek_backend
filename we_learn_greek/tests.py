@@ -1,7 +1,7 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
 from django.core.cache import cache
-from django.test import override_settings
+from django.test import SimpleTestCase, override_settings
 from django.urls import reverse
 from .models import User
 
@@ -248,3 +248,42 @@ class AdminHardeningTests(APITestCase):
                 self.assertEqual(self.client.get("/admin/").status_code, 404)
         finally:
             self._reload_urls()
+
+
+class GreekSearchHelperTests(SimpleTestCase):
+    """Unit tests for we_learn_greek.search (mirrored in the frontend's src/utils/greek.js)."""
+
+    def test_normalize_strips_accents_case_and_final_sigma(self):
+        from .search import normalize_greek
+
+        self.assertEqual(normalize_greek("Άνθρωπος"), "ανθρωποσ")
+        self.assertEqual(normalize_greek("ΪΫ"), "ιυ")
+
+    def test_transliterate_is_phonetic(self):
+        from .search import transliterate
+
+        self.assertEqual(transliterate("άνθρωπος"), "anthropos")
+        self.assertEqual(transliterate("είμαι"), "ime")
+        self.assertEqual(transliterate("ευχαριστώ"), "efharisto")
+        self.assertEqual(transliterate("αύριο"), "avrio")
+        self.assertEqual(transliterate("μπύρα"), "bira")
+
+    def test_matches(self):
+        from .search import matches
+
+        cases = [
+            ("άνθρωπος", "ανθρωπος", True),  # accents optional
+            ("άνθρωπος", "ΑΝΘΡ", True),  # case-insensitive prefix
+            ("άνθρωπος", "anthropos", True),  # Latin input
+            ("φιλοσοφία", "philosophia", True),  # spelling variants
+            ("μπύρα", "mpyra", True),
+            ("Καλημέρα", "kalimera", True),
+            ("democracy", "Democ", True),  # Latin fields still match plainly
+            ("σπίτι", "ανθρωπος", False),
+            ("σπίτι", "anthropos", False),
+            ("", "spiti", False),
+            ("σπίτι", "", True),  # empty query matches everything
+        ]
+        for value, query, expected in cases:
+            with self.subTest(value=value, query=query):
+                self.assertEqual(matches(value, query), expected)

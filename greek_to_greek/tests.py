@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from rest_framework.test import APITestCase
 from rest_framework import status
 from django.urls import reverse
@@ -36,3 +37,13 @@ class GreekToGreekAPITestCase(APITestCase):
         response = self.client.get(self.detail_url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["word"], "λόγος")
+
+    def test_search_filters_results(self):
+        # Regression: this viewset had no search backend, so ?search= returned every word.
+        cache.clear()  # content endpoints are rate limited
+        GreekToGreek.objects.create(word="θάλασσα", explanation="Μεγάλη έκταση αλμυρού νερού.")
+        for term, expected in [("θαλασσα", ["θάλασσα"]), ("thalasa", ["θάλασσα"]), ("νερου", ["θάλασσα"])]:
+            with self.subTest(term=term):
+                response = self.client.get(self.list_url, {"search": term})
+                self.assertEqual(response.status_code, status.HTTP_200_OK)
+                self.assertEqual([w["word"] for w in response.data["results"]], expected)

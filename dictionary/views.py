@@ -5,6 +5,7 @@ from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from dictionary.api.serializers import BulkDeleteSerializer, DictionarySerializer
 from django.db import IntegrityError, transaction
+from we_learn_greek.search import GreekSearchFilter
 from .models import Dictionary
 
 DUPLICATE_WORD_ERROR = {"greek_word": ["You already have this word in your dictionary"]}
@@ -20,8 +21,8 @@ class DictionaryViewSet(viewsets.ModelViewSet):
     serializer_class = DictionarySerializer
     pagination_class = DictionaryPagination
     permission_classes = [permissions.IsAuthenticated]
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['greek_word', 'translation']
+    filter_backends = [GreekSearchFilter, filters.OrderingFilter]
+    search_fields = ['greek_word', 'translation', 'pronounciation']
     ordering_fields = ['greek_word', 'date_added']
     ordering = ['-date_added']
 

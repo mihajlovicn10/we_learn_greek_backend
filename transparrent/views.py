@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from rest_framework import filters, viewsets
+from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
 
+from we_learn_greek.search import GreekSearchFilter
 from we_learn_greek.throttling import CONTENT_THROTTLES
 
 from .models import TransparentWord
@@ -32,7 +33,7 @@ class TransparentWordViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = TransparentWordSerializer
     permission_classes = [AllowAny]
     throttle_classes = CONTENT_THROTTLES
-    filter_backends = [filters.SearchFilter]
+    filter_backends = [GreekSearchFilter]
     search_fields = ['greek_word', 'language_word']
 
     def get_queryset(self):

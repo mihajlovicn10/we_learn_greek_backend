@@ -88,3 +88,10 @@ class TransparentWordAPITestCase(APITestCase):
         response = self.client.get(url, {"page_size": 2, "page": 2})
         self.assertEqual(response.data["count"], 4)
         self.assertEqual(len(response.data["results"]), 2)
+
+    def test_search_is_accent_insensitive_and_accepts_latin(self):
+        for term in ["προβλημα", "provlima", "PROBLEM"]:
+            with self.subTest(term=term):
+                response = self.client.get(self.language_url, {"search": term})
+                self.assertEqual(response.status_code, status.HTTP_200_OK)
+                self.assertEqual([w["greek_word"] for w in response.data["results"]], ["πρόβλημα"])
