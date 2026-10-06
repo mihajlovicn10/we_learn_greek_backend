@@ -114,4 +114,4 @@ def validate(data, expected_tier):
 
 
 def sync(rows, tier):
-    return sync_rows(Verb, rows, tier)
+    return sync_rows(Verb, rows, tier=tier)
