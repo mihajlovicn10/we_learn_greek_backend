@@ -95,6 +95,18 @@ class UserAuthenticationTests(APITestCase):
         self.assertEqual(statuses[:10], [status.HTTP_401_UNAUTHORIZED] * 10)
         self.assertEqual(statuses[10], status.HTTP_429_TOO_MANY_REQUESTS)
 
+    def test_throttled_response_exposes_retry_after_cross_origin(self):
+        # Regression: without Access-Control-Expose-Headers the frontend can't read Retry-After.
+        payload = {"email": "nobody@example.com", "password": "wrongpassword"}
+        origin = {"HTTP_ORIGIN": "https://app.example.com"}
+        for _ in range(10):
+            self.client.post(self.login_url, payload, **origin)
+        response = self.client.post(self.login_url, payload, **origin)
+        self.assertEqual(response.status_code, status.HTTP_429_TOO_MANY_REQUESTS)
+        self.assertTrue(response["Retry-After"].isdigit())
+        self.assertIn("Access-Control-Allow-Origin", response)  # it is a CORS response
+        self.assertIn("retry-after", response["Access-Control-Expose-Headers"].lower())
+
     def test_register_invalid_user(self):
         response = self.client.post(self.register_url, self.invalid_user_data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

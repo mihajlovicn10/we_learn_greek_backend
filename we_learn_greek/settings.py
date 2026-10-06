@@ -114,6 +114,9 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = _env_list('CORS_ALLOWED_ORIGINS')
 CORS_ALLOW_ALL_ORIGINS = DEBUG and not CORS_ALLOWED_ORIGINS
 CORS_ALLOW_CREDENTIALS = False
+# Browsers hide non-safelisted response headers from cross-origin JS. The frontend reads
+# Retry-After on 429s to tell the user how long to wait.
+CORS_EXPOSE_HEADERS = ['Retry-After']
 CSRF_TRUSTED_ORIGINS = _env_list('CSRF_TRUSTED_ORIGINS')
 
 if not DEBUG:
