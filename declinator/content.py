@@ -4,12 +4,7 @@ Load noun content files (content/nouns/tier-N.json, schema "nouns/v1") into the 
 The files are the source of truth: loading a tier makes the table match the file
 (creates new items, updates changed ones, deletes items removed from the file).
 """
-import unicodedata
-
-from django.core.exceptions import ValidationError
-from django.db import transaction
-
-from dictionary.validators import validate_greek
+from we_learn_greek.content import check_greek, check_id, check_translations, nfc, sync_rows
 
 from .models import Noun
 
@@ -19,22 +14,6 @@ NUMBERS = ("singular", "plural")
 CASES = ("nominative", "genitive", "accusative", "vocative")
 ITEM_KEYS = {"id", "tier", "basic_noun", "gender", "translations", "singular", "plural"}
 MAX_FORM_LENGTH = Noun._meta.get_field("basic_noun").max_length
-
-
-def _nfc(value):
-    return unicodedata.normalize("NFC", value) if isinstance(value, str) else value
-
-
-def _check_greek(errors, where, value):
-    if not isinstance(value, str) or not value:
-        errors.append(f"{where}: must be a non-empty string")
-        return
-    if len(value) > MAX_FORM_LENGTH:
-        errors.append(f"{where}: longer than {MAX_FORM_LENGTH} characters")
-    try:
-        validate_greek(_nfc(value))
-    except ValidationError:
-        errors.append(f"{where}: {value!r} is not Greek letters with single spaces")
 
 
 def validate(data, expected_tier):
@@ -62,28 +41,20 @@ def validate(data, expected_tier):
             continue
 
         item_id = item["id"]
-        if not isinstance(item_id, int) or isinstance(item_id, bool) or item_id < 1:
-            errors.append(f"{label}: id must be a positive integer")
-        elif item_id in seen_ids:
-            errors.append(f"{label}: duplicate id")
-        seen_ids.add(item_id)
+        check_id(errors, label, item_id, seen_ids)
 
         if item["tier"] != expected_tier:
             errors.append(f"{label}: tier is {item['tier']!r}, expected {expected_tier}")
         if item["gender"] not in GENDERS:
             errors.append(f"{label}: gender must be one of {sorted(GENDERS)}, got {item['gender']!r}")
 
-        _check_greek(errors, f"{label} basic_noun", item["basic_noun"])
-        word = _nfc(item["basic_noun"])
+        check_greek(errors, f"{label} basic_noun", item["basic_noun"], MAX_FORM_LENGTH)
+        word = nfc(item["basic_noun"])
         if word in seen_words:
             errors.append(f"{label}: duplicate basic_noun {word!r}")
         seen_words.add(word)
 
-        translations = item["translations"]
-        if (not isinstance(translations, dict) or not translations
-                or not all(isinstance(k, str) and len(k) == 2 and isinstance(v, str) and v.strip()
-                           for k, v in translations.items())):
-            errors.append(f'{label}: translations must map 2-letter language codes to text, e.g. {{"en": "..."}}')
+        translations = check_translations(errors, label, item["translations"])
 
         forms = {}
         for number in NUMBERS:
@@ -94,8 +65,8 @@ def validate(data, expected_tier):
             for case in CASES:
                 value = block[case]
                 if value is not None:  # null = the form doesn't exist (e.g. no plural)
-                    _check_greek(errors, f"{label} {number}.{case}", value)
-                forms[f"{case}_{number}"] = _nfc(value)
+                    check_greek(errors, f"{label} {number}.{case}", value, MAX_FORM_LENGTH)
+                forms[f"{case}_{number}"] = nfc(value)
         if forms.get("nominative_singular") is None and "nominative_singular" in forms:
             errors.append(f"{label}: singular.nominative is required")
         elif forms.get("nominative_singular") not in (None, word):
@@ -106,29 +77,11 @@ def validate(data, expected_tier):
             "tier": expected_tier,
             "basic_noun": word,
             "gender": item["gender"],
-            "translations": {k: v.strip() for k, v in translations.items()} if isinstance(translations, dict) else {},
+            "translations": translations,
             **forms,
         })
     return (rows if not errors else []), errors
 
 
-@transaction.atomic
 def sync(rows, tier):
-    """Make the tier's rows match `rows`. Returns counts of created/updated/unchanged/deleted."""
-    counts = {"created": 0, "updated": 0, "unchanged": 0, "deleted": 0}
-    existing = {noun.content_id: noun for noun in Noun.objects.filter(tier=tier, content_id__isnull=False)}
-    for row in rows:
-        noun = existing.pop(row["content_id"], None)
-        if noun is None:
-            Noun.objects.create(**row)
-            counts["created"] += 1
-        elif any(getattr(noun, field) != value for field, value in row.items()):
-            for field, value in row.items():
-                setattr(noun, field, value)
-            noun.save()
-            counts["updated"] += 1
-        else:
-            counts["unchanged"] += 1
-    if existing:  # removed from the file
-        counts["deleted"] = Noun.objects.filter(pk__in=[n.pk for n in existing.values()]).delete()[0]
-    return counts
+    return sync_rows(Noun, rows, tier)

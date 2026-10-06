@@ -170,10 +170,10 @@ class NounContentLoaderTests(TestCase):
 
     def test_bad_file_name_and_unknown_types(self):
         from django.core.management.base import CommandError
-        (self.tmp / "verbs").mkdir()
-        (self.tmp / "verbs" / "tier-1.json").write_text("{}", encoding="utf-8")
+        (self.tmp / "idioms").mkdir()  # a content type with no loader
+        (self.tmp / "idioms" / "tier-1.json").write_text("{}", encoding="utf-8")
         self.write(self.real)
-        self.assertIn("Skipping verbs/", self.load("--check"))
+        self.assertIn("Skipping idioms/", self.load("--check"))
         self.write(self.real, name="tier1.json")
         with self.assertRaises(CommandError):
             self.load("--check")

@@ -5,7 +5,7 @@ from ..models import Verb
 class VerbSerializer(serializers.ModelSerializer):
     class Meta:
         model = Verb
-        fields = '__all__'
+        exclude = ['content_id']  # internal: the item id within its content file
 
     def validate_infinitive(self, value):
         if not value:
@@ -14,7 +14,7 @@ class VerbSerializer(serializers.ModelSerializer):
 
 
 CONJUGATION_FIELDS = [
-    'infinitive', 'verb_type',
+    'infinitive', 'verb_type', 'irregular', 'tier', 'translations',
     'present_first_singular', 'present_second_singular', 'present_third_singular',
     'present_first_plural', 'present_second_plural', 'present_third_pluran',
     'aorist_first_singular', 'aorist_second_singular', 'aorist_third_singular',
