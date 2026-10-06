@@ -7,6 +7,7 @@ from rest_framework.permissions import AllowAny
 from we_learn_greek.search import GreekSearchFilter
 from we_learn_greek.throttling import CONTENT_THROTTLES
 
+from .content import GENDERS
 from .models import Noun
 from .api.serializers import NounSerializer
 
@@ -46,4 +47,9 @@ class NounViewSet(viewsets.ReadOnlyModelViewSet):
             if not tier.isdigit():
                 raise ValidationError({'tier': ['Must be a whole number, e.g. ?tier=1.']})
             queryset = queryset.filter(tier=int(tier))
+        gender = self.request.query_params.get('gender')
+        if gender:  # empty = all genders (the frontend's "All genders" option)
+            if gender not in GENDERS:
+                raise ValidationError({'gender': [f"Must be one of: {', '.join(sorted(GENDERS))}."]})
+            queryset = queryset.filter(gender=gender)
         return queryset

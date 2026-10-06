@@ -76,7 +76,7 @@ without touching the database.
 - `nouns/v1` item: `id, tier, basic_noun, gender (masculine|feminine|neuter), translations {"en": ...},
   singular/plural {nominative, genitive, accusative, vocative}`. A case form is `null` when it doesn't exist (no
   plural for γάλα). `basic_noun` must equal `singular.nominative`, and all forms must pass `validate_greek`.
-- `/api/nouns/` exposes `tier` and `translations` and supports `?tier=N`.
+- `/api/nouns/` exposes `tier` and `translations` and supports `?tier=N` and `?gender=masculine|feminine|neuter`.
 
 ## Conventions and gotchas
 
