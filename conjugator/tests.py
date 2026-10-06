@@ -63,6 +63,12 @@ class VerbAPITestCase(TestCase):
             "future_first_plural": "λύσομεν",
             "future_second_plural": "λύσετε",
             "future_third_plural": "λύσουσι",
+            "future_continuous_first_singular": "θα λύω",
+            "future_continuous_second_singular": "θα λύεις",
+            "future_continuous_third_singular": "θα λύει",
+            "future_continuous_first_plural": "θα λύουμε",
+            "future_continuous_second_plural": "θα λύετε",
+            "future_continuous_third_plural": "θα λύουν",
         }
 
         self.verb = Verb.objects.create(**self.verb_data)
@@ -92,6 +98,22 @@ class VerbAPITestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["infinitive"], self.verb_data["infinitive"])
         self.assertIn("present_first_singular", response.data)
+
+    def test_future_continuous_in_verb_and_conjugation_endpoints(self):
+        persons = ["first_singular", "second_singular", "third_singular", "first_plural", "second_plural", "third_plural"]
+        for url in [f"/api/verbs/{self.verb.id}/", self.conjugation_url]:
+            data = self.client.get(url).data
+            self.assertEqual(
+                [data[f"future_continuous_{p}"] for p in persons],
+                ["θα λύω", "θα λύεις", "θα λύει", "θα λύουμε", "θα λύετε", "θα λύουν"],
+                url,
+            )
+
+    def test_future_continuous_is_optional(self):
+        older = {k: v for k, v in self.verb_data.items() if not k.startswith("future_continuous_")}
+        verb = Verb.objects.create(**{**older, "infinitive": "γράφω"})
+        data = self.client.get(f"/api/verbs/{verb.id}/conjugation/").data
+        self.assertIsNone(data["future_continuous_first_singular"])
 
     def _create_verbs(self, count):
         for i in range(count):

@@ -50,7 +50,7 @@ class Verb(models.Model):
     plusperfect_second_plural = models.CharField(max_length=100) 
     plusperfect_third_plural = models.CharField(max_length=100) 
     
-    #Conjugation for Future 
+    #Conjugation for Future (simple future / στιγμιαίος μέλλοντας: θα γράψω)
     
     future_first_singular = models.CharField(max_length=100) 
     future_second_singular = models.CharField(max_length=100) 
@@ -58,6 +58,16 @@ class Verb(models.Model):
     future_first_plural = models.CharField(max_length=100) 
     future_second_plural = models.CharField(max_length=100) 
     future_third_plural = models.CharField(max_length=100) 
+
+    # Conjugation for Future Continuous (εξακολουθητικός μέλλοντας: θα γράφω).
+    # Nullable so verbs added before this tense existed stay valid.
+
+    future_continuous_first_singular = models.CharField(max_length=100, null=True, blank=True)
+    future_continuous_second_singular = models.CharField(max_length=100, null=True, blank=True)
+    future_continuous_third_singular = models.CharField(max_length=100, null=True, blank=True)
+    future_continuous_first_plural = models.CharField(max_length=100, null=True, blank=True)
+    future_continuous_second_plural = models.CharField(max_length=100, null=True, blank=True)
+    future_continuous_third_plural = models.CharField(max_length=100, null=True, blank=True)
     
     def __str__(self):
         return self.infinitive
