@@ -5,7 +5,7 @@ class GreekToGreekSerializer(serializers.ModelSerializer):
     
     class Meta: 
         model = GreekToGreek 
-        fields = '__all__' 
+        exclude = ['content_id']  # internal: the item id within its content file
         
         
     
