@@ -95,6 +95,9 @@ class UserAuthenticationTests(APITestCase):
         self.assertEqual(statuses[:10], [status.HTTP_401_UNAUTHORIZED] * 10)
         self.assertEqual(statuses[10], status.HTTP_429_TOO_MANY_REQUESTS)
 
+    # Pin CORS to an explicit allow-list, as in production. Otherwise the result depends on
+    # DEBUG: with DEBUG on every origin is allowed, but CI runs with DEBUG off.
+    @override_settings(CORS_ALLOWED_ORIGINS=["https://app.example.com"], CORS_ALLOW_ALL_ORIGINS=False)
     def test_throttled_response_exposes_retry_after_cross_origin(self):
         # Regression: without Access-Control-Expose-Headers the frontend can't read Retry-After.
         payload = {"email": "nobody@example.com", "password": "wrongpassword"}
