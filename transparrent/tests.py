@@ -133,7 +133,7 @@ class TransparentContentLoaderTests(APITestCase):
         from django.core.management import call_command
         out = StringIO()
         call_command("load_content", "--check", stdout=out)
-        for lang in ("en", "fr", "de"):
+        for lang in ("en", "fr", "de", "es", "it", "ru"):
             self.assertIn(f"transparent-words/{lang}.json: OK", out.getvalue())
 
     def test_each_file_owns_its_language(self):
@@ -200,6 +200,9 @@ class TransparentContentAPITests(APITestCase):
         self.assertEqual(count("/api/transparent-words/by-language/en/"), 71)
         self.assertEqual(count("/api/transparent-words/by-language/fr/"), 71)
         self.assertEqual(count("/api/transparent-words/by-language/de/"), 70)
+        self.assertEqual(count("/api/transparent-words/by-language/es/"), 69)
+        self.assertEqual(count("/api/transparent-words/by-language/it/"), 68)
+        self.assertEqual(count("/api/transparent-words/by-language/ru/"), 67)
         self.assertEqual(count("/api/transparent-words/by-language/en/", category="arts"), 12)
         self.assertEqual(count("/api/transparent-words/", language="de", tier=1), 70)
         cache.clear()
