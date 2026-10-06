@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets, filters
+from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny
 
 from we_learn_greek.search import GreekSearchFilter
@@ -40,4 +41,9 @@ class NounViewSet(viewsets.ReadOnlyModelViewSet):
         nominative = self.request.query_params.get('nominative_singular')
         if nominative:
             queryset = queryset.filter(nominative_singular__icontains=nominative)
+        tier = self.request.query_params.get('tier')
+        if tier is not None:
+            if not tier.isdigit():
+                raise ValidationError({'tier': ['Must be a whole number, e.g. ?tier=1.']})
+            queryset = queryset.filter(tier=int(tier))
         return queryset
