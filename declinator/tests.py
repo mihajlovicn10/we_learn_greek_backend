@@ -197,6 +197,15 @@ class NounContentAPITests(TestCase):
         self.assertEqual(result[0]["translations"], {"en": "water"})
         self.assertIsNone(result[0]["nominative_plural"])
 
+    def test_gender_filter(self):
+        Noun.objects.filter(basic_noun="γάλα").update(gender="masculine")  # make the two rows differ
+        self.assertEqual(self.client.get("/api/nouns/", {"gender": "neuter"}).data["count"], 1)
+        self.assertEqual(self.client.get("/api/nouns/", {"gender": "masculine"}).data["count"], 1)
+        self.assertEqual(self.client.get("/api/nouns/", {"gender": "feminine"}).data["count"], 0)
+        self.assertEqual(self.client.get("/api/nouns/", {"gender": ""}).data["count"], 2)  # "All genders"
+        self.assertEqual(self.client.get("/api/nouns/", {"gender": "neuter", "tier": 2}).data["count"], 0)
+        self.assertEqual(self.client.get("/api/nouns/", {"gender": "male"}).status_code, status.HTTP_400_BAD_REQUEST)
+
     def test_tier_filter(self):
         self.assertEqual(self.client.get("/api/nouns/").data["count"], 2)
         self.assertEqual(self.client.get("/api/nouns/", {"tier": 2}).data["count"], 1)
