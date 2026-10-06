@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
 from rest_framework.decorators import action
+from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny
 
 from we_learn_greek.search import GreekSearchFilter
@@ -44,6 +45,11 @@ class TransparentWordViewSet(viewsets.ReadOnlyModelViewSet):
         category = self.request.query_params.get('category')
         if category:
             queryset = queryset.filter(category__iexact=category)
+        tier = self.request.query_params.get('tier')
+        if tier is not None:
+            if not tier.isdigit():
+                raise ValidationError({'tier': ['Must be a whole number, e.g. ?tier=1.']})
+            queryset = queryset.filter(tier=int(tier))
         return queryset
 
     # Same filtering and pagination as the list; the frontend sends ?search, ?category,

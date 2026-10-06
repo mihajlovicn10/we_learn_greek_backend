@@ -4,6 +4,6 @@ from ..models import TransparentWord
 class TransparentWordSerializer(serializers.ModelSerializer): 
     class Meta: 
         model = TransparentWord 
-        fields = '__all__' 
+        exclude = ['content_id']  # internal: the item id within its content file
         
         

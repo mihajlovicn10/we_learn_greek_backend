@@ -9,14 +9,18 @@ from django.db import transaction
 from conjugator import content as verbs
 from declinator import content as nouns
 from greek_to_greek import content as greek_to_greek
+from transparrent import content as transparent_words
 
-# content/<type>/ directory name -> loader module with validate(data, tier) and sync(rows, tier).
+# content/<type>/ directory name -> loader module with validate(data, scope) and sync(rows, scope).
+# A file's scope is what it owns: by default its tier (tier-N.json); a loader may define
+# FILE_NAME (a regex whose group 1 is the scope) and FILE_NAME_HINT, e.g. per-language en.json.
 # Types without a loader yet are skipped with a warning, so adding their files early
 # doesn't break a deploy.
 LOADERS = {
     "nouns": nouns,
     "verbs": verbs,
     "greek-to-greek": greek_to_greek,
+    "transparent-words": transparent_words,
 }
 TIER_FILE = re.compile(r"^tier-([1-9]\d*)\.json$")
 
@@ -47,20 +51,21 @@ class Command(BaseCommand):
                 continue
             for path in sorted(type_dir.glob("*.json")):
                 rel = path.relative_to(root)
-                match = TIER_FILE.match(path.name)
+                match = getattr(loader, "FILE_NAME", TIER_FILE).match(path.name)
                 if not match:
-                    errors.append(f"{rel}: file name must be tier-<number>.json")
+                    hint = getattr(loader, "FILE_NAME_HINT", "tier-<number>.json")
+                    errors.append(f"{rel}: file name must be {hint}")
                     continue
-                tier = int(match.group(1))
+                scope = int(match.group(1)) if match.group(1).isdigit() else match.group(1)
                 try:
                     data = json.loads(path.read_text(encoding="utf-8"))
                 except (UnicodeDecodeError, json.JSONDecodeError) as exc:
                     errors.append(f"{rel}: not valid UTF-8 JSON ({exc})")
                     continue
-                rows, file_errors = loader.validate(data, tier)
+                rows, file_errors = loader.validate(data, scope)
                 errors.extend(f"{rel}: {e}" for e in file_errors)
                 if not file_errors:
-                    loaded.append((rel, loader, tier, rows))
+                    loaded.append((rel, loader, scope, rows))
 
         if errors:
             raise CommandError(
@@ -73,7 +78,7 @@ class Command(BaseCommand):
             return
 
         with transaction.atomic():  # all files or none
-            results = [(rel, loader.sync(rows, tier)) for rel, loader, tier, rows in loaded]
+            results = [(rel, loader.sync(rows, scope)) for rel, loader, scope, rows in loaded]
         for rel, counts in results:
             self.stdout.write(f"{rel}: " + ", ".join(f"{n} {k}" for k, n in counts.items()))
         self.stdout.write(self.style.SUCCESS(f"Loaded {len(results)} content file(s)."))

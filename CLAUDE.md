@@ -62,17 +62,21 @@ Each app follows the same pattern: `models.py`, `api/serializers.py`, `views.py`
 
 ## Content files
 
-Word content lives in `content/<type>/tier-N.json` (tiers 1–5, one file per type per tier). The files are the source of
+Word content lives in `content/<type>/tier-N.json` (tiers 1–5, one file per type per tier). Transparent words
+are the exception: one file per language, `content/transparent-words/<lang>.json`. The files are the source of
 truth; never edit content in admin or the database. `python manage.py load_content` validates every file and makes
 the tables match: it creates, updates, and deletes rows that were removed from a file. It's all-or-nothing, so one
 invalid file loads nothing. `build.sh` runs it on every deploy, and CI runs `load_content --check`, which validates
 without touching the database.
 
 - Loaders are registered in `we_learn_greek/management/commands/load_content.py` (`LOADERS`). Each one is a module
-  with `validate(data, tier)` and `sync(rows, tier)`, built on the shared helpers in `we_learn_greek/content.py`.
+  with `validate(data, scope)` and `sync(rows, scope)`, built on the shared helpers in `we_learn_greek/content.py`.
+  A file's scope is what it owns: its tier by default, or whatever group 1 of the loader's `FILE_NAME` regex
+  captures. `sync_rows(model, rows, **scope)` only creates, updates or deletes rows inside that scope.
   So far: **nouns** (`declinator/content.py`, schema `nouns/v1`), **verbs** (`conjugator/content.py`, schema
-  `verbs/v1`) and **greek-to-greek** (`greek_to_greek/content.py`, schema `greek-to-greek/v1`). Other type
-  directories (e.g. transparent words) are skipped with a warning until they get a loader.
+  `verbs/v1`), **greek-to-greek** (`greek_to_greek/content.py`, schema `greek-to-greek/v1`) and
+  **transparent-words** (`transparrent/content.py`, schema `transparent/v1`). Other type directories are skipped
+  with a warning until they get a loader.
 - Rows are matched on `(tier, content_id)`, where `content_id` is the item's `id` from the file. Ids only need to be
   unique within a tier file. The DB primary key (the API `id`) stays stable across reloads.
 - `nouns/v1` item: `id, tier, basic_noun, gender (masculine|feminine|neuter), translations {"en": ...},
@@ -90,6 +94,12 @@ without touching the database.
   numeral|particle|interjection|phrase), explanation (Greek text, ≤ 500 chars), translations`. `word` must pass
   `validate_greek` and be unique. `/api/greek-to-greek/` exposes `tier`, `pos` and `translations` and supports
   `?tier=` and `?pos=`. Search covers word and explanation.
+- `transparent/v1` file: `{schema, language, items}`, named `<language>.json`. The language must be one of en, fr,
+  de, es, ru, it (the languages the frontend offers). Item: `id, tier (1–5), language, greek_word, language_word,
+  pronunciation, etymology, example_greek, example_translation, category`. Category is one of Arts, Education,
+  Everyday, Food, Health, Nature, Philosophy, Science, Society, Technology. Rows are matched on
+  `(language, content_id)`, and a file only syncs its own language. `/api/transparent-words/` (and `by-language/`)
+  expose `tier` and support `?tier=`, alongside the existing `?language=` and `?category=`.
 
 ## Conventions and gotchas
 

@@ -41,11 +41,11 @@ def check_id(errors, label, item_id, seen_ids):
 
 
 @transaction.atomic
-def sync_rows(model, rows, tier):
-    """Make the tier's rows of `model` match `rows` (matched on content_id).
-    Returns counts of created/updated/unchanged/deleted."""
+def sync_rows(model, rows, **scope):
+    """Make the rows of `model` that one file owns (`scope`, e.g. tier=1 or language="en")
+    match `rows`, matched on content_id. Returns counts of created/updated/unchanged/deleted."""
     counts = {"created": 0, "updated": 0, "unchanged": 0, "deleted": 0}
-    existing = {obj.content_id: obj for obj in model.objects.filter(tier=tier, content_id__isnull=False)}
+    existing = {obj.content_id: obj for obj in model.objects.filter(**scope, content_id__isnull=False)}
     to_create = []
     for row in rows:
         obj = existing.pop(row["content_id"], None)

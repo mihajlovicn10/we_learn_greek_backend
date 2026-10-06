@@ -78,4 +78,4 @@ def validate(data, expected_tier):
 
 
 def sync(rows, tier):
-    return sync_rows(GreekToGreek, rows, tier)
+    return sync_rows(GreekToGreek, rows, tier=tier)
