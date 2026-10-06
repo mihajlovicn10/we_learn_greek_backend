@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
+from conjugator import content as verbs
 from declinator import content as nouns
 
 # content/<type>/ directory name -> loader module with validate(data, tier) and sync(rows, tier).
@@ -13,6 +14,7 @@ from declinator import content as nouns
 # doesn't break a deploy.
 LOADERS = {
     "nouns": nouns,
+    "verbs": verbs,
 }
 TIER_FILE = re.compile(r"^tier-([1-9]\d*)\.json$")
 

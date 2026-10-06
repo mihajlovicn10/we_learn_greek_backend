@@ -139,3 +139,114 @@ class VerbAPITestCase(TestCase):
                 response = self.client.get("/api/verbs/", {"search": term})
                 self.assertEqual(response.status_code, status.HTTP_200_OK)
                 self.assertEqual([v["infinitive"] for v in response.data["results"]], ["γράφω"])
+
+
+class VerbContentLoaderTests(TestCase):
+    """load_content against copies of the real verbs file in a temp directory."""
+
+    def setUp(self):
+        import json, tempfile
+        from pathlib import Path
+        from django.conf import settings
+        self.real = json.loads((Path(settings.BASE_DIR) / "content/verbs/tier-1.json").read_text(encoding="utf-8"))
+        self.tmp = Path(tempfile.mkdtemp())
+        (self.tmp / "verbs").mkdir()
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.tmp)
+
+    def copy(self):
+        import json
+        return json.loads(json.dumps(self.real))
+
+    def write(self, data):
+        import json
+        (self.tmp / "verbs" / "tier-1.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+
+    def load(self, *args):
+        from io import StringIO
+        from django.core.management import call_command
+        out = StringIO()
+        call_command("load_content", "--dir", str(self.tmp), *args, stdout=out, stderr=StringIO())
+        return out.getvalue()
+
+    def test_repo_verbs_file_is_valid(self):
+        from io import StringIO
+        from django.core.management import call_command
+        out = StringIO()
+        call_command("load_content", "--check", stdout=out)
+        self.assertIn("verbs/tier-1.json: OK", out.getvalue())
+
+    def test_load_maps_tenses_and_is_idempotent(self):
+        self.write(self.real)
+        self.assertIn(f"{len(self.real['items'])} created", self.load())
+        self.assertIn("0 created, 0 updated", self.load())
+        grafo = Verb.objects.get(infinitive="γράφω")
+        self.assertEqual(
+            [getattr(grafo, f"{t}_first_singular") for t in
+             ("present", "imperfect", "aorist", "future_continuous", "future", "perfect", "plusperfect")],
+            ["γράφω", "έγραφα", "έγραψα", "θα γράφω", "θα γράψω", "έχω γράψει", "είχα γράψει"],
+        )
+        self.assertEqual(grafo.present_third_pluran, "γράφουν")
+        eimai = Verb.objects.get(infinitive="είμαι")
+        self.assertIsNone(eimai.aorist_first_singular)
+        self.assertIsNone(eimai.plusperfect_third_plural)
+        self.assertTrue(eimai.irregular)
+        self.assertEqual(eimai.translations, {"en": "to be"})
+
+    def test_reload_updates_and_deletes(self):
+        self.write(self.real)
+        self.load()
+        data = self.copy()
+        data["items"][0]["translations"] = {"en": "to exist"}
+        removed = data["items"].pop()
+        self.write(data)
+        self.assertIn("1 updated", self.load())
+        self.assertEqual(Verb.objects.get(tier=1, content_id=data["items"][0]["id"]).translations, {"en": "to exist"})
+        self.assertFalse(Verb.objects.filter(infinitive=removed["infinitive"]).exists())
+
+    def test_invalid_files_load_nothing(self):
+        from django.core.management.base import CommandError
+        cases = {
+            "unknown verb_type": lambda d: d["items"][0].update(verb_type="C"),
+            "irregular not bool": lambda d: d["items"][0].update(irregular="yes"),
+            "tense with 5 forms": lambda d: d["items"][2]["conjugation"]["present"].pop(),
+            "missing tense": lambda d: d["items"][2]["conjugation"].pop("pluperfect"),
+            "Latin letters": lambda d: d["items"][2]["conjugation"]["aorist"].__setitem__(0, "ekana"),
+            "present is null": lambda d: d["items"][2]["conjugation"].update(present=None),
+            "infinitive vs present": lambda d: d["items"][2].update(infinitive="κάνει"),
+            "duplicate infinitive": lambda d: d["items"][3].update(infinitive=d["items"][2]["infinitive"]),
+            "wrong schema": lambda d: d.update(schema="nouns/v1"),
+        }
+        for name, break_it in cases.items():
+            with self.subTest(name):
+                data = self.copy()
+                break_it(data)
+                self.write(data)
+                with self.assertRaises(CommandError):
+                    self.load()
+                self.assertEqual(Verb.objects.count(), 0)
+
+
+class VerbContentAPITests(TestCase):
+    def setUp(self):
+        from io import StringIO
+        from django.core.management import call_command
+        cache.clear()
+        call_command("load_content", stdout=StringIO())  # the real content/ files
+        self.client = APIClient()
+
+    def test_filters(self):
+        self.assertEqual(self.client.get("/api/verbs/", {"tier": 1}).data["count"], 99)
+        self.assertEqual(self.client.get("/api/verbs/", {"irregular": "true"}).data["count"], 19)
+        self.assertEqual(self.client.get("/api/verbs/", {"verb_type": "B1"}).data["count"], 22)
+
+    def test_verb_fields(self):
+        verb = self.client.get("/api/verbs/", {"search": "eimai"}).data["results"][0]
+        self.assertEqual((verb["infinitive"], verb["irregular"], verb["translations"]), ("είμαι", True, {"en": "to be"}))
+        self.assertIsNone(verb["aorist_first_singular"])
+        self.assertNotIn("content_id", verb)
+        conjugation = self.client.get(f"/api/verbs/{verb['id']}/conjugation/").data
+        self.assertEqual(conjugation["future_continuous_first_singular"], "θα είμαι")
+        self.assertEqual(conjugation["translations"], {"en": "to be"})

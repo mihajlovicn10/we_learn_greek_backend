@@ -69,14 +69,22 @@ invalid file loads nothing. `build.sh` runs it on every deploy, and CI runs `loa
 without touching the database.
 
 - Loaders are registered in `we_learn_greek/management/commands/load_content.py` (`LOADERS`). Each one is a module
-  with `validate(data, tier)` and `sync(rows, tier)`. Only **nouns** exist so far (`declinator/content.py`, schema
-  `nouns/v1`). Other type directories are skipped with a warning until they get a loader.
+  with `validate(data, tier)` and `sync(rows, tier)`, built on the shared helpers in `we_learn_greek/content.py`.
+  So far: **nouns** (`declinator/content.py`, schema `nouns/v1`) and **verbs** (`conjugator/content.py`, schema
+  `verbs/v1`). Other type directories are skipped with a warning until they get a loader.
 - Rows are matched on `(tier, content_id)`, where `content_id` is the item's `id` from the file. Ids only need to be
   unique within a tier file. The DB primary key (the API `id`) stays stable across reloads.
 - `nouns/v1` item: `id, tier, basic_noun, gender (masculine|feminine|neuter), translations {"en": ...},
   singular/plural {nominative, genitive, accusative, vocative}`. A case form is `null` when it doesn't exist (no
   plural for γάλα). `basic_noun` must equal `singular.nominative`, and all forms must pass `validate_greek`.
 - `/api/nouns/` exposes `tier` and `translations` and supports `?tier=N` and `?gender=masculine|feminine|neuter`.
+- `verbs/v1` item: `id, tier, infinitive, verb_type (A|B1|B2, optionally -passive, or irregular), irregular (bool),
+  translations, conjugation {present, imperfect, aorist, future_continuous, future_simple, perfect, pluperfect}`.
+  Each tense is `null` (doesn't exist, e.g. no aorist for είμαι) or 6 forms ordered 1sg, 2sg, 3sg, 1pl, 2pl, 3pl;
+  an individual form may also be `null`. Present is required, and its 1sg must equal `infinitive`. The file tenses
+  map to the API fields: `future_simple` → `future_*`, `pluperfect` → `plusperfect_*`, and present 3pl →
+  `present_third_pluran`. `/api/verbs/` exposes `tier`, `irregular` and `translations` (not `content_id`) and
+  supports `?tier=`, `?irregular=` and `?verb_type=`.
 
 ## Conventions and gotchas
 

@@ -36,7 +36,7 @@ class VerbViewSet(viewsets.ReadOnlyModelViewSet):
     throttle_classes = CONTENT_THROTTLES
     filter_backends = [GreekSearchFilter, DjangoFilterBackend]
     search_fields = ['infinitive']
-    filterset_fields = ['verb_type']
+    filterset_fields = ['verb_type', 'tier', 'irregular']
 
     @action(detail=True, methods=['get'])
     def conjugation(self, request, pk=None):
