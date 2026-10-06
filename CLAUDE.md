@@ -70,8 +70,9 @@ without touching the database.
 
 - Loaders are registered in `we_learn_greek/management/commands/load_content.py` (`LOADERS`). Each one is a module
   with `validate(data, tier)` and `sync(rows, tier)`, built on the shared helpers in `we_learn_greek/content.py`.
-  So far: **nouns** (`declinator/content.py`, schema `nouns/v1`) and **verbs** (`conjugator/content.py`, schema
-  `verbs/v1`). Other type directories are skipped with a warning until they get a loader.
+  So far: **nouns** (`declinator/content.py`, schema `nouns/v1`), **verbs** (`conjugator/content.py`, schema
+  `verbs/v1`) and **greek-to-greek** (`greek_to_greek/content.py`, schema `greek-to-greek/v1`). Other type
+  directories (e.g. transparent words) are skipped with a warning until they get a loader.
 - Rows are matched on `(tier, content_id)`, where `content_id` is the item's `id` from the file. Ids only need to be
   unique within a tier file. The DB primary key (the API `id`) stays stable across reloads.
 - `nouns/v1` item: `id, tier, basic_noun, gender (masculine|feminine|neuter), translations {"en": ...},
@@ -85,6 +86,10 @@ without touching the database.
   map to the API fields: `future_simple` → `future_*`, `pluperfect` → `plusperfect_*`, and present 3pl →
   `present_third_pluran`. `/api/verbs/` exposes `tier`, `irregular` and `translations` (not `content_id`) and
   supports `?tier=`, `?irregular=` and `?verb_type=`.
+- `greek-to-greek/v1` item: `id, tier, word, pos (noun|verb|adjective|adverb|pronoun|preposition|conjunction|
+  numeral|particle|interjection|phrase), explanation (Greek text, ≤ 500 chars), translations`. `word` must pass
+  `validate_greek` and be unique. `/api/greek-to-greek/` exposes `tier`, `pos` and `translations` and supports
+  `?tier=` and `?pos=`. Search covers word and explanation.
 
 ## Conventions and gotchas
 

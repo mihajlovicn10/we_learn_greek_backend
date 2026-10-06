@@ -8,6 +8,7 @@ from django.db import transaction
 
 from conjugator import content as verbs
 from declinator import content as nouns
+from greek_to_greek import content as greek_to_greek
 
 # content/<type>/ directory name -> loader module with validate(data, tier) and sync(rows, tier).
 # Types without a loader yet are skipped with a warning, so adding their files early
@@ -15,6 +16,7 @@ from declinator import content as nouns
 LOADERS = {
     "nouns": nouns,
     "verbs": verbs,
+    "greek-to-greek": greek_to_greek,
 }
 TIER_FILE = re.compile(r"^tier-([1-9]\d*)\.json$")
 

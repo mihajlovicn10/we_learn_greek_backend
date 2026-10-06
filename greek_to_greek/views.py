@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
@@ -31,5 +32,6 @@ class GreekToGreekViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GreekToGreekSerializer
     permission_classes = [AllowAny]
     throttle_classes = CONTENT_THROTTLES
-    filter_backends = [GreekSearchFilter]
+    filter_backends = [GreekSearchFilter, DjangoFilterBackend]
     search_fields = ['word', 'explanation']
+    filterset_fields = ['tier', 'pos']
