@@ -60,6 +60,24 @@ Each app follows the same pattern: `models.py`, `api/serializers.py`, `views.py`
 - The word-data endpoints are **read-only** (`ReadOnlyModelViewSet`). Never re-add write methods to them. Content
   changes go through the data files (Django admin during the transition).
 
+## Content files
+
+Word content lives in `content/<type>/tier-N.json` (tiers 1–5, one file per type per tier). The files are the source of
+truth; never edit content in admin or the database. `python manage.py load_content` validates every file and makes
+the tables match: it creates, updates, and deletes rows that were removed from a file. It's all-or-nothing, so one
+invalid file loads nothing. `build.sh` runs it on every deploy, and CI runs `load_content --check`, which validates
+without touching the database.
+
+- Loaders are registered in `we_learn_greek/management/commands/load_content.py` (`LOADERS`). Each one is a module
+  with `validate(data, tier)` and `sync(rows, tier)`. Only **nouns** exist so far (`declinator/content.py`, schema
+  `nouns/v1`). Other type directories are skipped with a warning until they get a loader.
+- Rows are matched on `(tier, content_id)`, where `content_id` is the item's `id` from the file. Ids only need to be
+  unique within a tier file. The DB primary key (the API `id`) stays stable across reloads.
+- `nouns/v1` item: `id, tier, basic_noun, gender (masculine|feminine|neuter), translations {"en": ...},
+  singular/plural {nominative, genitive, accusative, vocative}`. A case form is `null` when it doesn't exist (no
+  plural for γάλα). `basic_noun` must equal `singular.nominative`, and all forms must pass `validate_greek`.
+- `/api/nouns/` exposes `tier` and `translations` and supports `?tier=N`.
+
 ## Conventions and gotchas
 
 - Settings are production-safe by default. `DEBUG` is off unless set, and when it is off `SECRET_KEY` is required

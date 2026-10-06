@@ -10,6 +10,8 @@ if [ -z "${DATABASE_URL:-}" ]; then
 fi
 
 python manage.py migrate --no-input
+# Sync word content from content/<type>/tier-N.json; fails the build (nothing loaded) if a file is invalid.
+python manage.py load_content
 # Rate-limit counters live in this table (CACHES in settings.py); no-op if it exists.
 python manage.py createcachetable
 # Drop expired entries from the JWT blacklist tables so they don't grow forever.

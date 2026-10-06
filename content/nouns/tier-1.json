@@ -1,0 +1,3765 @@
+{
+  "schema": "nouns/v1",
+  "tier": 1,
+  "items": [
+    {
+      "id": 1,
+      "tier": 1,
+      "basic_noun": "άνθρωπος",
+      "gender": "masculine",
+      "translations": {
+        "en": "person, human"
+      },
+      "singular": {
+        "nominative": "άνθρωπος",
+        "genitive": "ανθρώπου",
+        "accusative": "άνθρωπο",
+        "vocative": "άνθρωπε"
+      },
+      "plural": {
+        "nominative": "άνθρωποι",
+        "genitive": "ανθρώπων",
+        "accusative": "ανθρώπους",
+        "vocative": "άνθρωποι"
+      }
+    },
+    {
+      "id": 2,
+      "tier": 1,
+      "basic_noun": "άντρας",
+      "gender": "masculine",
+      "translations": {
+        "en": "man; husband"
+      },
+      "singular": {
+        "nominative": "άντρας",
+        "genitive": "άντρα",
+        "accusative": "άντρα",
+        "vocative": "άντρα"
+      },
+      "plural": {
+        "nominative": "άντρες",
+        "genitive": "αντρών",
+        "accusative": "άντρες",
+        "vocative": "άντρες"
+      }
+    },
+    {
+      "id": 3,
+      "tier": 1,
+      "basic_noun": "γυναίκα",
+      "gender": "feminine",
+      "translations": {
+        "en": "woman; wife"
+      },
+      "singular": {
+        "nominative": "γυναίκα",
+        "genitive": "γυναίκας",
+        "accusative": "γυναίκα",
+        "vocative": "γυναίκα"
+      },
+      "plural": {
+        "nominative": "γυναίκες",
+        "genitive": "γυναικών",
+        "accusative": "γυναίκες",
+        "vocative": "γυναίκες"
+      }
+    },
+    {
+      "id": 4,
+      "tier": 1,
+      "basic_noun": "παιδί",
+      "gender": "neuter",
+      "translations": {
+        "en": "child"
+      },
+      "singular": {
+        "nominative": "παιδί",
+        "genitive": "παιδιού",
+        "accusative": "παιδί",
+        "vocative": "παιδί"
+      },
+      "plural": {
+        "nominative": "παιδιά",
+        "genitive": "παιδιών",
+        "accusative": "παιδιά",
+        "vocative": "παιδιά"
+      }
+    },
+    {
+      "id": 5,
+      "tier": 1,
+      "basic_noun": "αγόρι",
+      "gender": "neuter",
+      "translations": {
+        "en": "boy"
+      },
+      "singular": {
+        "nominative": "αγόρι",
+        "genitive": "αγοριού",
+        "accusative": "αγόρι",
+        "vocative": "αγόρι"
+      },
+      "plural": {
+        "nominative": "αγόρια",
+        "genitive": "αγοριών",
+        "accusative": "αγόρια",
+        "vocative": "αγόρια"
+      }
+    },
+    {
+      "id": 6,
+      "tier": 1,
+      "basic_noun": "κορίτσι",
+      "gender": "neuter",
+      "translations": {
+        "en": "girl"
+      },
+      "singular": {
+        "nominative": "κορίτσι",
+        "genitive": "κοριτσιού",
+        "accusative": "κορίτσι",
+        "vocative": "κορίτσι"
+      },
+      "plural": {
+        "nominative": "κορίτσια",
+        "genitive": "κοριτσιών",
+        "accusative": "κορίτσια",
+        "vocative": "κορίτσια"
+      }
+    },
+    {
+      "id": 7,
+      "tier": 1,
+      "basic_noun": "μωρό",
+      "gender": "neuter",
+      "translations": {
+        "en": "baby"
+      },
+      "singular": {
+        "nominative": "μωρό",
+        "genitive": "μωρού",
+        "accusative": "μωρό",
+        "vocative": "μωρό"
+      },
+      "plural": {
+        "nominative": "μωρά",
+        "genitive": "μωρών",
+        "accusative": "μωρά",
+        "vocative": "μωρά"
+      }
+    },
+    {
+      "id": 8,
+      "tier": 1,
+      "basic_noun": "οικογένεια",
+      "gender": "feminine",
+      "translations": {
+        "en": "family"
+      },
+      "singular": {
+        "nominative": "οικογένεια",
+        "genitive": "οικογένειας",
+        "accusative": "οικογένεια",
+        "vocative": "οικογένεια"
+      },
+      "plural": {
+        "nominative": "οικογένειες",
+        "genitive": "οικογενειών",
+        "accusative": "οικογένειες",
+        "vocative": "οικογένειες"
+      }
+    },
+    {
+      "id": 9,
+      "tier": 1,
+      "basic_noun": "μητέρα",
+      "gender": "feminine",
+      "translations": {
+        "en": "mother"
+      },
+      "singular": {
+        "nominative": "μητέρα",
+        "genitive": "μητέρας",
+        "accusative": "μητέρα",
+        "vocative": "μητέρα"
+      },
+      "plural": {
+        "nominative": "μητέρες",
+        "genitive": "μητέρων",
+        "accusative": "μητέρες",
+        "vocative": "μητέρες"
+      }
+    },
+    {
+      "id": 10,
+      "tier": 1,
+      "basic_noun": "πατέρας",
+      "gender": "masculine",
+      "translations": {
+        "en": "father"
+      },
+      "singular": {
+        "nominative": "πατέρας",
+        "genitive": "πατέρα",
+        "accusative": "πατέρα",
+        "vocative": "πατέρα"
+      },
+      "plural": {
+        "nominative": "πατέρες",
+        "genitive": "πατέρων",
+        "accusative": "πατέρες",
+        "vocative": "πατέρες"
+      }
+    },
+    {
+      "id": 11,
+      "tier": 1,
+      "basic_noun": "μαμά",
+      "gender": "feminine",
+      "translations": {
+        "en": "mum"
+      },
+      "singular": {
+        "nominative": "μαμά",
+        "genitive": "μαμάς",
+        "accusative": "μαμά",
+        "vocative": "μαμά"
+      },
+      "plural": {
+        "nominative": "μαμάδες",
+        "genitive": "μαμάδων",
+        "accusative": "μαμάδες",
+        "vocative": "μαμάδες"
+      }
+    },
+    {
+      "id": 12,
+      "tier": 1,
+      "basic_noun": "μπαμπάς",
+      "gender": "masculine",
+      "translations": {
+        "en": "dad"
+      },
+      "singular": {
+        "nominative": "μπαμπάς",
+        "genitive": "μπαμπά",
+        "accusative": "μπαμπά",
+        "vocative": "μπαμπά"
+      },
+      "plural": {
+        "nominative": "μπαμπάδες",
+        "genitive": "μπαμπάδων",
+        "accusative": "μπαμπάδες",
+        "vocative": "μπαμπάδες"
+      }
+    },
+    {
+      "id": 13,
+      "tier": 1,
+      "basic_noun": "αδερφός",
+      "gender": "masculine",
+      "translations": {
+        "en": "brother"
+      },
+      "singular": {
+        "nominative": "αδερφός",
+        "genitive": "αδερφού",
+        "accusative": "αδερφό",
+        "vocative": "αδερφέ"
+      },
+      "plural": {
+        "nominative": "αδερφοί",
+        "genitive": "αδερφών",
+        "accusative": "αδερφούς",
+        "vocative": "αδερφοί"
+      }
+    },
+    {
+      "id": 14,
+      "tier": 1,
+      "basic_noun": "αδερφή",
+      "gender": "feminine",
+      "translations": {
+        "en": "sister"
+      },
+      "singular": {
+        "nominative": "αδερφή",
+        "genitive": "αδερφής",
+        "accusative": "αδερφή",
+        "vocative": "αδερφή"
+      },
+      "plural": {
+        "nominative": "αδερφές",
+        "genitive": "αδερφών",
+        "accusative": "αδερφές",
+        "vocative": "αδερφές"
+      }
+    },
+    {
+      "id": 15,
+      "tier": 1,
+      "basic_noun": "γιος",
+      "gender": "masculine",
+      "translations": {
+        "en": "son"
+      },
+      "singular": {
+        "nominative": "γιος",
+        "genitive": "γιου",
+        "accusative": "γιο",
+        "vocative": "γιε"
+      },
+      "plural": {
+        "nominative": "γιοι",
+        "genitive": "γιων",
+        "accusative": "γιους",
+        "vocative": "γιοι"
+      }
+    },
+    {
+      "id": 16,
+      "tier": 1,
+      "basic_noun": "κόρη",
+      "gender": "feminine",
+      "translations": {
+        "en": "daughter"
+      },
+      "singular": {
+        "nominative": "κόρη",
+        "genitive": "κόρης",
+        "accusative": "κόρη",
+        "vocative": "κόρη"
+      },
+      "plural": {
+        "nominative": "κόρες",
+        "genitive": "κορών",
+        "accusative": "κόρες",
+        "vocative": "κόρες"
+      }
+    },
+    {
+      "id": 17,
+      "tier": 1,
+      "basic_noun": "παππούς",
+      "gender": "masculine",
+      "translations": {
+        "en": "grandfather"
+      },
+      "singular": {
+        "nominative": "παππούς",
+        "genitive": "παππού",
+        "accusative": "παππού",
+        "vocative": "παππού"
+      },
+      "plural": {
+        "nominative": "παππούδες",
+        "genitive": "παππούδων",
+        "accusative": "παππούδες",
+        "vocative": "παππούδες"
+      }
+    },
+    {
+      "id": 18,
+      "tier": 1,
+      "basic_noun": "γιαγιά",
+      "gender": "feminine",
+      "translations": {
+        "en": "grandmother"
+      },
+      "singular": {
+        "nominative": "γιαγιά",
+        "genitive": "γιαγιάς",
+        "accusative": "γιαγιά",
+        "vocative": "γιαγιά"
+      },
+      "plural": {
+        "nominative": "γιαγιάδες",
+        "genitive": "γιαγιάδων",
+        "accusative": "γιαγιάδες",
+        "vocative": "γιαγιάδες"
+      }
+    },
+    {
+      "id": 19,
+      "tier": 1,
+      "basic_noun": "φίλος",
+      "gender": "masculine",
+      "translations": {
+        "en": "friend (male)"
+      },
+      "singular": {
+        "nominative": "φίλος",
+        "genitive": "φίλου",
+        "accusative": "φίλο",
+        "vocative": "φίλε"
+      },
+      "plural": {
+        "nominative": "φίλοι",
+        "genitive": "φίλων",
+        "accusative": "φίλους",
+        "vocative": "φίλοι"
+      }
+    },
+    {
+      "id": 20,
+      "tier": 1,
+      "basic_noun": "φίλη",
+      "gender": "feminine",
+      "translations": {
+        "en": "friend (female)"
+      },
+      "singular": {
+        "nominative": "φίλη",
+        "genitive": "φίλης",
+        "accusative": "φίλη",
+        "vocative": "φίλη"
+      },
+      "plural": {
+        "nominative": "φίλες",
+        "genitive": "φιλών",
+        "accusative": "φίλες",
+        "vocative": "φίλες"
+      }
+    },
+    {
+      "id": 21,
+      "tier": 1,
+      "basic_noun": "γιατρός",
+      "gender": "masculine",
+      "translations": {
+        "en": "doctor"
+      },
+      "singular": {
+        "nominative": "γιατρός",
+        "genitive": "γιατρού",
+        "accusative": "γιατρό",
+        "vocative": "γιατρέ"
+      },
+      "plural": {
+        "nominative": "γιατροί",
+        "genitive": "γιατρών",
+        "accusative": "γιατρούς",
+        "vocative": "γιατροί"
+      }
+    },
+    {
+      "id": 22,
+      "tier": 1,
+      "basic_noun": "δάσκαλος",
+      "gender": "masculine",
+      "translations": {
+        "en": "teacher (primary school)"
+      },
+      "singular": {
+        "nominative": "δάσκαλος",
+        "genitive": "δασκάλου",
+        "accusative": "δάσκαλο",
+        "vocative": "δάσκαλε"
+      },
+      "plural": {
+        "nominative": "δάσκαλοι",
+        "genitive": "δασκάλων",
+        "accusative": "δασκάλους",
+        "vocative": "δάσκαλοι"
+      }
+    },
+    {
+      "id": 23,
+      "tier": 1,
+      "basic_noun": "καθηγητής",
+      "gender": "masculine",
+      "translations": {
+        "en": "teacher, professor"
+      },
+      "singular": {
+        "nominative": "καθηγητής",
+        "genitive": "καθηγητή",
+        "accusative": "καθηγητή",
+        "vocative": "καθηγητή"
+      },
+      "plural": {
+        "nominative": "καθηγητές",
+        "genitive": "καθηγητών",
+        "accusative": "καθηγητές",
+        "vocative": "καθηγητές"
+      }
+    },
+    {
+      "id": 24,
+      "tier": 1,
+      "basic_noun": "μαθητής",
+      "gender": "masculine",
+      "translations": {
+        "en": "pupil, student (male)"
+      },
+      "singular": {
+        "nominative": "μαθητής",
+        "genitive": "μαθητή",
+        "accusative": "μαθητή",
+        "vocative": "μαθητή"
+      },
+      "plural": {
+        "nominative": "μαθητές",
+        "genitive": "μαθητών",
+        "accusative": "μαθητές",
+        "vocative": "μαθητές"
+      }
+    },
+    {
+      "id": 25,
+      "tier": 1,
+      "basic_noun": "μαθήτρια",
+      "gender": "feminine",
+      "translations": {
+        "en": "pupil, student (female)"
+      },
+      "singular": {
+        "nominative": "μαθήτρια",
+        "genitive": "μαθήτριας",
+        "accusative": "μαθήτρια",
+        "vocative": "μαθήτρια"
+      },
+      "plural": {
+        "nominative": "μαθήτριες",
+        "genitive": "μαθητριών",
+        "accusative": "μαθήτριες",
+        "vocative": "μαθήτριες"
+      }
+    },
+    {
+      "id": 26,
+      "tier": 1,
+      "basic_noun": "σπίτι",
+      "gender": "neuter",
+      "translations": {
+        "en": "house, home"
+      },
+      "singular": {
+        "nominative": "σπίτι",
+        "genitive": "σπιτιού",
+        "accusative": "σπίτι",
+        "vocative": "σπίτι"
+      },
+      "plural": {
+        "nominative": "σπίτια",
+        "genitive": "σπιτιών",
+        "accusative": "σπίτια",
+        "vocative": "σπίτια"
+      }
+    },
+    {
+      "id": 27,
+      "tier": 1,
+      "basic_noun": "διαμέρισμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "apartment, flat"
+      },
+      "singular": {
+        "nominative": "διαμέρισμα",
+        "genitive": "διαμερίσματος",
+        "accusative": "διαμέρισμα",
+        "vocative": "διαμέρισμα"
+      },
+      "plural": {
+        "nominative": "διαμερίσματα",
+        "genitive": "διαμερισμάτων",
+        "accusative": "διαμερίσματα",
+        "vocative": "διαμερίσματα"
+      }
+    },
+    {
+      "id": 28,
+      "tier": 1,
+      "basic_noun": "δωμάτιο",
+      "gender": "neuter",
+      "translations": {
+        "en": "room"
+      },
+      "singular": {
+        "nominative": "δωμάτιο",
+        "genitive": "δωματίου",
+        "accusative": "δωμάτιο",
+        "vocative": "δωμάτιο"
+      },
+      "plural": {
+        "nominative": "δωμάτια",
+        "genitive": "δωματίων",
+        "accusative": "δωμάτια",
+        "vocative": "δωμάτια"
+      }
+    },
+    {
+      "id": 29,
+      "tier": 1,
+      "basic_noun": "κουζίνα",
+      "gender": "feminine",
+      "translations": {
+        "en": "kitchen; cooker"
+      },
+      "singular": {
+        "nominative": "κουζίνα",
+        "genitive": "κουζίνας",
+        "accusative": "κουζίνα",
+        "vocative": "κουζίνα"
+      },
+      "plural": {
+        "nominative": "κουζίνες",
+        "genitive": "κουζινών",
+        "accusative": "κουζίνες",
+        "vocative": "κουζίνες"
+      }
+    },
+    {
+      "id": 30,
+      "tier": 1,
+      "basic_noun": "μπάνιο",
+      "gender": "neuter",
+      "translations": {
+        "en": "bathroom; bath"
+      },
+      "singular": {
+        "nominative": "μπάνιο",
+        "genitive": "μπάνιου",
+        "accusative": "μπάνιο",
+        "vocative": "μπάνιο"
+      },
+      "plural": {
+        "nominative": "μπάνια",
+        "genitive": "μπάνιων",
+        "accusative": "μπάνια",
+        "vocative": "μπάνια"
+      }
+    },
+    {
+      "id": 31,
+      "tier": 1,
+      "basic_noun": "σαλόνι",
+      "gender": "neuter",
+      "translations": {
+        "en": "living room"
+      },
+      "singular": {
+        "nominative": "σαλόνι",
+        "genitive": "σαλονιού",
+        "accusative": "σαλόνι",
+        "vocative": "σαλόνι"
+      },
+      "plural": {
+        "nominative": "σαλόνια",
+        "genitive": "σαλονιών",
+        "accusative": "σαλόνια",
+        "vocative": "σαλόνια"
+      }
+    },
+    {
+      "id": 32,
+      "tier": 1,
+      "basic_noun": "κήπος",
+      "gender": "masculine",
+      "translations": {
+        "en": "garden"
+      },
+      "singular": {
+        "nominative": "κήπος",
+        "genitive": "κήπου",
+        "accusative": "κήπο",
+        "vocative": "κήπε"
+      },
+      "plural": {
+        "nominative": "κήποι",
+        "genitive": "κήπων",
+        "accusative": "κήπους",
+        "vocative": "κήποι"
+      }
+    },
+    {
+      "id": 33,
+      "tier": 1,
+      "basic_noun": "πόρτα",
+      "gender": "feminine",
+      "translations": {
+        "en": "door"
+      },
+      "singular": {
+        "nominative": "πόρτα",
+        "genitive": "πόρτας",
+        "accusative": "πόρτα",
+        "vocative": "πόρτα"
+      },
+      "plural": {
+        "nominative": "πόρτες",
+        "genitive": "πορτών",
+        "accusative": "πόρτες",
+        "vocative": "πόρτες"
+      }
+    },
+    {
+      "id": 34,
+      "tier": 1,
+      "basic_noun": "παράθυρο",
+      "gender": "neuter",
+      "translations": {
+        "en": "window"
+      },
+      "singular": {
+        "nominative": "παράθυρο",
+        "genitive": "παραθύρου",
+        "accusative": "παράθυρο",
+        "vocative": "παράθυρο"
+      },
+      "plural": {
+        "nominative": "παράθυρα",
+        "genitive": "παραθύρων",
+        "accusative": "παράθυρα",
+        "vocative": "παράθυρα"
+      }
+    },
+    {
+      "id": 35,
+      "tier": 1,
+      "basic_noun": "τοίχος",
+      "gender": "masculine",
+      "translations": {
+        "en": "wall"
+      },
+      "singular": {
+        "nominative": "τοίχος",
+        "genitive": "τοίχου",
+        "accusative": "τοίχο",
+        "vocative": "τοίχε"
+      },
+      "plural": {
+        "nominative": "τοίχοι",
+        "genitive": "τοίχων",
+        "accusative": "τοίχους",
+        "vocative": "τοίχοι"
+      }
+    },
+    {
+      "id": 36,
+      "tier": 1,
+      "basic_noun": "πάτωμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "floor"
+      },
+      "singular": {
+        "nominative": "πάτωμα",
+        "genitive": "πατώματος",
+        "accusative": "πάτωμα",
+        "vocative": "πάτωμα"
+      },
+      "plural": {
+        "nominative": "πατώματα",
+        "genitive": "πατωμάτων",
+        "accusative": "πατώματα",
+        "vocative": "πατώματα"
+      }
+    },
+    {
+      "id": 37,
+      "tier": 1,
+      "basic_noun": "σκάλα",
+      "gender": "feminine",
+      "translations": {
+        "en": "stairs; ladder"
+      },
+      "singular": {
+        "nominative": "σκάλα",
+        "genitive": "σκάλας",
+        "accusative": "σκάλα",
+        "vocative": "σκάλα"
+      },
+      "plural": {
+        "nominative": "σκάλες",
+        "genitive": "σκαλών",
+        "accusative": "σκάλες",
+        "vocative": "σκάλες"
+      }
+    },
+    {
+      "id": 38,
+      "tier": 1,
+      "basic_noun": "τραπέζι",
+      "gender": "neuter",
+      "translations": {
+        "en": "table"
+      },
+      "singular": {
+        "nominative": "τραπέζι",
+        "genitive": "τραπεζιού",
+        "accusative": "τραπέζι",
+        "vocative": "τραπέζι"
+      },
+      "plural": {
+        "nominative": "τραπέζια",
+        "genitive": "τραπεζιών",
+        "accusative": "τραπέζια",
+        "vocative": "τραπέζια"
+      }
+    },
+    {
+      "id": 39,
+      "tier": 1,
+      "basic_noun": "καρέκλα",
+      "gender": "feminine",
+      "translations": {
+        "en": "chair"
+      },
+      "singular": {
+        "nominative": "καρέκλα",
+        "genitive": "καρέκλας",
+        "accusative": "καρέκλα",
+        "vocative": "καρέκλα"
+      },
+      "plural": {
+        "nominative": "καρέκλες",
+        "genitive": "καρεκλών",
+        "accusative": "καρέκλες",
+        "vocative": "καρέκλες"
+      }
+    },
+    {
+      "id": 40,
+      "tier": 1,
+      "basic_noun": "κρεβάτι",
+      "gender": "neuter",
+      "translations": {
+        "en": "bed"
+      },
+      "singular": {
+        "nominative": "κρεβάτι",
+        "genitive": "κρεβατιού",
+        "accusative": "κρεβάτι",
+        "vocative": "κρεβάτι"
+      },
+      "plural": {
+        "nominative": "κρεβάτια",
+        "genitive": "κρεβατιών",
+        "accusative": "κρεβάτια",
+        "vocative": "κρεβάτια"
+      }
+    },
+    {
+      "id": 41,
+      "tier": 1,
+      "basic_noun": "ντουλάπα",
+      "gender": "feminine",
+      "translations": {
+        "en": "wardrobe, cupboard"
+      },
+      "singular": {
+        "nominative": "ντουλάπα",
+        "genitive": "ντουλάπας",
+        "accusative": "ντουλάπα",
+        "vocative": "ντουλάπα"
+      },
+      "plural": {
+        "nominative": "ντουλάπες",
+        "genitive": "ντουλαπών",
+        "accusative": "ντουλάπες",
+        "vocative": "ντουλάπες"
+      }
+    },
+    {
+      "id": 42,
+      "tier": 1,
+      "basic_noun": "κλειδί",
+      "gender": "neuter",
+      "translations": {
+        "en": "key"
+      },
+      "singular": {
+        "nominative": "κλειδί",
+        "genitive": "κλειδιού",
+        "accusative": "κλειδί",
+        "vocative": "κλειδί"
+      },
+      "plural": {
+        "nominative": "κλειδιά",
+        "genitive": "κλειδιών",
+        "accusative": "κλειδιά",
+        "vocative": "κλειδιά"
+      }
+    },
+    {
+      "id": 43,
+      "tier": 1,
+      "basic_noun": "ρολόι",
+      "gender": "neuter",
+      "translations": {
+        "en": "clock, watch"
+      },
+      "singular": {
+        "nominative": "ρολόι",
+        "genitive": "ρολογιού",
+        "accusative": "ρολόι",
+        "vocative": "ρολόι"
+      },
+      "plural": {
+        "nominative": "ρολόγια",
+        "genitive": "ρολογιών",
+        "accusative": "ρολόγια",
+        "vocative": "ρολόγια"
+      }
+    },
+    {
+      "id": 44,
+      "tier": 1,
+      "basic_noun": "ποτήρι",
+      "gender": "neuter",
+      "translations": {
+        "en": "glass (for drinking)"
+      },
+      "singular": {
+        "nominative": "ποτήρι",
+        "genitive": "ποτηριού",
+        "accusative": "ποτήρι",
+        "vocative": "ποτήρι"
+      },
+      "plural": {
+        "nominative": "ποτήρια",
+        "genitive": "ποτηριών",
+        "accusative": "ποτήρια",
+        "vocative": "ποτήρια"
+      }
+    },
+    {
+      "id": 45,
+      "tier": 1,
+      "basic_noun": "πιάτο",
+      "gender": "neuter",
+      "translations": {
+        "en": "plate; dish"
+      },
+      "singular": {
+        "nominative": "πιάτο",
+        "genitive": "πιάτου",
+        "accusative": "πιάτο",
+        "vocative": "πιάτο"
+      },
+      "plural": {
+        "nominative": "πιάτα",
+        "genitive": "πιάτων",
+        "accusative": "πιάτα",
+        "vocative": "πιάτα"
+      }
+    },
+    {
+      "id": 46,
+      "tier": 1,
+      "basic_noun": "μπουκάλι",
+      "gender": "neuter",
+      "translations": {
+        "en": "bottle"
+      },
+      "singular": {
+        "nominative": "μπουκάλι",
+        "genitive": "μπουκαλιού",
+        "accusative": "μπουκάλι",
+        "vocative": "μπουκάλι"
+      },
+      "plural": {
+        "nominative": "μπουκάλια",
+        "genitive": "μπουκαλιών",
+        "accusative": "μπουκάλια",
+        "vocative": "μπουκάλια"
+      }
+    },
+    {
+      "id": 47,
+      "tier": 1,
+      "basic_noun": "φαγητό",
+      "gender": "neuter",
+      "translations": {
+        "en": "food; meal"
+      },
+      "singular": {
+        "nominative": "φαγητό",
+        "genitive": "φαγητού",
+        "accusative": "φαγητό",
+        "vocative": "φαγητό"
+      },
+      "plural": {
+        "nominative": "φαγητά",
+        "genitive": "φαγητών",
+        "accusative": "φαγητά",
+        "vocative": "φαγητά"
+      }
+    },
+    {
+      "id": 48,
+      "tier": 1,
+      "basic_noun": "πρωινό",
+      "gender": "neuter",
+      "translations": {
+        "en": "breakfast; morning"
+      },
+      "singular": {
+        "nominative": "πρωινό",
+        "genitive": "πρωινού",
+        "accusative": "πρωινό",
+        "vocative": "πρωινό"
+      },
+      "plural": {
+        "nominative": "πρωινά",
+        "genitive": "πρωινών",
+        "accusative": "πρωινά",
+        "vocative": "πρωινά"
+      }
+    },
+    {
+      "id": 49,
+      "tier": 1,
+      "basic_noun": "ψωμί",
+      "gender": "neuter",
+      "translations": {
+        "en": "bread"
+      },
+      "singular": {
+        "nominative": "ψωμί",
+        "genitive": "ψωμιού",
+        "accusative": "ψωμί",
+        "vocative": "ψωμί"
+      },
+      "plural": {
+        "nominative": "ψωμιά",
+        "genitive": "ψωμιών",
+        "accusative": "ψωμιά",
+        "vocative": "ψωμιά"
+      }
+    },
+    {
+      "id": 50,
+      "tier": 1,
+      "basic_noun": "νερό",
+      "gender": "neuter",
+      "translations": {
+        "en": "water"
+      },
+      "singular": {
+        "nominative": "νερό",
+        "genitive": "νερού",
+        "accusative": "νερό",
+        "vocative": "νερό"
+      },
+      "plural": {
+        "nominative": "νερά",
+        "genitive": "νερών",
+        "accusative": "νερά",
+        "vocative": "νερά"
+      }
+    },
+    {
+      "id": 51,
+      "tier": 1,
+      "basic_noun": "γάλα",
+      "gender": "neuter",
+      "translations": {
+        "en": "milk"
+      },
+      "singular": {
+        "nominative": "γάλα",
+        "genitive": "γάλακτος",
+        "accusative": "γάλα",
+        "vocative": "γάλα"
+      },
+      "plural": {
+        "nominative": null,
+        "genitive": null,
+        "accusative": null,
+        "vocative": null
+      }
+    },
+    {
+      "id": 52,
+      "tier": 1,
+      "basic_noun": "καφές",
+      "gender": "masculine",
+      "translations": {
+        "en": "coffee"
+      },
+      "singular": {
+        "nominative": "καφές",
+        "genitive": "καφέ",
+        "accusative": "καφέ",
+        "vocative": "καφέ"
+      },
+      "plural": {
+        "nominative": "καφέδες",
+        "genitive": "καφέδων",
+        "accusative": "καφέδες",
+        "vocative": "καφέδες"
+      }
+    },
+    {
+      "id": 53,
+      "tier": 1,
+      "basic_noun": "τσάι",
+      "gender": "neuter",
+      "translations": {
+        "en": "tea"
+      },
+      "singular": {
+        "nominative": "τσάι",
+        "genitive": "τσαγιού",
+        "accusative": "τσάι",
+        "vocative": "τσάι"
+      },
+      "plural": {
+        "nominative": "τσάγια",
+        "genitive": "τσαγιών",
+        "accusative": "τσάγια",
+        "vocative": "τσάγια"
+      }
+    },
+    {
+      "id": 54,
+      "tier": 1,
+      "basic_noun": "κρασί",
+      "gender": "neuter",
+      "translations": {
+        "en": "wine"
+      },
+      "singular": {
+        "nominative": "κρασί",
+        "genitive": "κρασιού",
+        "accusative": "κρασί",
+        "vocative": "κρασί"
+      },
+      "plural": {
+        "nominative": "κρασιά",
+        "genitive": "κρασιών",
+        "accusative": "κρασιά",
+        "vocative": "κρασιά"
+      }
+    },
+    {
+      "id": 55,
+      "tier": 1,
+      "basic_noun": "μπίρα",
+      "gender": "feminine",
+      "translations": {
+        "en": "beer"
+      },
+      "singular": {
+        "nominative": "μπίρα",
+        "genitive": "μπίρας",
+        "accusative": "μπίρα",
+        "vocative": "μπίρα"
+      },
+      "plural": {
+        "nominative": "μπίρες",
+        "genitive": "μπιρών",
+        "accusative": "μπίρες",
+        "vocative": "μπίρες"
+      }
+    },
+    {
+      "id": 56,
+      "tier": 1,
+      "basic_noun": "τυρί",
+      "gender": "neuter",
+      "translations": {
+        "en": "cheese"
+      },
+      "singular": {
+        "nominative": "τυρί",
+        "genitive": "τυριού",
+        "accusative": "τυρί",
+        "vocative": "τυρί"
+      },
+      "plural": {
+        "nominative": "τυριά",
+        "genitive": "τυριών",
+        "accusative": "τυριά",
+        "vocative": "τυριά"
+      }
+    },
+    {
+      "id": 57,
+      "tier": 1,
+      "basic_noun": "κρέας",
+      "gender": "neuter",
+      "translations": {
+        "en": "meat"
+      },
+      "singular": {
+        "nominative": "κρέας",
+        "genitive": "κρέατος",
+        "accusative": "κρέας",
+        "vocative": "κρέας"
+      },
+      "plural": {
+        "nominative": "κρέατα",
+        "genitive": "κρεάτων",
+        "accusative": "κρέατα",
+        "vocative": "κρέατα"
+      }
+    },
+    {
+      "id": 58,
+      "tier": 1,
+      "basic_noun": "κοτόπουλο",
+      "gender": "neuter",
+      "translations": {
+        "en": "chicken"
+      },
+      "singular": {
+        "nominative": "κοτόπουλο",
+        "genitive": "κοτόπουλου",
+        "accusative": "κοτόπουλο",
+        "vocative": "κοτόπουλο"
+      },
+      "plural": {
+        "nominative": "κοτόπουλα",
+        "genitive": "κοτόπουλων",
+        "accusative": "κοτόπουλα",
+        "vocative": "κοτόπουλα"
+      }
+    },
+    {
+      "id": 59,
+      "tier": 1,
+      "basic_noun": "ψάρι",
+      "gender": "neuter",
+      "translations": {
+        "en": "fish"
+      },
+      "singular": {
+        "nominative": "ψάρι",
+        "genitive": "ψαριού",
+        "accusative": "ψάρι",
+        "vocative": "ψάρι"
+      },
+      "plural": {
+        "nominative": "ψάρια",
+        "genitive": "ψαριών",
+        "accusative": "ψάρια",
+        "vocative": "ψάρια"
+      }
+    },
+    {
+      "id": 60,
+      "tier": 1,
+      "basic_noun": "αυγό",
+      "gender": "neuter",
+      "translations": {
+        "en": "egg"
+      },
+      "singular": {
+        "nominative": "αυγό",
+        "genitive": "αυγού",
+        "accusative": "αυγό",
+        "vocative": "αυγό"
+      },
+      "plural": {
+        "nominative": "αυγά",
+        "genitive": "αυγών",
+        "accusative": "αυγά",
+        "vocative": "αυγά"
+      }
+    },
+    {
+      "id": 61,
+      "tier": 1,
+      "basic_noun": "ρύζι",
+      "gender": "neuter",
+      "translations": {
+        "en": "rice"
+      },
+      "singular": {
+        "nominative": "ρύζι",
+        "genitive": "ρυζιού",
+        "accusative": "ρύζι",
+        "vocative": "ρύζι"
+      },
+      "plural": {
+        "nominative": "ρύζια",
+        "genitive": "ρυζιών",
+        "accusative": "ρύζια",
+        "vocative": "ρύζια"
+      }
+    },
+    {
+      "id": 62,
+      "tier": 1,
+      "basic_noun": "σούπα",
+      "gender": "feminine",
+      "translations": {
+        "en": "soup"
+      },
+      "singular": {
+        "nominative": "σούπα",
+        "genitive": "σούπας",
+        "accusative": "σούπα",
+        "vocative": "σούπα"
+      },
+      "plural": {
+        "nominative": "σούπες",
+        "genitive": "σουπών",
+        "accusative": "σούπες",
+        "vocative": "σούπες"
+      }
+    },
+    {
+      "id": 63,
+      "tier": 1,
+      "basic_noun": "σαλάτα",
+      "gender": "feminine",
+      "translations": {
+        "en": "salad"
+      },
+      "singular": {
+        "nominative": "σαλάτα",
+        "genitive": "σαλάτας",
+        "accusative": "σαλάτα",
+        "vocative": "σαλάτα"
+      },
+      "plural": {
+        "nominative": "σαλάτες",
+        "genitive": "σαλατών",
+        "accusative": "σαλάτες",
+        "vocative": "σαλάτες"
+      }
+    },
+    {
+      "id": 64,
+      "tier": 1,
+      "basic_noun": "ντομάτα",
+      "gender": "feminine",
+      "translations": {
+        "en": "tomato"
+      },
+      "singular": {
+        "nominative": "ντομάτα",
+        "genitive": "ντομάτας",
+        "accusative": "ντομάτα",
+        "vocative": "ντομάτα"
+      },
+      "plural": {
+        "nominative": "ντομάτες",
+        "genitive": "ντοματών",
+        "accusative": "ντομάτες",
+        "vocative": "ντομάτες"
+      }
+    },
+    {
+      "id": 65,
+      "tier": 1,
+      "basic_noun": "πατάτα",
+      "gender": "feminine",
+      "translations": {
+        "en": "potato"
+      },
+      "singular": {
+        "nominative": "πατάτα",
+        "genitive": "πατάτας",
+        "accusative": "πατάτα",
+        "vocative": "πατάτα"
+      },
+      "plural": {
+        "nominative": "πατάτες",
+        "genitive": "πατατών",
+        "accusative": "πατάτες",
+        "vocative": "πατάτες"
+      }
+    },
+    {
+      "id": 66,
+      "tier": 1,
+      "basic_noun": "φρούτο",
+      "gender": "neuter",
+      "translations": {
+        "en": "fruit"
+      },
+      "singular": {
+        "nominative": "φρούτο",
+        "genitive": "φρούτου",
+        "accusative": "φρούτο",
+        "vocative": "φρούτο"
+      },
+      "plural": {
+        "nominative": "φρούτα",
+        "genitive": "φρούτων",
+        "accusative": "φρούτα",
+        "vocative": "φρούτα"
+      }
+    },
+    {
+      "id": 67,
+      "tier": 1,
+      "basic_noun": "μήλο",
+      "gender": "neuter",
+      "translations": {
+        "en": "apple"
+      },
+      "singular": {
+        "nominative": "μήλο",
+        "genitive": "μήλου",
+        "accusative": "μήλο",
+        "vocative": "μήλο"
+      },
+      "plural": {
+        "nominative": "μήλα",
+        "genitive": "μήλων",
+        "accusative": "μήλα",
+        "vocative": "μήλα"
+      }
+    },
+    {
+      "id": 68,
+      "tier": 1,
+      "basic_noun": "λάδι",
+      "gender": "neuter",
+      "translations": {
+        "en": "oil"
+      },
+      "singular": {
+        "nominative": "λάδι",
+        "genitive": "λαδιού",
+        "accusative": "λάδι",
+        "vocative": "λάδι"
+      },
+      "plural": {
+        "nominative": "λάδια",
+        "genitive": "λαδιών",
+        "accusative": "λάδια",
+        "vocative": "λάδια"
+      }
+    },
+    {
+      "id": 69,
+      "tier": 1,
+      "basic_noun": "αλάτι",
+      "gender": "neuter",
+      "translations": {
+        "en": "salt"
+      },
+      "singular": {
+        "nominative": "αλάτι",
+        "genitive": "αλατιού",
+        "accusative": "αλάτι",
+        "vocative": "αλάτι"
+      },
+      "plural": {
+        "nominative": "αλάτια",
+        "genitive": "αλατιών",
+        "accusative": "αλάτια",
+        "vocative": "αλάτια"
+      }
+    },
+    {
+      "id": 70,
+      "tier": 1,
+      "basic_noun": "ζάχαρη",
+      "gender": "feminine",
+      "translations": {
+        "en": "sugar"
+      },
+      "singular": {
+        "nominative": "ζάχαρη",
+        "genitive": "ζάχαρης",
+        "accusative": "ζάχαρη",
+        "vocative": "ζάχαρη"
+      },
+      "plural": {
+        "nominative": null,
+        "genitive": null,
+        "accusative": null,
+        "vocative": null
+      }
+    },
+    {
+      "id": 71,
+      "tier": 1,
+      "basic_noun": "ώρα",
+      "gender": "feminine",
+      "translations": {
+        "en": "hour; time"
+      },
+      "singular": {
+        "nominative": "ώρα",
+        "genitive": "ώρας",
+        "accusative": "ώρα",
+        "vocative": "ώρα"
+      },
+      "plural": {
+        "nominative": "ώρες",
+        "genitive": "ωρών",
+        "accusative": "ώρες",
+        "vocative": "ώρες"
+      }
+    },
+    {
+      "id": 72,
+      "tier": 1,
+      "basic_noun": "λεπτό",
+      "gender": "neuter",
+      "translations": {
+        "en": "minute"
+      },
+      "singular": {
+        "nominative": "λεπτό",
+        "genitive": "λεπτού",
+        "accusative": "λεπτό",
+        "vocative": "λεπτό"
+      },
+      "plural": {
+        "nominative": "λεπτά",
+        "genitive": "λεπτών",
+        "accusative": "λεπτά",
+        "vocative": "λεπτά"
+      }
+    },
+    {
+      "id": 73,
+      "tier": 1,
+      "basic_noun": "μέρα",
+      "gender": "feminine",
+      "translations": {
+        "en": "day"
+      },
+      "singular": {
+        "nominative": "μέρα",
+        "genitive": "μέρας",
+        "accusative": "μέρα",
+        "vocative": "μέρα"
+      },
+      "plural": {
+        "nominative": "μέρες",
+        "genitive": "μερών",
+        "accusative": "μέρες",
+        "vocative": "μέρες"
+      }
+    },
+    {
+      "id": 74,
+      "tier": 1,
+      "basic_noun": "νύχτα",
+      "gender": "feminine",
+      "translations": {
+        "en": "night"
+      },
+      "singular": {
+        "nominative": "νύχτα",
+        "genitive": "νύχτας",
+        "accusative": "νύχτα",
+        "vocative": "νύχτα"
+      },
+      "plural": {
+        "nominative": "νύχτες",
+        "genitive": "νυχτών",
+        "accusative": "νύχτες",
+        "vocative": "νύχτες"
+      }
+    },
+    {
+      "id": 75,
+      "tier": 1,
+      "basic_noun": "απόγευμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "afternoon"
+      },
+      "singular": {
+        "nominative": "απόγευμα",
+        "genitive": "απογεύματος",
+        "accusative": "απόγευμα",
+        "vocative": "απόγευμα"
+      },
+      "plural": {
+        "nominative": "απογεύματα",
+        "genitive": "απογευμάτων",
+        "accusative": "απογεύματα",
+        "vocative": "απογεύματα"
+      }
+    },
+    {
+      "id": 76,
+      "tier": 1,
+      "basic_noun": "βράδυ",
+      "gender": "neuter",
+      "translations": {
+        "en": "evening"
+      },
+      "singular": {
+        "nominative": "βράδυ",
+        "genitive": "βραδιού",
+        "accusative": "βράδυ",
+        "vocative": "βράδυ"
+      },
+      "plural": {
+        "nominative": "βράδια",
+        "genitive": "βραδιών",
+        "accusative": "βράδια",
+        "vocative": "βράδια"
+      }
+    },
+    {
+      "id": 77,
+      "tier": 1,
+      "basic_noun": "εβδομάδα",
+      "gender": "feminine",
+      "translations": {
+        "en": "week"
+      },
+      "singular": {
+        "nominative": "εβδομάδα",
+        "genitive": "εβδομάδας",
+        "accusative": "εβδομάδα",
+        "vocative": "εβδομάδα"
+      },
+      "plural": {
+        "nominative": "εβδομάδες",
+        "genitive": "εβδομάδων",
+        "accusative": "εβδομάδες",
+        "vocative": "εβδομάδες"
+      }
+    },
+    {
+      "id": 78,
+      "tier": 1,
+      "basic_noun": "μήνας",
+      "gender": "masculine",
+      "translations": {
+        "en": "month"
+      },
+      "singular": {
+        "nominative": "μήνας",
+        "genitive": "μήνα",
+        "accusative": "μήνα",
+        "vocative": "μήνα"
+      },
+      "plural": {
+        "nominative": "μήνες",
+        "genitive": "μηνών",
+        "accusative": "μήνες",
+        "vocative": "μήνες"
+      }
+    },
+    {
+      "id": 79,
+      "tier": 1,
+      "basic_noun": "χρόνος",
+      "gender": "masculine",
+      "translations": {
+        "en": "year; time"
+      },
+      "singular": {
+        "nominative": "χρόνος",
+        "genitive": "χρόνου",
+        "accusative": "χρόνο",
+        "vocative": "χρόνε"
+      },
+      "plural": {
+        "nominative": "χρόνια",
+        "genitive": "χρόνων",
+        "accusative": "χρόνια",
+        "vocative": "χρόνια"
+      }
+    },
+    {
+      "id": 80,
+      "tier": 1,
+      "basic_noun": "καλοκαίρι",
+      "gender": "neuter",
+      "translations": {
+        "en": "summer"
+      },
+      "singular": {
+        "nominative": "καλοκαίρι",
+        "genitive": "καλοκαιριού",
+        "accusative": "καλοκαίρι",
+        "vocative": "καλοκαίρι"
+      },
+      "plural": {
+        "nominative": "καλοκαίρια",
+        "genitive": "καλοκαιριών",
+        "accusative": "καλοκαίρια",
+        "vocative": "καλοκαίρια"
+      }
+    },
+    {
+      "id": 81,
+      "tier": 1,
+      "basic_noun": "φθινόπωρο",
+      "gender": "neuter",
+      "translations": {
+        "en": "autumn"
+      },
+      "singular": {
+        "nominative": "φθινόπωρο",
+        "genitive": "φθινοπώρου",
+        "accusative": "φθινόπωρο",
+        "vocative": "φθινόπωρο"
+      },
+      "plural": {
+        "nominative": "φθινόπωρα",
+        "genitive": "φθινοπώρων",
+        "accusative": "φθινόπωρα",
+        "vocative": "φθινόπωρα"
+      }
+    },
+    {
+      "id": 82,
+      "tier": 1,
+      "basic_noun": "χειμώνας",
+      "gender": "masculine",
+      "translations": {
+        "en": "winter"
+      },
+      "singular": {
+        "nominative": "χειμώνας",
+        "genitive": "χειμώνα",
+        "accusative": "χειμώνα",
+        "vocative": "χειμώνα"
+      },
+      "plural": {
+        "nominative": "χειμώνες",
+        "genitive": "χειμώνων",
+        "accusative": "χειμώνες",
+        "vocative": "χειμώνες"
+      }
+    },
+    {
+      "id": 83,
+      "tier": 1,
+      "basic_noun": "άνοιξη",
+      "gender": "feminine",
+      "translations": {
+        "en": "spring"
+      },
+      "singular": {
+        "nominative": "άνοιξη",
+        "genitive": "άνοιξης",
+        "accusative": "άνοιξη",
+        "vocative": "άνοιξη"
+      },
+      "plural": {
+        "nominative": "ανοίξεις",
+        "genitive": "ανοίξεων",
+        "accusative": "ανοίξεις",
+        "vocative": "ανοίξεις"
+      }
+    },
+    {
+      "id": 84,
+      "tier": 1,
+      "basic_noun": "καιρός",
+      "gender": "masculine",
+      "translations": {
+        "en": "weather; time"
+      },
+      "singular": {
+        "nominative": "καιρός",
+        "genitive": "καιρού",
+        "accusative": "καιρό",
+        "vocative": "καιρέ"
+      },
+      "plural": {
+        "nominative": "καιροί",
+        "genitive": "καιρών",
+        "accusative": "καιρούς",
+        "vocative": "καιροί"
+      }
+    },
+    {
+      "id": 85,
+      "tier": 1,
+      "basic_noun": "ήλιος",
+      "gender": "masculine",
+      "translations": {
+        "en": "sun"
+      },
+      "singular": {
+        "nominative": "ήλιος",
+        "genitive": "ηλίου",
+        "accusative": "ήλιο",
+        "vocative": "ήλιε"
+      },
+      "plural": {
+        "nominative": "ήλιοι",
+        "genitive": "ηλίων",
+        "accusative": "ηλίους",
+        "vocative": "ήλιοι"
+      }
+    },
+    {
+      "id": 86,
+      "tier": 1,
+      "basic_noun": "βροχή",
+      "gender": "feminine",
+      "translations": {
+        "en": "rain"
+      },
+      "singular": {
+        "nominative": "βροχή",
+        "genitive": "βροχής",
+        "accusative": "βροχή",
+        "vocative": "βροχή"
+      },
+      "plural": {
+        "nominative": "βροχές",
+        "genitive": "βροχών",
+        "accusative": "βροχές",
+        "vocative": "βροχές"
+      }
+    },
+    {
+      "id": 87,
+      "tier": 1,
+      "basic_noun": "πόλη",
+      "gender": "feminine",
+      "translations": {
+        "en": "city, town"
+      },
+      "singular": {
+        "nominative": "πόλη",
+        "genitive": "πόλης",
+        "accusative": "πόλη",
+        "vocative": "πόλη"
+      },
+      "plural": {
+        "nominative": "πόλεις",
+        "genitive": "πόλεων",
+        "accusative": "πόλεις",
+        "vocative": "πόλεις"
+      }
+    },
+    {
+      "id": 88,
+      "tier": 1,
+      "basic_noun": "χωριό",
+      "gender": "neuter",
+      "translations": {
+        "en": "village"
+      },
+      "singular": {
+        "nominative": "χωριό",
+        "genitive": "χωριού",
+        "accusative": "χωριό",
+        "vocative": "χωριό"
+      },
+      "plural": {
+        "nominative": "χωριά",
+        "genitive": "χωριών",
+        "accusative": "χωριά",
+        "vocative": "χωριά"
+      }
+    },
+    {
+      "id": 89,
+      "tier": 1,
+      "basic_noun": "χώρα",
+      "gender": "feminine",
+      "translations": {
+        "en": "country"
+      },
+      "singular": {
+        "nominative": "χώρα",
+        "genitive": "χώρας",
+        "accusative": "χώρα",
+        "vocative": "χώρα"
+      },
+      "plural": {
+        "nominative": "χώρες",
+        "genitive": "χωρών",
+        "accusative": "χώρες",
+        "vocative": "χώρες"
+      }
+    },
+    {
+      "id": 90,
+      "tier": 1,
+      "basic_noun": "δρόμος",
+      "gender": "masculine",
+      "translations": {
+        "en": "street, road"
+      },
+      "singular": {
+        "nominative": "δρόμος",
+        "genitive": "δρόμου",
+        "accusative": "δρόμο",
+        "vocative": "δρόμε"
+      },
+      "plural": {
+        "nominative": "δρόμοι",
+        "genitive": "δρόμων",
+        "accusative": "δρόμους",
+        "vocative": "δρόμοι"
+      }
+    },
+    {
+      "id": 91,
+      "tier": 1,
+      "basic_noun": "πλατεία",
+      "gender": "feminine",
+      "translations": {
+        "en": "square (in a town)"
+      },
+      "singular": {
+        "nominative": "πλατεία",
+        "genitive": "πλατείας",
+        "accusative": "πλατεία",
+        "vocative": "πλατεία"
+      },
+      "plural": {
+        "nominative": "πλατείες",
+        "genitive": "πλατειών",
+        "accusative": "πλατείες",
+        "vocative": "πλατείες"
+      }
+    },
+    {
+      "id": 92,
+      "tier": 1,
+      "basic_noun": "κέντρο",
+      "gender": "neuter",
+      "translations": {
+        "en": "centre"
+      },
+      "singular": {
+        "nominative": "κέντρο",
+        "genitive": "κέντρου",
+        "accusative": "κέντρο",
+        "vocative": "κέντρο"
+      },
+      "plural": {
+        "nominative": "κέντρα",
+        "genitive": "κέντρων",
+        "accusative": "κέντρα",
+        "vocative": "κέντρα"
+      }
+    },
+    {
+      "id": 93,
+      "tier": 1,
+      "basic_noun": "σχολείο",
+      "gender": "neuter",
+      "translations": {
+        "en": "school"
+      },
+      "singular": {
+        "nominative": "σχολείο",
+        "genitive": "σχολείου",
+        "accusative": "σχολείο",
+        "vocative": "σχολείο"
+      },
+      "plural": {
+        "nominative": "σχολεία",
+        "genitive": "σχολείων",
+        "accusative": "σχολεία",
+        "vocative": "σχολεία"
+      }
+    },
+    {
+      "id": 94,
+      "tier": 1,
+      "basic_noun": "γραφείο",
+      "gender": "neuter",
+      "translations": {
+        "en": "office; desk"
+      },
+      "singular": {
+        "nominative": "γραφείο",
+        "genitive": "γραφείου",
+        "accusative": "γραφείο",
+        "vocative": "γραφείο"
+      },
+      "plural": {
+        "nominative": "γραφεία",
+        "genitive": "γραφείων",
+        "accusative": "γραφεία",
+        "vocative": "γραφεία"
+      }
+    },
+    {
+      "id": 95,
+      "tier": 1,
+      "basic_noun": "νοσοκομείο",
+      "gender": "neuter",
+      "translations": {
+        "en": "hospital"
+      },
+      "singular": {
+        "nominative": "νοσοκομείο",
+        "genitive": "νοσοκομείου",
+        "accusative": "νοσοκομείο",
+        "vocative": "νοσοκομείο"
+      },
+      "plural": {
+        "nominative": "νοσοκομεία",
+        "genitive": "νοσοκομείων",
+        "accusative": "νοσοκομεία",
+        "vocative": "νοσοκομεία"
+      }
+    },
+    {
+      "id": 96,
+      "tier": 1,
+      "basic_noun": "φαρμακείο",
+      "gender": "neuter",
+      "translations": {
+        "en": "pharmacy"
+      },
+      "singular": {
+        "nominative": "φαρμακείο",
+        "genitive": "φαρμακείου",
+        "accusative": "φαρμακείο",
+        "vocative": "φαρμακείο"
+      },
+      "plural": {
+        "nominative": "φαρμακεία",
+        "genitive": "φαρμακείων",
+        "accusative": "φαρμακεία",
+        "vocative": "φαρμακεία"
+      }
+    },
+    {
+      "id": 97,
+      "tier": 1,
+      "basic_noun": "τράπεζα",
+      "gender": "feminine",
+      "translations": {
+        "en": "bank"
+      },
+      "singular": {
+        "nominative": "τράπεζα",
+        "genitive": "τράπεζας",
+        "accusative": "τράπεζα",
+        "vocative": "τράπεζα"
+      },
+      "plural": {
+        "nominative": "τράπεζες",
+        "genitive": "τραπεζών",
+        "accusative": "τράπεζες",
+        "vocative": "τράπεζες"
+      }
+    },
+    {
+      "id": 98,
+      "tier": 1,
+      "basic_noun": "μαγαζί",
+      "gender": "neuter",
+      "translations": {
+        "en": "shop"
+      },
+      "singular": {
+        "nominative": "μαγαζί",
+        "genitive": "μαγαζιού",
+        "accusative": "μαγαζί",
+        "vocative": "μαγαζί"
+      },
+      "plural": {
+        "nominative": "μαγαζιά",
+        "genitive": "μαγαζιών",
+        "accusative": "μαγαζιά",
+        "vocative": "μαγαζιά"
+      }
+    },
+    {
+      "id": 99,
+      "tier": 1,
+      "basic_noun": "αγορά",
+      "gender": "feminine",
+      "translations": {
+        "en": "market; shopping"
+      },
+      "singular": {
+        "nominative": "αγορά",
+        "genitive": "αγοράς",
+        "accusative": "αγορά",
+        "vocative": "αγορά"
+      },
+      "plural": {
+        "nominative": "αγορές",
+        "genitive": "αγορών",
+        "accusative": "αγορές",
+        "vocative": "αγορές"
+      }
+    },
+    {
+      "id": 100,
+      "tier": 1,
+      "basic_noun": "εστιατόριο",
+      "gender": "neuter",
+      "translations": {
+        "en": "restaurant"
+      },
+      "singular": {
+        "nominative": "εστιατόριο",
+        "genitive": "εστιατορίου",
+        "accusative": "εστιατόριο",
+        "vocative": "εστιατόριο"
+      },
+      "plural": {
+        "nominative": "εστιατόρια",
+        "genitive": "εστιατορίων",
+        "accusative": "εστιατόρια",
+        "vocative": "εστιατόρια"
+      }
+    },
+    {
+      "id": 101,
+      "tier": 1,
+      "basic_noun": "καφετέρια",
+      "gender": "feminine",
+      "translations": {
+        "en": "café"
+      },
+      "singular": {
+        "nominative": "καφετέρια",
+        "genitive": "καφετέριας",
+        "accusative": "καφετέρια",
+        "vocative": "καφετέρια"
+      },
+      "plural": {
+        "nominative": "καφετέριες",
+        "genitive": "καφετεριών",
+        "accusative": "καφετέριες",
+        "vocative": "καφετέριες"
+      }
+    },
+    {
+      "id": 102,
+      "tier": 1,
+      "basic_noun": "ξενοδοχείο",
+      "gender": "neuter",
+      "translations": {
+        "en": "hotel"
+      },
+      "singular": {
+        "nominative": "ξενοδοχείο",
+        "genitive": "ξενοδοχείου",
+        "accusative": "ξενοδοχείο",
+        "vocative": "ξενοδοχείο"
+      },
+      "plural": {
+        "nominative": "ξενοδοχεία",
+        "genitive": "ξενοδοχείων",
+        "accusative": "ξενοδοχεία",
+        "vocative": "ξενοδοχεία"
+      }
+    },
+    {
+      "id": 103,
+      "tier": 1,
+      "basic_noun": "μουσείο",
+      "gender": "neuter",
+      "translations": {
+        "en": "museum"
+      },
+      "singular": {
+        "nominative": "μουσείο",
+        "genitive": "μουσείου",
+        "accusative": "μουσείο",
+        "vocative": "μουσείο"
+      },
+      "plural": {
+        "nominative": "μουσεία",
+        "genitive": "μουσείων",
+        "accusative": "μουσεία",
+        "vocative": "μουσεία"
+      }
+    },
+    {
+      "id": 104,
+      "tier": 1,
+      "basic_noun": "εκκλησία",
+      "gender": "feminine",
+      "translations": {
+        "en": "church"
+      },
+      "singular": {
+        "nominative": "εκκλησία",
+        "genitive": "εκκλησίας",
+        "accusative": "εκκλησία",
+        "vocative": "εκκλησία"
+      },
+      "plural": {
+        "nominative": "εκκλησίες",
+        "genitive": "εκκλησιών",
+        "accusative": "εκκλησίες",
+        "vocative": "εκκλησίες"
+      }
+    },
+    {
+      "id": 105,
+      "tier": 1,
+      "basic_noun": "σταθμός",
+      "gender": "masculine",
+      "translations": {
+        "en": "station"
+      },
+      "singular": {
+        "nominative": "σταθμός",
+        "genitive": "σταθμού",
+        "accusative": "σταθμό",
+        "vocative": "σταθμέ"
+      },
+      "plural": {
+        "nominative": "σταθμοί",
+        "genitive": "σταθμών",
+        "accusative": "σταθμούς",
+        "vocative": "σταθμοί"
+      }
+    },
+    {
+      "id": 106,
+      "tier": 1,
+      "basic_noun": "αεροδρόμιο",
+      "gender": "neuter",
+      "translations": {
+        "en": "airport"
+      },
+      "singular": {
+        "nominative": "αεροδρόμιο",
+        "genitive": "αεροδρομίου",
+        "accusative": "αεροδρόμιο",
+        "vocative": "αεροδρόμιο"
+      },
+      "plural": {
+        "nominative": "αεροδρόμια",
+        "genitive": "αεροδρομίων",
+        "accusative": "αεροδρόμια",
+        "vocative": "αεροδρόμια"
+      }
+    },
+    {
+      "id": 107,
+      "tier": 1,
+      "basic_noun": "θάλασσα",
+      "gender": "feminine",
+      "translations": {
+        "en": "sea"
+      },
+      "singular": {
+        "nominative": "θάλασσα",
+        "genitive": "θάλασσας",
+        "accusative": "θάλασσα",
+        "vocative": "θάλασσα"
+      },
+      "plural": {
+        "nominative": "θάλασσες",
+        "genitive": "θαλασσών",
+        "accusative": "θάλασσες",
+        "vocative": "θάλασσες"
+      }
+    },
+    {
+      "id": 108,
+      "tier": 1,
+      "basic_noun": "παραλία",
+      "gender": "feminine",
+      "translations": {
+        "en": "beach"
+      },
+      "singular": {
+        "nominative": "παραλία",
+        "genitive": "παραλίας",
+        "accusative": "παραλία",
+        "vocative": "παραλία"
+      },
+      "plural": {
+        "nominative": "παραλίες",
+        "genitive": "παραλιών",
+        "accusative": "παραλίες",
+        "vocative": "παραλίες"
+      }
+    },
+    {
+      "id": 109,
+      "tier": 1,
+      "basic_noun": "βουνό",
+      "gender": "neuter",
+      "translations": {
+        "en": "mountain"
+      },
+      "singular": {
+        "nominative": "βουνό",
+        "genitive": "βουνού",
+        "accusative": "βουνό",
+        "vocative": "βουνό"
+      },
+      "plural": {
+        "nominative": "βουνά",
+        "genitive": "βουνών",
+        "accusative": "βουνά",
+        "vocative": "βουνά"
+      }
+    },
+    {
+      "id": 110,
+      "tier": 1,
+      "basic_noun": "νησί",
+      "gender": "neuter",
+      "translations": {
+        "en": "island"
+      },
+      "singular": {
+        "nominative": "νησί",
+        "genitive": "νησιού",
+        "accusative": "νησί",
+        "vocative": "νησί"
+      },
+      "plural": {
+        "nominative": "νησιά",
+        "genitive": "νησιών",
+        "accusative": "νησιά",
+        "vocative": "νησιά"
+      }
+    },
+    {
+      "id": 111,
+      "tier": 1,
+      "basic_noun": "αυτοκίνητο",
+      "gender": "neuter",
+      "translations": {
+        "en": "car"
+      },
+      "singular": {
+        "nominative": "αυτοκίνητο",
+        "genitive": "αυτοκινήτου",
+        "accusative": "αυτοκίνητο",
+        "vocative": "αυτοκίνητο"
+      },
+      "plural": {
+        "nominative": "αυτοκίνητα",
+        "genitive": "αυτοκινήτων",
+        "accusative": "αυτοκίνητα",
+        "vocative": "αυτοκίνητα"
+      }
+    },
+    {
+      "id": 112,
+      "tier": 1,
+      "basic_noun": "λεωφορείο",
+      "gender": "neuter",
+      "translations": {
+        "en": "bus"
+      },
+      "singular": {
+        "nominative": "λεωφορείο",
+        "genitive": "λεωφορείου",
+        "accusative": "λεωφορείο",
+        "vocative": "λεωφορείο"
+      },
+      "plural": {
+        "nominative": "λεωφορεία",
+        "genitive": "λεωφορείων",
+        "accusative": "λεωφορεία",
+        "vocative": "λεωφορεία"
+      }
+    },
+    {
+      "id": 113,
+      "tier": 1,
+      "basic_noun": "ταξί",
+      "gender": "neuter",
+      "translations": {
+        "en": "taxi"
+      },
+      "singular": {
+        "nominative": "ταξί",
+        "genitive": "ταξί",
+        "accusative": "ταξί",
+        "vocative": "ταξί"
+      },
+      "plural": {
+        "nominative": "ταξί",
+        "genitive": "ταξί",
+        "accusative": "ταξί",
+        "vocative": "ταξί"
+      }
+    },
+    {
+      "id": 114,
+      "tier": 1,
+      "basic_noun": "τρένο",
+      "gender": "neuter",
+      "translations": {
+        "en": "train"
+      },
+      "singular": {
+        "nominative": "τρένο",
+        "genitive": "τρένου",
+        "accusative": "τρένο",
+        "vocative": "τρένο"
+      },
+      "plural": {
+        "nominative": "τρένα",
+        "genitive": "τρένων",
+        "accusative": "τρένα",
+        "vocative": "τρένα"
+      }
+    },
+    {
+      "id": 115,
+      "tier": 1,
+      "basic_noun": "αεροπλάνο",
+      "gender": "neuter",
+      "translations": {
+        "en": "aeroplane"
+      },
+      "singular": {
+        "nominative": "αεροπλάνο",
+        "genitive": "αεροπλάνου",
+        "accusative": "αεροπλάνο",
+        "vocative": "αεροπλάνο"
+      },
+      "plural": {
+        "nominative": "αεροπλάνα",
+        "genitive": "αεροπλάνων",
+        "accusative": "αεροπλάνα",
+        "vocative": "αεροπλάνα"
+      }
+    },
+    {
+      "id": 116,
+      "tier": 1,
+      "basic_noun": "πλοίο",
+      "gender": "neuter",
+      "translations": {
+        "en": "ship"
+      },
+      "singular": {
+        "nominative": "πλοίο",
+        "genitive": "πλοίου",
+        "accusative": "πλοίο",
+        "vocative": "πλοίο"
+      },
+      "plural": {
+        "nominative": "πλοία",
+        "genitive": "πλοίων",
+        "accusative": "πλοία",
+        "vocative": "πλοία"
+      }
+    },
+    {
+      "id": 117,
+      "tier": 1,
+      "basic_noun": "ποδήλατο",
+      "gender": "neuter",
+      "translations": {
+        "en": "bicycle"
+      },
+      "singular": {
+        "nominative": "ποδήλατο",
+        "genitive": "ποδηλάτου",
+        "accusative": "ποδήλατο",
+        "vocative": "ποδήλατο"
+      },
+      "plural": {
+        "nominative": "ποδήλατα",
+        "genitive": "ποδηλάτων",
+        "accusative": "ποδήλατα",
+        "vocative": "ποδήλατα"
+      }
+    },
+    {
+      "id": 118,
+      "tier": 1,
+      "basic_noun": "εισιτήριο",
+      "gender": "neuter",
+      "translations": {
+        "en": "ticket"
+      },
+      "singular": {
+        "nominative": "εισιτήριο",
+        "genitive": "εισιτηρίου",
+        "accusative": "εισιτήριο",
+        "vocative": "εισιτήριο"
+      },
+      "plural": {
+        "nominative": "εισιτήρια",
+        "genitive": "εισιτηρίων",
+        "accusative": "εισιτήρια",
+        "vocative": "εισιτήρια"
+      }
+    },
+    {
+      "id": 119,
+      "tier": 1,
+      "basic_noun": "ταξίδι",
+      "gender": "neuter",
+      "translations": {
+        "en": "trip, journey"
+      },
+      "singular": {
+        "nominative": "ταξίδι",
+        "genitive": "ταξιδιού",
+        "accusative": "ταξίδι",
+        "vocative": "ταξίδι"
+      },
+      "plural": {
+        "nominative": "ταξίδια",
+        "genitive": "ταξιδιών",
+        "accusative": "ταξίδια",
+        "vocative": "ταξίδια"
+      }
+    },
+    {
+      "id": 120,
+      "tier": 1,
+      "basic_noun": "σώμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "body"
+      },
+      "singular": {
+        "nominative": "σώμα",
+        "genitive": "σώματος",
+        "accusative": "σώμα",
+        "vocative": "σώμα"
+      },
+      "plural": {
+        "nominative": "σώματα",
+        "genitive": "σωμάτων",
+        "accusative": "σώματα",
+        "vocative": "σώματα"
+      }
+    },
+    {
+      "id": 121,
+      "tier": 1,
+      "basic_noun": "κεφάλι",
+      "gender": "neuter",
+      "translations": {
+        "en": "head"
+      },
+      "singular": {
+        "nominative": "κεφάλι",
+        "genitive": "κεφαλιού",
+        "accusative": "κεφάλι",
+        "vocative": "κεφάλι"
+      },
+      "plural": {
+        "nominative": "κεφάλια",
+        "genitive": "κεφαλιών",
+        "accusative": "κεφάλια",
+        "vocative": "κεφάλια"
+      }
+    },
+    {
+      "id": 122,
+      "tier": 1,
+      "basic_noun": "μάτι",
+      "gender": "neuter",
+      "translations": {
+        "en": "eye"
+      },
+      "singular": {
+        "nominative": "μάτι",
+        "genitive": "ματιού",
+        "accusative": "μάτι",
+        "vocative": "μάτι"
+      },
+      "plural": {
+        "nominative": "μάτια",
+        "genitive": "ματιών",
+        "accusative": "μάτια",
+        "vocative": "μάτια"
+      }
+    },
+    {
+      "id": 123,
+      "tier": 1,
+      "basic_noun": "αυτί",
+      "gender": "neuter",
+      "translations": {
+        "en": "ear"
+      },
+      "singular": {
+        "nominative": "αυτί",
+        "genitive": "αυτιού",
+        "accusative": "αυτί",
+        "vocative": "αυτί"
+      },
+      "plural": {
+        "nominative": "αυτιά",
+        "genitive": "αυτιών",
+        "accusative": "αυτιά",
+        "vocative": "αυτιά"
+      }
+    },
+    {
+      "id": 124,
+      "tier": 1,
+      "basic_noun": "μύτη",
+      "gender": "feminine",
+      "translations": {
+        "en": "nose"
+      },
+      "singular": {
+        "nominative": "μύτη",
+        "genitive": "μύτης",
+        "accusative": "μύτη",
+        "vocative": "μύτη"
+      },
+      "plural": {
+        "nominative": "μύτες",
+        "genitive": "μυτών",
+        "accusative": "μύτες",
+        "vocative": "μύτες"
+      }
+    },
+    {
+      "id": 125,
+      "tier": 1,
+      "basic_noun": "στόμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "mouth"
+      },
+      "singular": {
+        "nominative": "στόμα",
+        "genitive": "στόματος",
+        "accusative": "στόμα",
+        "vocative": "στόμα"
+      },
+      "plural": {
+        "nominative": "στόματα",
+        "genitive": "στομάτων",
+        "accusative": "στόματα",
+        "vocative": "στόματα"
+      }
+    },
+    {
+      "id": 126,
+      "tier": 1,
+      "basic_noun": "δόντι",
+      "gender": "neuter",
+      "translations": {
+        "en": "tooth"
+      },
+      "singular": {
+        "nominative": "δόντι",
+        "genitive": "δοντιού",
+        "accusative": "δόντι",
+        "vocative": "δόντι"
+      },
+      "plural": {
+        "nominative": "δόντια",
+        "genitive": "δοντιών",
+        "accusative": "δόντια",
+        "vocative": "δόντια"
+      }
+    },
+    {
+      "id": 127,
+      "tier": 1,
+      "basic_noun": "χέρι",
+      "gender": "neuter",
+      "translations": {
+        "en": "hand; arm"
+      },
+      "singular": {
+        "nominative": "χέρι",
+        "genitive": "χεριού",
+        "accusative": "χέρι",
+        "vocative": "χέρι"
+      },
+      "plural": {
+        "nominative": "χέρια",
+        "genitive": "χεριών",
+        "accusative": "χέρια",
+        "vocative": "χέρια"
+      }
+    },
+    {
+      "id": 128,
+      "tier": 1,
+      "basic_noun": "πόδι",
+      "gender": "neuter",
+      "translations": {
+        "en": "foot; leg"
+      },
+      "singular": {
+        "nominative": "πόδι",
+        "genitive": "ποδιού",
+        "accusative": "πόδι",
+        "vocative": "πόδι"
+      },
+      "plural": {
+        "nominative": "πόδια",
+        "genitive": "ποδιών",
+        "accusative": "πόδια",
+        "vocative": "πόδια"
+      }
+    },
+    {
+      "id": 129,
+      "tier": 1,
+      "basic_noun": "καρδιά",
+      "gender": "feminine",
+      "translations": {
+        "en": "heart"
+      },
+      "singular": {
+        "nominative": "καρδιά",
+        "genitive": "καρδιάς",
+        "accusative": "καρδιά",
+        "vocative": "καρδιά"
+      },
+      "plural": {
+        "nominative": "καρδιές",
+        "genitive": "καρδιών",
+        "accusative": "καρδιές",
+        "vocative": "καρδιές"
+      }
+    },
+    {
+      "id": 130,
+      "tier": 1,
+      "basic_noun": "ρούχο",
+      "gender": "neuter",
+      "translations": {
+        "en": "item of clothing"
+      },
+      "singular": {
+        "nominative": "ρούχο",
+        "genitive": "ρούχου",
+        "accusative": "ρούχο",
+        "vocative": "ρούχο"
+      },
+      "plural": {
+        "nominative": "ρούχα",
+        "genitive": "ρούχων",
+        "accusative": "ρούχα",
+        "vocative": "ρούχα"
+      }
+    },
+    {
+      "id": 131,
+      "tier": 1,
+      "basic_noun": "μπλούζα",
+      "gender": "feminine",
+      "translations": {
+        "en": "top, blouse, T-shirt"
+      },
+      "singular": {
+        "nominative": "μπλούζα",
+        "genitive": "μπλούζας",
+        "accusative": "μπλούζα",
+        "vocative": "μπλούζα"
+      },
+      "plural": {
+        "nominative": "μπλούζες",
+        "genitive": "μπλουζών",
+        "accusative": "μπλούζες",
+        "vocative": "μπλούζες"
+      }
+    },
+    {
+      "id": 132,
+      "tier": 1,
+      "basic_noun": "πουκάμισο",
+      "gender": "neuter",
+      "translations": {
+        "en": "shirt"
+      },
+      "singular": {
+        "nominative": "πουκάμισο",
+        "genitive": "πουκαμίσου",
+        "accusative": "πουκάμισο",
+        "vocative": "πουκάμισο"
+      },
+      "plural": {
+        "nominative": "πουκάμισα",
+        "genitive": "πουκαμίσων",
+        "accusative": "πουκάμισα",
+        "vocative": "πουκάμισα"
+      }
+    },
+    {
+      "id": 133,
+      "tier": 1,
+      "basic_noun": "παντελόνι",
+      "gender": "neuter",
+      "translations": {
+        "en": "trousers"
+      },
+      "singular": {
+        "nominative": "παντελόνι",
+        "genitive": "παντελονιού",
+        "accusative": "παντελόνι",
+        "vocative": "παντελόνι"
+      },
+      "plural": {
+        "nominative": "παντελόνια",
+        "genitive": "παντελονιών",
+        "accusative": "παντελόνια",
+        "vocative": "παντελόνια"
+      }
+    },
+    {
+      "id": 134,
+      "tier": 1,
+      "basic_noun": "φόρεμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "dress"
+      },
+      "singular": {
+        "nominative": "φόρεμα",
+        "genitive": "φορέματος",
+        "accusative": "φόρεμα",
+        "vocative": "φόρεμα"
+      },
+      "plural": {
+        "nominative": "φορέματα",
+        "genitive": "φορεμάτων",
+        "accusative": "φορέματα",
+        "vocative": "φορέματα"
+      }
+    },
+    {
+      "id": 135,
+      "tier": 1,
+      "basic_noun": "παπούτσι",
+      "gender": "neuter",
+      "translations": {
+        "en": "shoe"
+      },
+      "singular": {
+        "nominative": "παπούτσι",
+        "genitive": "παπουτσιού",
+        "accusative": "παπούτσι",
+        "vocative": "παπούτσι"
+      },
+      "plural": {
+        "nominative": "παπούτσια",
+        "genitive": "παπουτσιών",
+        "accusative": "παπούτσια",
+        "vocative": "παπούτσια"
+      }
+    },
+    {
+      "id": 136,
+      "tier": 1,
+      "basic_noun": "τσάντα",
+      "gender": "feminine",
+      "translations": {
+        "en": "bag"
+      },
+      "singular": {
+        "nominative": "τσάντα",
+        "genitive": "τσάντας",
+        "accusative": "τσάντα",
+        "vocative": "τσάντα"
+      },
+      "plural": {
+        "nominative": "τσάντες",
+        "genitive": "τσαντών",
+        "accusative": "τσάντες",
+        "vocative": "τσάντες"
+      }
+    },
+    {
+      "id": 137,
+      "tier": 1,
+      "basic_noun": "βιβλίο",
+      "gender": "neuter",
+      "translations": {
+        "en": "book"
+      },
+      "singular": {
+        "nominative": "βιβλίο",
+        "genitive": "βιβλίου",
+        "accusative": "βιβλίο",
+        "vocative": "βιβλίο"
+      },
+      "plural": {
+        "nominative": "βιβλία",
+        "genitive": "βιβλίων",
+        "accusative": "βιβλία",
+        "vocative": "βιβλία"
+      }
+    },
+    {
+      "id": 138,
+      "tier": 1,
+      "basic_noun": "τετράδιο",
+      "gender": "neuter",
+      "translations": {
+        "en": "notebook"
+      },
+      "singular": {
+        "nominative": "τετράδιο",
+        "genitive": "τετραδίου",
+        "accusative": "τετράδιο",
+        "vocative": "τετράδιο"
+      },
+      "plural": {
+        "nominative": "τετράδια",
+        "genitive": "τετραδίων",
+        "accusative": "τετράδια",
+        "vocative": "τετράδια"
+      }
+    },
+    {
+      "id": 139,
+      "tier": 1,
+      "basic_noun": "μολύβι",
+      "gender": "neuter",
+      "translations": {
+        "en": "pencil"
+      },
+      "singular": {
+        "nominative": "μολύβι",
+        "genitive": "μολυβιού",
+        "accusative": "μολύβι",
+        "vocative": "μολύβι"
+      },
+      "plural": {
+        "nominative": "μολύβια",
+        "genitive": "μολυβιών",
+        "accusative": "μολύβια",
+        "vocative": "μολύβια"
+      }
+    },
+    {
+      "id": 140,
+      "tier": 1,
+      "basic_noun": "στυλό",
+      "gender": "neuter",
+      "translations": {
+        "en": "pen"
+      },
+      "singular": {
+        "nominative": "στυλό",
+        "genitive": "στυλό",
+        "accusative": "στυλό",
+        "vocative": "στυλό"
+      },
+      "plural": {
+        "nominative": "στυλό",
+        "genitive": "στυλό",
+        "accusative": "στυλό",
+        "vocative": "στυλό"
+      }
+    },
+    {
+      "id": 141,
+      "tier": 1,
+      "basic_noun": "μάθημα",
+      "gender": "neuter",
+      "translations": {
+        "en": "lesson"
+      },
+      "singular": {
+        "nominative": "μάθημα",
+        "genitive": "μαθήματος",
+        "accusative": "μάθημα",
+        "vocative": "μάθημα"
+      },
+      "plural": {
+        "nominative": "μαθήματα",
+        "genitive": "μαθημάτων",
+        "accusative": "μαθήματα",
+        "vocative": "μαθήματα"
+      }
+    },
+    {
+      "id": 142,
+      "tier": 1,
+      "basic_noun": "λέξη",
+      "gender": "feminine",
+      "translations": {
+        "en": "word"
+      },
+      "singular": {
+        "nominative": "λέξη",
+        "genitive": "λέξης",
+        "accusative": "λέξη",
+        "vocative": "λέξη"
+      },
+      "plural": {
+        "nominative": "λέξεις",
+        "genitive": "λέξεων",
+        "accusative": "λέξεις",
+        "vocative": "λέξεις"
+      }
+    },
+    {
+      "id": 143,
+      "tier": 1,
+      "basic_noun": "γλώσσα",
+      "gender": "feminine",
+      "translations": {
+        "en": "language; tongue"
+      },
+      "singular": {
+        "nominative": "γλώσσα",
+        "genitive": "γλώσσας",
+        "accusative": "γλώσσα",
+        "vocative": "γλώσσα"
+      },
+      "plural": {
+        "nominative": "γλώσσες",
+        "genitive": "γλωσσών",
+        "accusative": "γλώσσες",
+        "vocative": "γλώσσες"
+      }
+    },
+    {
+      "id": 144,
+      "tier": 1,
+      "basic_noun": "ερώτηση",
+      "gender": "feminine",
+      "translations": {
+        "en": "question"
+      },
+      "singular": {
+        "nominative": "ερώτηση",
+        "genitive": "ερώτησης",
+        "accusative": "ερώτηση",
+        "vocative": "ερώτηση"
+      },
+      "plural": {
+        "nominative": "ερωτήσεις",
+        "genitive": "ερωτήσεων",
+        "accusative": "ερωτήσεις",
+        "vocative": "ερωτήσεις"
+      }
+    },
+    {
+      "id": 145,
+      "tier": 1,
+      "basic_noun": "απάντηση",
+      "gender": "feminine",
+      "translations": {
+        "en": "answer"
+      },
+      "singular": {
+        "nominative": "απάντηση",
+        "genitive": "απάντησης",
+        "accusative": "απάντηση",
+        "vocative": "απάντηση"
+      },
+      "plural": {
+        "nominative": "απαντήσεις",
+        "genitive": "απαντήσεων",
+        "accusative": "απαντήσεις",
+        "vocative": "απαντήσεις"
+      }
+    },
+    {
+      "id": 146,
+      "tier": 1,
+      "basic_noun": "τάξη",
+      "gender": "feminine",
+      "translations": {
+        "en": "class, classroom; order"
+      },
+      "singular": {
+        "nominative": "τάξη",
+        "genitive": "τάξης",
+        "accusative": "τάξη",
+        "vocative": "τάξη"
+      },
+      "plural": {
+        "nominative": "τάξεις",
+        "genitive": "τάξεων",
+        "accusative": "τάξεις",
+        "vocative": "τάξεις"
+      }
+    },
+    {
+      "id": 147,
+      "tier": 1,
+      "basic_noun": "δουλειά",
+      "gender": "feminine",
+      "translations": {
+        "en": "work, job"
+      },
+      "singular": {
+        "nominative": "δουλειά",
+        "genitive": "δουλειάς",
+        "accusative": "δουλειά",
+        "vocative": "δουλειά"
+      },
+      "plural": {
+        "nominative": "δουλειές",
+        "genitive": "δουλειών",
+        "accusative": "δουλειές",
+        "vocative": "δουλειές"
+      }
+    },
+    {
+      "id": 148,
+      "tier": 1,
+      "basic_noun": "εργασία",
+      "gender": "feminine",
+      "translations": {
+        "en": "work; assignment"
+      },
+      "singular": {
+        "nominative": "εργασία",
+        "genitive": "εργασίας",
+        "accusative": "εργασία",
+        "vocative": "εργασία"
+      },
+      "plural": {
+        "nominative": "εργασίες",
+        "genitive": "εργασιών",
+        "accusative": "εργασίες",
+        "vocative": "εργασίες"
+      }
+    },
+    {
+      "id": 149,
+      "tier": 1,
+      "basic_noun": "τηλέφωνο",
+      "gender": "neuter",
+      "translations": {
+        "en": "telephone"
+      },
+      "singular": {
+        "nominative": "τηλέφωνο",
+        "genitive": "τηλεφώνου",
+        "accusative": "τηλέφωνο",
+        "vocative": "τηλέφωνο"
+      },
+      "plural": {
+        "nominative": "τηλέφωνα",
+        "genitive": "τηλεφώνων",
+        "accusative": "τηλέφωνα",
+        "vocative": "τηλέφωνα"
+      }
+    },
+    {
+      "id": 150,
+      "tier": 1,
+      "basic_noun": "υπολογιστής",
+      "gender": "masculine",
+      "translations": {
+        "en": "computer"
+      },
+      "singular": {
+        "nominative": "υπολογιστής",
+        "genitive": "υπολογιστή",
+        "accusative": "υπολογιστή",
+        "vocative": "υπολογιστή"
+      },
+      "plural": {
+        "nominative": "υπολογιστές",
+        "genitive": "υπολογιστών",
+        "accusative": "υπολογιστές",
+        "vocative": "υπολογιστές"
+      }
+    },
+    {
+      "id": 151,
+      "tier": 1,
+      "basic_noun": "όνομα",
+      "gender": "neuter",
+      "translations": {
+        "en": "name"
+      },
+      "singular": {
+        "nominative": "όνομα",
+        "genitive": "ονόματος",
+        "accusative": "όνομα",
+        "vocative": "όνομα"
+      },
+      "plural": {
+        "nominative": "ονόματα",
+        "genitive": "ονομάτων",
+        "accusative": "ονόματα",
+        "vocative": "ονόματα"
+      }
+    },
+    {
+      "id": 152,
+      "tier": 1,
+      "basic_noun": "διεύθυνση",
+      "gender": "feminine",
+      "translations": {
+        "en": "address"
+      },
+      "singular": {
+        "nominative": "διεύθυνση",
+        "genitive": "διεύθυνσης",
+        "accusative": "διεύθυνση",
+        "vocative": "διεύθυνση"
+      },
+      "plural": {
+        "nominative": "διευθύνσεις",
+        "genitive": "διευθύνσεων",
+        "accusative": "διευθύνσεις",
+        "vocative": "διευθύνσεις"
+      }
+    },
+    {
+      "id": 153,
+      "tier": 1,
+      "basic_noun": "αριθμός",
+      "gender": "masculine",
+      "translations": {
+        "en": "number"
+      },
+      "singular": {
+        "nominative": "αριθμός",
+        "genitive": "αριθμού",
+        "accusative": "αριθμό",
+        "vocative": "αριθμέ"
+      },
+      "plural": {
+        "nominative": "αριθμοί",
+        "genitive": "αριθμών",
+        "accusative": "αριθμούς",
+        "vocative": "αριθμοί"
+      }
+    },
+    {
+      "id": 154,
+      "tier": 1,
+      "basic_noun": "λογαριασμός",
+      "gender": "masculine",
+      "translations": {
+        "en": "bill; account"
+      },
+      "singular": {
+        "nominative": "λογαριασμός",
+        "genitive": "λογαριασμού",
+        "accusative": "λογαριασμό",
+        "vocative": "λογαριασμέ"
+      },
+      "plural": {
+        "nominative": "λογαριασμοί",
+        "genitive": "λογαριασμών",
+        "accusative": "λογαριασμούς",
+        "vocative": "λογαριασμοί"
+      }
+    },
+    {
+      "id": 155,
+      "tier": 1,
+      "basic_noun": "πρόβλημα",
+      "gender": "neuter",
+      "translations": {
+        "en": "problem"
+      },
+      "singular": {
+        "nominative": "πρόβλημα",
+        "genitive": "προβλήματος",
+        "accusative": "πρόβλημα",
+        "vocative": "πρόβλημα"
+      },
+      "plural": {
+        "nominative": "προβλήματα",
+        "genitive": "προβλημάτων",
+        "accusative": "προβλήματα",
+        "vocative": "προβλήματα"
+      }
+    },
+    {
+      "id": 156,
+      "tier": 1,
+      "basic_noun": "γράμμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "letter"
+      },
+      "singular": {
+        "nominative": "γράμμα",
+        "genitive": "γράμματος",
+        "accusative": "γράμμα",
+        "vocative": "γράμμα"
+      },
+      "plural": {
+        "nominative": "γράμματα",
+        "genitive": "γραμμάτων",
+        "accusative": "γράμματα",
+        "vocative": "γράμματα"
+      }
+    },
+    {
+      "id": 157,
+      "tier": 1,
+      "basic_noun": "ουρανός",
+      "gender": "masculine",
+      "translations": {
+        "en": "sky"
+      },
+      "singular": {
+        "nominative": "ουρανός",
+        "genitive": "ουρανού",
+        "accusative": "ουρανό",
+        "vocative": "ουρανέ"
+      },
+      "plural": {
+        "nominative": "ουρανοί",
+        "genitive": "ουρανών",
+        "accusative": "ουρανούς",
+        "vocative": "ουρανοί"
+      }
+    },
+    {
+      "id": 158,
+      "tier": 1,
+      "basic_noun": "φεγγάρι",
+      "gender": "neuter",
+      "translations": {
+        "en": "moon"
+      },
+      "singular": {
+        "nominative": "φεγγάρι",
+        "genitive": "φεγγαριού",
+        "accusative": "φεγγάρι",
+        "vocative": "φεγγάρι"
+      },
+      "plural": {
+        "nominative": "φεγγάρια",
+        "genitive": "φεγγαριών",
+        "accusative": "φεγγάρια",
+        "vocative": "φεγγάρια"
+      }
+    },
+    {
+      "id": 159,
+      "tier": 1,
+      "basic_noun": "δέντρο",
+      "gender": "neuter",
+      "translations": {
+        "en": "tree"
+      },
+      "singular": {
+        "nominative": "δέντρο",
+        "genitive": "δέντρου",
+        "accusative": "δέντρο",
+        "vocative": "δέντρο"
+      },
+      "plural": {
+        "nominative": "δέντρα",
+        "genitive": "δέντρων",
+        "accusative": "δέντρα",
+        "vocative": "δέντρα"
+      }
+    },
+    {
+      "id": 160,
+      "tier": 1,
+      "basic_noun": "λουλούδι",
+      "gender": "neuter",
+      "translations": {
+        "en": "flower"
+      },
+      "singular": {
+        "nominative": "λουλούδι",
+        "genitive": "λουλουδιού",
+        "accusative": "λουλούδι",
+        "vocative": "λουλούδι"
+      },
+      "plural": {
+        "nominative": "λουλούδια",
+        "genitive": "λουλουδιών",
+        "accusative": "λουλούδια",
+        "vocative": "λουλούδια"
+      }
+    },
+    {
+      "id": 161,
+      "tier": 1,
+      "basic_noun": "ζώο",
+      "gender": "neuter",
+      "translations": {
+        "en": "animal"
+      },
+      "singular": {
+        "nominative": "ζώο",
+        "genitive": "ζώου",
+        "accusative": "ζώο",
+        "vocative": "ζώο"
+      },
+      "plural": {
+        "nominative": "ζώα",
+        "genitive": "ζώων",
+        "accusative": "ζώα",
+        "vocative": "ζώα"
+      }
+    },
+    {
+      "id": 162,
+      "tier": 1,
+      "basic_noun": "σκύλος",
+      "gender": "masculine",
+      "translations": {
+        "en": "dog"
+      },
+      "singular": {
+        "nominative": "σκύλος",
+        "genitive": "σκύλου",
+        "accusative": "σκύλο",
+        "vocative": "σκύλε"
+      },
+      "plural": {
+        "nominative": "σκύλοι",
+        "genitive": "σκύλων",
+        "accusative": "σκύλους",
+        "vocative": "σκύλοι"
+      }
+    },
+    {
+      "id": 163,
+      "tier": 1,
+      "basic_noun": "γάτα",
+      "gender": "feminine",
+      "translations": {
+        "en": "cat"
+      },
+      "singular": {
+        "nominative": "γάτα",
+        "genitive": "γάτας",
+        "accusative": "γάτα",
+        "vocative": "γάτα"
+      },
+      "plural": {
+        "nominative": "γάτες",
+        "genitive": "γατών",
+        "accusative": "γάτες",
+        "vocative": "γάτες"
+      }
+    },
+    {
+      "id": 164,
+      "tier": 1,
+      "basic_noun": "πουλί",
+      "gender": "neuter",
+      "translations": {
+        "en": "bird"
+      },
+      "singular": {
+        "nominative": "πουλί",
+        "genitive": "πουλιού",
+        "accusative": "πουλί",
+        "vocative": "πουλί"
+      },
+      "plural": {
+        "nominative": "πουλιά",
+        "genitive": "πουλιών",
+        "accusative": "πουλιά",
+        "vocative": "πουλιά"
+      }
+    },
+    {
+      "id": 165,
+      "tier": 1,
+      "basic_noun": "πράγμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "thing"
+      },
+      "singular": {
+        "nominative": "πράγμα",
+        "genitive": "πράγματος",
+        "accusative": "πράγμα",
+        "vocative": "πράγμα"
+      },
+      "plural": {
+        "nominative": "πράγματα",
+        "genitive": "πραγμάτων",
+        "accusative": "πράγματα",
+        "vocative": "πράγματα"
+      }
+    },
+    {
+      "id": 166,
+      "tier": 1,
+      "basic_noun": "χρώμα",
+      "gender": "neuter",
+      "translations": {
+        "en": "colour"
+      },
+      "singular": {
+        "nominative": "χρώμα",
+        "genitive": "χρώματος",
+        "accusative": "χρώμα",
+        "vocative": "χρώμα"
+      },
+      "plural": {
+        "nominative": "χρώματα",
+        "genitive": "χρωμάτων",
+        "accusative": "χρώματα",
+        "vocative": "χρώματα"
+      }
+    },
+    {
+      "id": 167,
+      "tier": 1,
+      "basic_noun": "μέρος",
+      "gender": "neuter",
+      "translations": {
+        "en": "place; part"
+      },
+      "singular": {
+        "nominative": "μέρος",
+        "genitive": "μέρους",
+        "accusative": "μέρος",
+        "vocative": "μέρος"
+      },
+      "plural": {
+        "nominative": "μέρη",
+        "genitive": "μερών",
+        "accusative": "μέρη",
+        "vocative": "μέρη"
+      }
+    },
+    {
+      "id": 168,
+      "tier": 1,
+      "basic_noun": "λάθος",
+      "gender": "neuter",
+      "translations": {
+        "en": "mistake"
+      },
+      "singular": {
+        "nominative": "λάθος",
+        "genitive": "λάθους",
+        "accusative": "λάθος",
+        "vocative": "λάθος"
+      },
+      "plural": {
+        "nominative": "λάθη",
+        "genitive": "λαθών",
+        "accusative": "λάθη",
+        "vocative": "λάθη"
+      }
+    },
+    {
+      "id": 169,
+      "tier": 1,
+      "basic_noun": "κόσμος",
+      "gender": "masculine",
+      "translations": {
+        "en": "world; people"
+      },
+      "singular": {
+        "nominative": "κόσμος",
+        "genitive": "κόσμου",
+        "accusative": "κόσμο",
+        "vocative": "κόσμε"
+      },
+      "plural": {
+        "nominative": "κόσμοι",
+        "genitive": "κόσμων",
+        "accusative": "κόσμους",
+        "vocative": "κόσμοι"
+      }
+    },
+    {
+      "id": 170,
+      "tier": 1,
+      "basic_noun": "ζωή",
+      "gender": "feminine",
+      "translations": {
+        "en": "life"
+      },
+      "singular": {
+        "nominative": "ζωή",
+        "genitive": "ζωής",
+        "accusative": "ζωή",
+        "vocative": "ζωή"
+      },
+      "plural": {
+        "nominative": "ζωές",
+        "genitive": "ζωών",
+        "accusative": "ζωές",
+        "vocative": "ζωές"
+      }
+    },
+    {
+      "id": 171,
+      "tier": 1,
+      "basic_noun": "αγάπη",
+      "gender": "feminine",
+      "translations": {
+        "en": "love"
+      },
+      "singular": {
+        "nominative": "αγάπη",
+        "genitive": "αγάπης",
+        "accusative": "αγάπη",
+        "vocative": "αγάπη"
+      },
+      "plural": {
+        "nominative": "αγάπες",
+        "genitive": "αγαπών",
+        "accusative": "αγάπες",
+        "vocative": "αγάπες"
+      }
+    },
+    {
+      "id": 172,
+      "tier": 1,
+      "basic_noun": "ιδέα",
+      "gender": "feminine",
+      "translations": {
+        "en": "idea"
+      },
+      "singular": {
+        "nominative": "ιδέα",
+        "genitive": "ιδέας",
+        "accusative": "ιδέα",
+        "vocative": "ιδέα"
+      },
+      "plural": {
+        "nominative": "ιδέες",
+        "genitive": "ιδεών",
+        "accusative": "ιδέες",
+        "vocative": "ιδέες"
+      }
+    },
+    {
+      "id": 173,
+      "tier": 1,
+      "basic_noun": "φως",
+      "gender": "neuter",
+      "translations": {
+        "en": "light"
+      },
+      "singular": {
+        "nominative": "φως",
+        "genitive": "φωτός",
+        "accusative": "φως",
+        "vocative": "φως"
+      },
+      "plural": {
+        "nominative": "φώτα",
+        "genitive": "φώτων",
+        "accusative": "φώτα",
+        "vocative": "φώτα"
+      }
+    },
+    {
+      "id": 174,
+      "tier": 1,
+      "basic_noun": "μουσική",
+      "gender": "feminine",
+      "translations": {
+        "en": "music"
+      },
+      "singular": {
+        "nominative": "μουσική",
+        "genitive": "μουσικής",
+        "accusative": "μουσική",
+        "vocative": "μουσική"
+      },
+      "plural": {
+        "nominative": null,
+        "genitive": null,
+        "accusative": null,
+        "vocative": null
+      }
+    },
+    {
+      "id": 175,
+      "tier": 1,
+      "basic_noun": "τραγούδι",
+      "gender": "neuter",
+      "translations": {
+        "en": "song"
+      },
+      "singular": {
+        "nominative": "τραγούδι",
+        "genitive": "τραγουδιού",
+        "accusative": "τραγούδι",
+        "vocative": "τραγούδι"
+      },
+      "plural": {
+        "nominative": "τραγούδια",
+        "genitive": "τραγουδιών",
+        "accusative": "τραγούδια",
+        "vocative": "τραγούδια"
+      }
+    },
+    {
+      "id": 176,
+      "tier": 1,
+      "basic_noun": "ταινία",
+      "gender": "feminine",
+      "translations": {
+        "en": "film, movie"
+      },
+      "singular": {
+        "nominative": "ταινία",
+        "genitive": "ταινίας",
+        "accusative": "ταινία",
+        "vocative": "ταινία"
+      },
+      "plural": {
+        "nominative": "ταινίες",
+        "genitive": "ταινιών",
+        "accusative": "ταινίες",
+        "vocative": "ταινίες"
+      }
+    },
+    {
+      "id": 177,
+      "tier": 1,
+      "basic_noun": "φωτογραφία",
+      "gender": "feminine",
+      "translations": {
+        "en": "photograph"
+      },
+      "singular": {
+        "nominative": "φωτογραφία",
+        "genitive": "φωτογραφίας",
+        "accusative": "φωτογραφία",
+        "vocative": "φωτογραφία"
+      },
+      "plural": {
+        "nominative": "φωτογραφίες",
+        "genitive": "φωτογραφιών",
+        "accusative": "φωτογραφίες",
+        "vocative": "φωτογραφίες"
+      }
+    },
+    {
+      "id": 178,
+      "tier": 1,
+      "basic_noun": "παιχνίδι",
+      "gender": "neuter",
+      "translations": {
+        "en": "game; toy"
+      },
+      "singular": {
+        "nominative": "παιχνίδι",
+        "genitive": "παιχνιδιού",
+        "accusative": "παιχνίδι",
+        "vocative": "παιχνίδι"
+      },
+      "plural": {
+        "nominative": "παιχνίδια",
+        "genitive": "παιχνιδιών",
+        "accusative": "παιχνίδια",
+        "vocative": "παιχνίδια"
+      }
+    },
+    {
+      "id": 179,
+      "tier": 1,
+      "basic_noun": "δώρο",
+      "gender": "neuter",
+      "translations": {
+        "en": "gift, present"
+      },
+      "singular": {
+        "nominative": "δώρο",
+        "genitive": "δώρου",
+        "accusative": "δώρο",
+        "vocative": "δώρο"
+      },
+      "plural": {
+        "nominative": "δώρα",
+        "genitive": "δώρων",
+        "accusative": "δώρα",
+        "vocative": "δώρα"
+      }
+    }
+  ]
+}

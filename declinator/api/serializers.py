@@ -6,8 +6,10 @@ class NounSerializer(serializers.ModelSerializer):
         model = Noun
         fields = [
             'id',
+            'tier',
             'basic_noun',
             'gender',
+            'translations',
             'nominative_singular',
             'nominative_plural',
             'genitive_singular',
