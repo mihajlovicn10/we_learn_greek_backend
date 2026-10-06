@@ -27,6 +27,8 @@ CONJUGATION_FIELDS = [
     'plusperfect_first_plural', 'plusperfect_second_plural', 'plusperfect_third_plural',
     'future_first_singular', 'future_second_singular', 'future_third_singular',
     'future_first_plural', 'future_second_plural', 'future_third_plural',
+    'future_continuous_first_singular', 'future_continuous_second_singular', 'future_continuous_third_singular',
+    'future_continuous_first_plural', 'future_continuous_second_plural', 'future_continuous_third_plural',
 ]
 
 

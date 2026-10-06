@@ -44,7 +44,7 @@ Never run `migrate` against the Neon URL unless the user asks for it.
 |-----|---------|---------------|--------|
 | `we_learn_greek/` | Project settings, URLs, custom `User` (email login, JWT auth) | Postgres | Postgres |
 | `dictionary/` | The user's personal word list ("learned words"). Auth required, scoped to `request.user` | Postgres | Postgres |
-| `conjugator/` | Verbs: `Verb`, 36 flat conjugation columns (6 tenses × 6 persons) | Postgres | static JSON |
+| `conjugator/` | Verbs: `Verb`, flat `{tense}_{person}` columns for 7 tenses × 6 persons: present, imperfect, aorist, perfect, plusperfect, future (= simple future, θα γράψω), future_continuous (θα γράφω, nullable) | Postgres | static JSON |
 | `declinator/` | Nouns: `Noun`, 8 case/number columns + gender | Postgres | static JSON |
 | `greek_to_greek/` | Monolingual definitions (`word`, `explanation`) | Postgres | static JSON |
 | `transparrent/` | "Transparent" words (Greek → cognate in another language) | Postgres | static JSON |
