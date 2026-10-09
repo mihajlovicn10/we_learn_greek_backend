@@ -95,7 +95,7 @@ without touching the database.
   `validate_greek` and be unique. `/api/greek-to-greek/` exposes `tier`, `pos` and `translations` and supports
   `?tier=` and `?pos=`. Search covers word and explanation.
 - `transparent/v1` file: `{schema, language, items}`, named `<language>.json`. The language must be one of en, fr,
-  de, es, ru, it (the languages the frontend offers). Item: `id, tier (1–5), language, greek_word, language_word,
+  de, es, ru, it, sr, uk, ar (the languages the frontend offers; Ukrainian is `uk`, shown as "UA"). Item: `id, tier (1–5), language, greek_word, language_word,
   pronunciation, etymology, example_greek, example_translation, category`. Category is one of Arts, Education,
   Everyday, Food, Health, Nature, Philosophy, Science, Society, Technology. Rows are matched on
   `(language, content_id)`, and a file only syncs its own language. `/api/transparent-words/` (and `by-language/`)
