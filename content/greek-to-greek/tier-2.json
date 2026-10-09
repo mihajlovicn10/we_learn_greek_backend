@@ -1,0 +1,3666 @@
+{
+  "schema": "greek-to-greek/v1",
+  "tier": 2,
+  "items": [
+    {
+      "id": 1,
+      "tier": 2,
+      "word": "θείος",
+      "pos": "noun",
+      "explanation": "Ο αδερφός του πατέρα ή της μητέρας σου.",
+      "translations": {
+        "en": "uncle"
+      }
+    },
+    {
+      "id": 2,
+      "tier": 2,
+      "word": "θεία",
+      "pos": "noun",
+      "explanation": "Η αδερφή του πατέρα ή της μητέρας σου.",
+      "translations": {
+        "en": "aunt"
+      }
+    },
+    {
+      "id": 3,
+      "tier": 2,
+      "word": "ξάδερφος",
+      "pos": "noun",
+      "explanation": "Ο γιος του θείου ή της θείας σου.",
+      "translations": {
+        "en": "cousin (male)"
+      }
+    },
+    {
+      "id": 4,
+      "tier": 2,
+      "word": "ξαδέρφη",
+      "pos": "noun",
+      "explanation": "Η κόρη του θείου ή της θείας σου.",
+      "translations": {
+        "en": "cousin (female)"
+      }
+    },
+    {
+      "id": 5,
+      "tier": 2,
+      "word": "εγγονός",
+      "pos": "noun",
+      "explanation": "Ο γιος του παιδιού σου.",
+      "translations": {
+        "en": "grandson"
+      }
+    },
+    {
+      "id": 6,
+      "tier": 2,
+      "word": "εγγονή",
+      "pos": "noun",
+      "explanation": "Η κόρη του παιδιού σου.",
+      "translations": {
+        "en": "granddaughter"
+      }
+    },
+    {
+      "id": 7,
+      "tier": 2,
+      "word": "γείτονας",
+      "pos": "noun",
+      "explanation": "Άντρας που μένει πολύ κοντά σου, π.χ. στο διπλανό σπίτι.",
+      "translations": {
+        "en": "neighbour (male)"
+      }
+    },
+    {
+      "id": 8,
+      "tier": 2,
+      "word": "γειτόνισσα",
+      "pos": "noun",
+      "explanation": "Γυναίκα που μένει πολύ κοντά σου, π.χ. στο διπλανό σπίτι.",
+      "translations": {
+        "en": "neighbour (female)"
+      }
+    },
+    {
+      "id": 9,
+      "tier": 2,
+      "word": "φοιτητής",
+      "pos": "noun",
+      "explanation": "Νέος που σπουδάζει σε πανεπιστήμιο.",
+      "translations": {
+        "en": "university student (male)"
+      }
+    },
+    {
+      "id": 10,
+      "tier": 2,
+      "word": "φοιτήτρια",
+      "pos": "noun",
+      "explanation": "Νέα που σπουδάζει σε πανεπιστήμιο.",
+      "translations": {
+        "en": "university student (female)"
+      }
+    },
+    {
+      "id": 11,
+      "tier": 2,
+      "word": "πωλητής",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που δουλεύει σε μαγαζί και πουλάει πράγματα.",
+      "translations": {
+        "en": "salesman, seller"
+      }
+    },
+    {
+      "id": 12,
+      "tier": 2,
+      "word": "πελάτης",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που αγοράζει κάτι από ένα μαγαζί ή μια επιχείρηση.",
+      "translations": {
+        "en": "customer, client"
+      }
+    },
+    {
+      "id": 13,
+      "tier": 2,
+      "word": "επισκέπτης",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που έρχεται να δει κάποιον ή έναν τόπο.",
+      "translations": {
+        "en": "visitor"
+      }
+    },
+    {
+      "id": 14,
+      "tier": 2,
+      "word": "οδηγός",
+      "pos": "noun",
+      "explanation": "Αυτός που κάνει ένα αυτοκίνητο ή λεωφορείο να κινείται. Επίσης αυτός που δείχνει τον δρόμο σε τουρίστες.",
+      "translations": {
+        "en": "driver; guide"
+      }
+    },
+    {
+      "id": 15,
+      "tier": 2,
+      "word": "μάγειρας",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που η δουλειά του είναι να φτιάχνει φαγητό, π.χ. σε εστιατόριο.",
+      "translations": {
+        "en": "cook"
+      }
+    },
+    {
+      "id": 16,
+      "tier": 2,
+      "word": "σερβιτόρος",
+      "pos": "noun",
+      "explanation": "Άντρας που φέρνει το φαγητό και τα ποτά στο εστιατόριο.",
+      "translations": {
+        "en": "waiter"
+      }
+    },
+    {
+      "id": 17,
+      "tier": 2,
+      "word": "σερβιτόρα",
+      "pos": "noun",
+      "explanation": "Γυναίκα που φέρνει το φαγητό και τα ποτά στο εστιατόριο.",
+      "translations": {
+        "en": "waitress"
+      }
+    },
+    {
+      "id": 18,
+      "tier": 2,
+      "word": "αστυνομικός",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που δουλεύει στην αστυνομία και προστατεύει τον νόμο.",
+      "translations": {
+        "en": "police officer"
+      }
+    },
+    {
+      "id": 19,
+      "tier": 2,
+      "word": "δικηγόρος",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που ξέρει τους νόμους και βοηθάει τους άλλους στο δικαστήριο.",
+      "translations": {
+        "en": "lawyer"
+      }
+    },
+    {
+      "id": 20,
+      "tier": 2,
+      "word": "νοσηλευτής",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που φροντίζει τους άρρωστους στο νοσοκομείο μαζί με τον γιατρό.",
+      "translations": {
+        "en": "nurse (male)"
+      }
+    },
+    {
+      "id": 21,
+      "tier": 2,
+      "word": "μηχανικός",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που σχεδιάζει κτίρια ή μηχανές. Επίσης αυτός που επισκευάζει αυτοκίνητα.",
+      "translations": {
+        "en": "engineer; mechanic"
+      }
+    },
+    {
+      "id": 22,
+      "tier": 2,
+      "word": "υπάλληλος",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που δουλεύει για μια εταιρεία ή υπηρεσία και παίρνει μισθό.",
+      "translations": {
+        "en": "employee, clerk"
+      }
+    },
+    {
+      "id": 23,
+      "tier": 2,
+      "word": "αφεντικό",
+      "pos": "noun",
+      "explanation": "Ο άνθρωπος για τον οποίο δουλεύεις.",
+      "translations": {
+        "en": "boss"
+      }
+    },
+    {
+      "id": 24,
+      "tier": 2,
+      "word": "ταχυδρόμος",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που φέρνει τα γράμματα στα σπίτια.",
+      "translations": {
+        "en": "postman"
+      }
+    },
+    {
+      "id": 25,
+      "tier": 2,
+      "word": "ταξιδιώτης",
+      "pos": "noun",
+      "explanation": "Άνθρωπος που κάνει ένα ταξίδι.",
+      "translations": {
+        "en": "traveller"
+      }
+    },
+    {
+      "id": 26,
+      "tier": 2,
+      "word": "καναπές",
+      "pos": "noun",
+      "explanation": "Μαλακό έπιπλο όπου κάθονται δύο ή τρεις άνθρωποι.",
+      "translations": {
+        "en": "sofa"
+      }
+    },
+    {
+      "id": 27,
+      "tier": 2,
+      "word": "πολυθρόνα",
+      "pos": "noun",
+      "explanation": "Μαλακή, άνετη καρέκλα με μπράτσα.",
+      "translations": {
+        "en": "armchair"
+      }
+    },
+    {
+      "id": 28,
+      "tier": 2,
+      "word": "κουρτίνα",
+      "pos": "noun",
+      "explanation": "Ύφασμα που κρέμεται μπροστά στο παράθυρο.",
+      "translations": {
+        "en": "curtain"
+      }
+    },
+    {
+      "id": 29,
+      "tier": 2,
+      "word": "λάμπα",
+      "pos": "noun",
+      "explanation": "Δίνει φως στο δωμάτιο όταν είναι σκοτάδι.",
+      "translations": {
+        "en": "lamp; light bulb"
+      }
+    },
+    {
+      "id": 30,
+      "tier": 2,
+      "word": "καθρέφτης",
+      "pos": "noun",
+      "explanation": "Γυαλί όπου βλέπεις τον εαυτό σου.",
+      "translations": {
+        "en": "mirror"
+      }
+    },
+    {
+      "id": 31,
+      "tier": 2,
+      "word": "ψυγείο",
+      "pos": "noun",
+      "explanation": "Ηλεκτρική συσκευή της κουζίνας που κρατάει το φαγητό κρύο.",
+      "translations": {
+        "en": "fridge"
+      }
+    },
+    {
+      "id": 32,
+      "tier": 2,
+      "word": "φούρνος",
+      "pos": "noun",
+      "explanation": "Συσκευή όπου ψήνουμε φαγητό. Επίσης το μαγαζί που φτιάχνει ψωμί.",
+      "translations": {
+        "en": "oven; bakery"
+      }
+    },
+    {
+      "id": 33,
+      "tier": 2,
+      "word": "πλυντήριο",
+      "pos": "noun",
+      "explanation": "Ηλεκτρική συσκευή που πλένει τα ρούχα ή τα πιάτα.",
+      "translations": {
+        "en": "washing machine"
+      }
+    },
+    {
+      "id": 34,
+      "tier": 2,
+      "word": "ταβάνι",
+      "pos": "noun",
+      "explanation": "Το πάνω μέρος του δωματίου, πάνω από το κεφάλι μας.",
+      "translations": {
+        "en": "ceiling"
+      }
+    },
+    {
+      "id": 35,
+      "tier": 2,
+      "word": "στέγη",
+      "pos": "noun",
+      "explanation": "Το πάνω εξωτερικό μέρος του σπιτιού, που το προστατεύει από τη βροχή.",
+      "translations": {
+        "en": "roof"
+      }
+    },
+    {
+      "id": 36,
+      "tier": 2,
+      "word": "αυλή",
+      "pos": "noun",
+      "explanation": "Ανοιχτός χώρος μπροστά ή πίσω από το σπίτι.",
+      "translations": {
+        "en": "yard, courtyard"
+      }
+    },
+    {
+      "id": 37,
+      "tier": 2,
+      "word": "χαλί",
+      "pos": "noun",
+      "explanation": "Ύφασμα που απλώνουμε στο πάτωμα.",
+      "translations": {
+        "en": "carpet, rug"
+      }
+    },
+    {
+      "id": 38,
+      "tier": 2,
+      "word": "μαξιλάρι",
+      "pos": "noun",
+      "explanation": "Μαλακό αντικείμενο όπου ακουμπάμε το κεφάλι στο κρεβάτι.",
+      "translations": {
+        "en": "pillow, cushion"
+      }
+    },
+    {
+      "id": 39,
+      "tier": 2,
+      "word": "κουβέρτα",
+      "pos": "noun",
+      "explanation": "Χοντρό ύφασμα που μας κρατάει ζεστούς στο κρεβάτι.",
+      "translations": {
+        "en": "blanket"
+      }
+    },
+    {
+      "id": 40,
+      "tier": 2,
+      "word": "πετσέτα",
+      "pos": "noun",
+      "explanation": "Ύφασμα για να σκουπίζουμε το σώμα ή τα χέρια μετά το πλύσιμο.",
+      "translations": {
+        "en": "towel"
+      }
+    },
+    {
+      "id": 41,
+      "tier": 2,
+      "word": "σαπούνι",
+      "pos": "noun",
+      "explanation": "Με αυτό πλένουμε τα χέρια και το σώμα.",
+      "translations": {
+        "en": "soap"
+      }
+    },
+    {
+      "id": 42,
+      "tier": 2,
+      "word": "οδοντόβουρτσα",
+      "pos": "noun",
+      "explanation": "Μικρή βούρτσα για να καθαρίζουμε τα δόντια.",
+      "translations": {
+        "en": "toothbrush"
+      }
+    },
+    {
+      "id": 43,
+      "tier": 2,
+      "word": "κουτάλι",
+      "pos": "noun",
+      "explanation": "Με αυτό τρώμε σούπα ή γιαούρτι.",
+      "translations": {
+        "en": "spoon"
+      }
+    },
+    {
+      "id": 44,
+      "tier": 2,
+      "word": "πιρούνι",
+      "pos": "noun",
+      "explanation": "Με αυτό πιάνουμε το φαγητό, π.χ. τη σαλάτα, και το βάζουμε στο στόμα.",
+      "translations": {
+        "en": "fork"
+      }
+    },
+    {
+      "id": 45,
+      "tier": 2,
+      "word": "μαχαίρι",
+      "pos": "noun",
+      "explanation": "Με αυτό κόβουμε το ψωμί ή το κρέας.",
+      "translations": {
+        "en": "knife"
+      }
+    },
+    {
+      "id": 46,
+      "tier": 2,
+      "word": "φλιτζάνι",
+      "pos": "noun",
+      "explanation": "Μικρό σκεύος με χερούλι για καφέ ή τσάι.",
+      "translations": {
+        "en": "cup"
+      }
+    },
+    {
+      "id": 47,
+      "tier": 2,
+      "word": "κατσαρόλα",
+      "pos": "noun",
+      "explanation": "Βαθύ σκεύος όπου βράζουμε ή μαγειρεύουμε φαγητό.",
+      "translations": {
+        "en": "saucepan, pot"
+      }
+    },
+    {
+      "id": 48,
+      "tier": 2,
+      "word": "τηλεόραση",
+      "pos": "noun",
+      "explanation": "Συσκευή με οθόνη όπου βλέπουμε ειδήσεις, ταινίες και σειρές.",
+      "translations": {
+        "en": "television"
+      }
+    },
+    {
+      "id": 49,
+      "tier": 2,
+      "word": "κινητό",
+      "pos": "noun",
+      "explanation": "Τηλέφωνο που το έχουμε μαζί μας παντού.",
+      "translations": {
+        "en": "mobile phone"
+      }
+    },
+    {
+      "id": 50,
+      "tier": 2,
+      "word": "ομπρέλα",
+      "pos": "noun",
+      "explanation": "Την ανοίγουμε για να μη βραχούμε όταν βρέχει.",
+      "translations": {
+        "en": "umbrella"
+      }
+    },
+    {
+      "id": 51,
+      "tier": 2,
+      "word": "πορτοφόλι",
+      "pos": "noun",
+      "explanation": "Μικρό αντικείμενο όπου κρατάμε χρήματα και κάρτες.",
+      "translations": {
+        "en": "wallet"
+      }
+    },
+    {
+      "id": 52,
+      "tier": 2,
+      "word": "πορτοκάλι",
+      "pos": "noun",
+      "explanation": "Στρογγυλό φρούτο με χοντρή φλούδα και πολύ χυμό.",
+      "translations": {
+        "en": "orange"
+      }
+    },
+    {
+      "id": 53,
+      "tier": 2,
+      "word": "λεμόνι",
+      "pos": "noun",
+      "explanation": "Κίτρινο, ξινό φρούτο· βάζουμε τον χυμό του στη σαλάτα και στο ψάρι.",
+      "translations": {
+        "en": "lemon"
+      }
+    },
+    {
+      "id": 54,
+      "tier": 2,
+      "word": "σταφύλι",
+      "pos": "noun",
+      "explanation": "Μικρά στρογγυλά φρούτα σε τσαμπί· από αυτά φτιάχνουμε κρασί.",
+      "translations": {
+        "en": "grape"
+      }
+    },
+    {
+      "id": 55,
+      "tier": 2,
+      "word": "καρπούζι",
+      "pos": "noun",
+      "explanation": "Μεγάλο φρούτο του καλοκαιριού, πράσινο απ' έξω και κόκκινο μέσα.",
+      "translations": {
+        "en": "watermelon"
+      }
+    },
+    {
+      "id": 56,
+      "tier": 2,
+      "word": "αχλάδι",
+      "pos": "noun",
+      "explanation": "Γλυκό φρούτο, πιο στενό πάνω και πιο φαρδύ κάτω.",
+      "translations": {
+        "en": "pear"
+      }
+    },
+    {
+      "id": 57,
+      "tier": 2,
+      "word": "κεράσι",
+      "pos": "noun",
+      "explanation": "Μικρό, κόκκινο, γλυκό φρούτο με κουκούτσι.",
+      "translations": {
+        "en": "cherry"
+      }
+    },
+    {
+      "id": 58,
+      "tier": 2,
+      "word": "φράουλα",
+      "pos": "noun",
+      "explanation": "Μικρό κόκκινο φρούτο της άνοιξης με σπόρους απ' έξω.",
+      "translations": {
+        "en": "strawberry"
+      }
+    },
+    {
+      "id": 59,
+      "tier": 2,
+      "word": "αγγούρι",
+      "pos": "noun",
+      "explanation": "Μακρύ πράσινο λαχανικό που βάζουμε στη σαλάτα.",
+      "translations": {
+        "en": "cucumber"
+      }
+    },
+    {
+      "id": 60,
+      "tier": 2,
+      "word": "κρεμμύδι",
+      "pos": "noun",
+      "explanation": "Λαχανικό με δυνατή γεύση· όταν το κόβουμε, κλαίνε τα μάτια.",
+      "translations": {
+        "en": "onion"
+      }
+    },
+    {
+      "id": 61,
+      "tier": 2,
+      "word": "σκόρδο",
+      "pos": "noun",
+      "explanation": "Μικρό άσπρο λαχανικό με πολύ δυνατή μυρωδιά.",
+      "translations": {
+        "en": "garlic"
+      }
+    },
+    {
+      "id": 62,
+      "tier": 2,
+      "word": "καρότο",
+      "pos": "noun",
+      "explanation": "Μακρύ πορτοκαλί λαχανικό που μεγαλώνει μέσα στη γη.",
+      "translations": {
+        "en": "carrot"
+      }
+    },
+    {
+      "id": 63,
+      "tier": 2,
+      "word": "φασόλι",
+      "pos": "noun",
+      "explanation": "Σπόρος που μαγειρεύουμε, π.χ. στη φασολάδα.",
+      "translations": {
+        "en": "bean"
+      }
+    },
+    {
+      "id": 64,
+      "tier": 2,
+      "word": "ελιά",
+      "pos": "noun",
+      "explanation": "Μικρός πράσινος ή μαύρος καρπός· από αυτόν βγάζουμε λάδι. Επίσης το δέντρο.",
+      "translations": {
+        "en": "olive; olive tree"
+      }
+    },
+    {
+      "id": 65,
+      "tier": 2,
+      "word": "βούτυρο",
+      "pos": "noun",
+      "explanation": "Κίτρινο λίπος από γάλα, που βάζουμε στο ψωμί.",
+      "translations": {
+        "en": "butter"
+      }
+    },
+    {
+      "id": 66,
+      "tier": 2,
+      "word": "μέλι",
+      "pos": "noun",
+      "explanation": "Γλυκό, χρυσό υγρό που φτιάχνουν οι μέλισσες.",
+      "translations": {
+        "en": "honey"
+      }
+    },
+    {
+      "id": 67,
+      "tier": 2,
+      "word": "γιαούρτι",
+      "pos": "noun",
+      "explanation": "Παχύ, άσπρο φαγητό από γάλα, συχνά με μέλι.",
+      "translations": {
+        "en": "yoghurt"
+      }
+    },
+    {
+      "id": 68,
+      "tier": 2,
+      "word": "αλεύρι",
+      "pos": "noun",
+      "explanation": "Άσπρη σκόνη από σιτάρι· με αυτήν φτιάχνουμε ψωμί και γλυκά.",
+      "translations": {
+        "en": "flour"
+      }
+    },
+    {
+      "id": 69,
+      "tier": 2,
+      "word": "μοσχάρι",
+      "pos": "noun",
+      "explanation": "Το κρέας της αγελάδας. Επίσης το μικρό της αγελάδας.",
+      "translations": {
+        "en": "veal, beef; calf"
+      }
+    },
+    {
+      "id": 70,
+      "tier": 2,
+      "word": "χοιρινό",
+      "pos": "noun",
+      "explanation": "Το κρέας του γουρουνιού.",
+      "translations": {
+        "en": "pork"
+      }
+    },
+    {
+      "id": 71,
+      "tier": 2,
+      "word": "γλυκό",
+      "pos": "noun",
+      "explanation": "Φαγητό με ζάχαρη που τρώμε συνήθως στο τέλος, π.χ. κέικ.",
+      "translations": {
+        "en": "sweet, dessert"
+      }
+    },
+    {
+      "id": 72,
+      "tier": 2,
+      "word": "παγωτό",
+      "pos": "noun",
+      "explanation": "Κρύο, γλυκό φαγητό από γάλα, ωραίο το καλοκαίρι.",
+      "translations": {
+        "en": "ice cream"
+      }
+    },
+    {
+      "id": 73,
+      "tier": 2,
+      "word": "χυμός",
+      "pos": "noun",
+      "explanation": "Το υγρό που βγαίνει από τα φρούτα, π.χ. από το πορτοκάλι.",
+      "translations": {
+        "en": "juice"
+      }
+    },
+    {
+      "id": 74,
+      "tier": 2,
+      "word": "ποτό",
+      "pos": "noun",
+      "explanation": "Ό,τι πίνουμε. Συχνά κάτι με αλκοόλ, π.χ. κρασί.",
+      "translations": {
+        "en": "drink"
+      }
+    },
+    {
+      "id": 75,
+      "tier": 2,
+      "word": "ταχυδρομείο",
+      "pos": "noun",
+      "explanation": "Το μέρος όπου στέλνουμε γράμματα και δέματα.",
+      "translations": {
+        "en": "post office"
+      }
+    },
+    {
+      "id": 76,
+      "tier": 2,
+      "word": "αστυνομία",
+      "pos": "noun",
+      "explanation": "Η υπηρεσία που προστατεύει τους πολίτες και τον νόμο.",
+      "translations": {
+        "en": "police"
+      }
+    },
+    {
+      "id": 77,
+      "tier": 2,
+      "word": "περίπτερο",
+      "pos": "noun",
+      "explanation": "Μικρό μαγαζί στο πεζοδρόμιο με εφημερίδες, νερό και τσιγάρα.",
+      "translations": {
+        "en": "kiosk"
+      }
+    },
+    {
+      "id": 78,
+      "tier": 2,
+      "word": "βιβλιοθήκη",
+      "pos": "noun",
+      "explanation": "Χώρος με πολλά βιβλία για διάβασμα. Επίσης το έπιπλο για βιβλία.",
+      "translations": {
+        "en": "library; bookcase"
+      }
+    },
+    {
+      "id": 79,
+      "tier": 2,
+      "word": "πανεπιστήμιο",
+      "pos": "noun",
+      "explanation": "Σχολή όπου σπουδάζουν οι νέοι μετά το λύκειο.",
+      "translations": {
+        "en": "university"
+      }
+    },
+    {
+      "id": 80,
+      "tier": 2,
+      "word": "γήπεδο",
+      "pos": "noun",
+      "explanation": "Μεγάλος χώρος όπου παίζουμε ποδόσφαιρο ή άλλο άθλημα.",
+      "translations": {
+        "en": "sports ground, pitch"
+      }
+    },
+    {
+      "id": 81,
+      "tier": 2,
+      "word": "λιμάνι",
+      "pos": "noun",
+      "explanation": "Μέρος στη θάλασσα όπου σταματούν τα πλοία.",
+      "translations": {
+        "en": "port, harbour"
+      }
+    },
+    {
+      "id": 82,
+      "tier": 2,
+      "word": "γέφυρα",
+      "pos": "noun",
+      "explanation": "Δρόμος πάνω από ποτάμι ή θάλασσα, για να περνάμε απέναντι.",
+      "translations": {
+        "en": "bridge"
+      }
+    },
+    {
+      "id": 83,
+      "tier": 2,
+      "word": "πεζοδρόμιο",
+      "pos": "noun",
+      "explanation": "Το μέρος δίπλα στον δρόμο όπου περπατούν οι άνθρωποι.",
+      "translations": {
+        "en": "pavement, sidewalk"
+      }
+    },
+    {
+      "id": 84,
+      "tier": 2,
+      "word": "φανάρι",
+      "pos": "noun",
+      "explanation": "Τα φώτα στον δρόμο: κόκκινο σταματάμε, πράσινο προχωράμε.",
+      "translations": {
+        "en": "traffic light; lantern"
+      }
+    },
+    {
+      "id": 85,
+      "tier": 2,
+      "word": "γωνία",
+      "pos": "noun",
+      "explanation": "Το σημείο όπου συναντιούνται δύο δρόμοι ή δύο τοίχοι.",
+      "translations": {
+        "en": "corner"
+      }
+    },
+    {
+      "id": 86,
+      "tier": 2,
+      "word": "γειτονιά",
+      "pos": "noun",
+      "explanation": "Τα σπίτια και οι δρόμοι γύρω από το σπίτι σου.",
+      "translations": {
+        "en": "neighbourhood"
+      }
+    },
+    {
+      "id": 87,
+      "tier": 2,
+      "word": "πολυκατοικία",
+      "pos": "noun",
+      "explanation": "Ψηλό κτίριο με πολλά διαμερίσματα.",
+      "translations": {
+        "en": "block of flats"
+      }
+    },
+    {
+      "id": 88,
+      "tier": 2,
+      "word": "κτίριο",
+      "pos": "noun",
+      "explanation": "Κάθε κατασκευή με τοίχους και στέγη, π.χ. σπίτι ή σχολείο.",
+      "translations": {
+        "en": "building"
+      }
+    },
+    {
+      "id": 89,
+      "tier": 2,
+      "word": "όροφος",
+      "pos": "noun",
+      "explanation": "Ένα επίπεδο ενός κτιρίου, π.χ. ο πρώτος ή ο δεύτερος.",
+      "translations": {
+        "en": "floor, storey"
+      }
+    },
+    {
+      "id": 90,
+      "tier": 2,
+      "word": "διάδρομος",
+      "pos": "noun",
+      "explanation": "Στενός χώρος που ενώνει δωμάτια. Επίσης μια λωρίδα του δρόμου.",
+      "translations": {
+        "en": "corridor; lane"
+      }
+    },
+    {
+      "id": 91,
+      "tier": 2,
+      "word": "ταμείο",
+      "pos": "noun",
+      "explanation": "Το μέρος στο μαγαζί όπου πληρώνουμε.",
+      "translations": {
+        "en": "cash desk, till; fund"
+      }
+    },
+    {
+      "id": 92,
+      "tier": 2,
+      "word": "βαλίτσα",
+      "pos": "noun",
+      "explanation": "Μεγάλη τσάντα για τα ρούχα όταν ταξιδεύουμε.",
+      "translations": {
+        "en": "suitcase"
+      }
+    },
+    {
+      "id": 93,
+      "tier": 2,
+      "word": "διαβατήριο",
+      "pos": "noun",
+      "explanation": "Βιβλιαράκι με τη φωτογραφία μας, που χρειαζόμαστε για να ταξιδέψουμε σε άλλες χώρες.",
+      "translations": {
+        "en": "passport"
+      }
+    },
+    {
+      "id": 94,
+      "tier": 2,
+      "word": "ταυτότητα",
+      "pos": "noun",
+      "explanation": "Κάρτα με το όνομα και τη φωτογραφία μας, που δείχνει ποιοι είμαστε.",
+      "translations": {
+        "en": "identity card; identity"
+      }
+    },
+    {
+      "id": 95,
+      "tier": 2,
+      "word": "κράτηση",
+      "pos": "noun",
+      "explanation": "Όταν κλείνουμε από πριν ένα τραπέζι, ένα δωμάτιο ή ένα εισιτήριο.",
+      "translations": {
+        "en": "reservation, booking"
+      }
+    },
+    {
+      "id": 96,
+      "tier": 2,
+      "word": "εκδρομή",
+      "pos": "noun",
+      "explanation": "Μικρό ταξίδι για μια μέρα, για να δούμε ένα μέρος.",
+      "translations": {
+        "en": "excursion, day trip"
+      }
+    },
+    {
+      "id": 97,
+      "tier": 2,
+      "word": "χάρτης",
+      "pos": "noun",
+      "explanation": "Εικόνα που δείχνει χώρες, πόλεις και δρόμους.",
+      "translations": {
+        "en": "map"
+      }
+    },
+    {
+      "id": 98,
+      "tier": 2,
+      "word": "πτήση",
+      "pos": "noun",
+      "explanation": "Το ταξίδι με αεροπλάνο.",
+      "translations": {
+        "en": "flight"
+      }
+    },
+    {
+      "id": 99,
+      "tier": 2,
+      "word": "θέση",
+      "pos": "noun",
+      "explanation": "Η καρέκλα όπου κάθεσαι στο λεωφορείο ή στο θέατρο. Επίσης το μέρος κάποιου.",
+      "translations": {
+        "en": "seat; place, position"
+      }
+    },
+    {
+      "id": 100,
+      "tier": 2,
+      "word": "πρόσωπο",
+      "pos": "noun",
+      "explanation": "Το μπροστινό μέρος του κεφαλιού, με τα μάτια, τη μύτη και το στόμα.",
+      "translations": {
+        "en": "face"
+      }
+    },
+    {
+      "id": 101,
+      "tier": 2,
+      "word": "λαιμός",
+      "pos": "noun",
+      "explanation": "Το μέρος του σώματος ανάμεσα στο κεφάλι και στους ώμους.",
+      "translations": {
+        "en": "neck; throat"
+      }
+    },
+    {
+      "id": 102,
+      "tier": 2,
+      "word": "ώμος",
+      "pos": "noun",
+      "explanation": "Το μέρος του σώματος όπου αρχίζει το χέρι.",
+      "translations": {
+        "en": "shoulder"
+      }
+    },
+    {
+      "id": 103,
+      "tier": 2,
+      "word": "πλάτη",
+      "pos": "noun",
+      "explanation": "Το πίσω μέρος του σώματος, από τον λαιμό ως τη μέση.",
+      "translations": {
+        "en": "back (of the body)"
+      }
+    },
+    {
+      "id": 104,
+      "tier": 2,
+      "word": "κοιλιά",
+      "pos": "noun",
+      "explanation": "Το μπροστινό μέρος του σώματος, εκεί που πηγαίνει το φαγητό.",
+      "translations": {
+        "en": "belly, stomach"
+      }
+    },
+    {
+      "id": 105,
+      "tier": 2,
+      "word": "δάχτυλο",
+      "pos": "noun",
+      "explanation": "Ένα από τα πέντε κομμάτια στην άκρη του χεριού ή του ποδιού.",
+      "translations": {
+        "en": "finger; toe"
+      }
+    },
+    {
+      "id": 106,
+      "tier": 2,
+      "word": "γόνατο",
+      "pos": "noun",
+      "explanation": "Το μέρος στη μέση του ποδιού, εκεί που λυγίζει.",
+      "translations": {
+        "en": "knee"
+      }
+    },
+    {
+      "id": 107,
+      "tier": 2,
+      "word": "αίμα",
+      "pos": "noun",
+      "explanation": "Κόκκινο υγρό που κυκλοφορεί μέσα στο σώμα.",
+      "translations": {
+        "en": "blood"
+      }
+    },
+    {
+      "id": 108,
+      "tier": 2,
+      "word": "πόνος",
+      "pos": "noun",
+      "explanation": "Αυτό που νιώθουμε όταν μας χτυπάει ή μας ενοχλεί κάτι στο σώμα.",
+      "translations": {
+        "en": "pain"
+      }
+    },
+    {
+      "id": 109,
+      "tier": 2,
+      "word": "πυρετός",
+      "pos": "noun",
+      "explanation": "Όταν το σώμα είναι πολύ ζεστό επειδή είμαστε άρρωστοι.",
+      "translations": {
+        "en": "fever"
+      }
+    },
+    {
+      "id": 110,
+      "tier": 2,
+      "word": "φάρμακο",
+      "pos": "noun",
+      "explanation": "Κάτι που παίρνουμε για να γίνουμε καλά όταν είμαστε άρρωστοι.",
+      "translations": {
+        "en": "medicine, drug"
+      }
+    },
+    {
+      "id": 111,
+      "tier": 2,
+      "word": "χάπι",
+      "pos": "noun",
+      "explanation": "Μικρό στρογγυλό φάρμακο που καταπίνουμε με νερό.",
+      "translations": {
+        "en": "pill"
+      }
+    },
+    {
+      "id": 112,
+      "tier": 2,
+      "word": "αρρώστια",
+      "pos": "noun",
+      "explanation": "Όταν το σώμα δεν είναι καλά και χρειαζόμαστε γιατρό.",
+      "translations": {
+        "en": "illness"
+      }
+    },
+    {
+      "id": 113,
+      "tier": 2,
+      "word": "υγεία",
+      "pos": "noun",
+      "explanation": "Όταν το σώμα και το μυαλό είναι καλά.",
+      "translations": {
+        "en": "health"
+      }
+    },
+    {
+      "id": 114,
+      "tier": 2,
+      "word": "ραντεβού",
+      "pos": "noun",
+      "explanation": "Συνάντηση σε ορισμένη ώρα, π.χ. με τον γιατρό ή με έναν φίλο.",
+      "translations": {
+        "en": "appointment; date"
+      }
+    },
+    {
+      "id": 115,
+      "tier": 2,
+      "word": "Δευτέρα",
+      "pos": "noun",
+      "explanation": "Η πρώτη μέρα της εβδομάδας, μετά την Κυριακή.",
+      "translations": {
+        "en": "Monday"
+      }
+    },
+    {
+      "id": 116,
+      "tier": 2,
+      "word": "Τρίτη",
+      "pos": "noun",
+      "explanation": "Η μέρα μετά τη Δευτέρα.",
+      "translations": {
+        "en": "Tuesday"
+      }
+    },
+    {
+      "id": 117,
+      "tier": 2,
+      "word": "Τετάρτη",
+      "pos": "noun",
+      "explanation": "Η μέρα μετά την Τρίτη, στη μέση της εβδομάδας.",
+      "translations": {
+        "en": "Wednesday"
+      }
+    },
+    {
+      "id": 118,
+      "tier": 2,
+      "word": "Πέμπτη",
+      "pos": "noun",
+      "explanation": "Η μέρα μετά την Τετάρτη.",
+      "translations": {
+        "en": "Thursday"
+      }
+    },
+    {
+      "id": 119,
+      "tier": 2,
+      "word": "Παρασκευή",
+      "pos": "noun",
+      "explanation": "Η τελευταία μέρα της δουλειάς, πριν από το Σαββατοκύριακο.",
+      "translations": {
+        "en": "Friday"
+      }
+    },
+    {
+      "id": 120,
+      "tier": 2,
+      "word": "Σάββατο",
+      "pos": "noun",
+      "explanation": "Η μέρα μετά την Παρασκευή· συνήθως δεν δουλεύουμε.",
+      "translations": {
+        "en": "Saturday"
+      }
+    },
+    {
+      "id": 121,
+      "tier": 2,
+      "word": "Κυριακή",
+      "pos": "noun",
+      "explanation": "Η τελευταία μέρα της εβδομάδας, μέρα ξεκούρασης.",
+      "translations": {
+        "en": "Sunday"
+      }
+    },
+    {
+      "id": 122,
+      "tier": 2,
+      "word": "μεσημέρι",
+      "pos": "noun",
+      "explanation": "Η μέση της μέρας, γύρω στις δώδεκα με τρεις.",
+      "translations": {
+        "en": "noon, midday"
+      }
+    },
+    {
+      "id": 123,
+      "tier": 2,
+      "word": "ημερομηνία",
+      "pos": "noun",
+      "explanation": "Η μέρα, ο μήνας και ο χρόνος, π.χ. 25 Μαρτίου 2026.",
+      "translations": {
+        "en": "date"
+      }
+    },
+    {
+      "id": 124,
+      "tier": 2,
+      "word": "γιορτή",
+      "pos": "noun",
+      "explanation": "Ειδική μέρα με χαρά, φαγητό και φίλους. Επίσης η μέρα του ονόματός μας.",
+      "translations": {
+        "en": "celebration; name day"
+      }
+    },
+    {
+      "id": 125,
+      "tier": 2,
+      "word": "αιώνας",
+      "pos": "noun",
+      "explanation": "Εκατό χρόνια.",
+      "translations": {
+        "en": "century"
+      }
+    },
+    {
+      "id": 126,
+      "tier": 2,
+      "word": "στιγμή",
+      "pos": "noun",
+      "explanation": "Πολύ μικρό διάστημα χρόνου.",
+      "translations": {
+        "en": "moment"
+      }
+    },
+    {
+      "id": 127,
+      "tier": 2,
+      "word": "εποχή",
+      "pos": "noun",
+      "explanation": "Ένα από τα τέσσερα μέρη του χρόνου. Επίσης μια περίοδος της ιστορίας.",
+      "translations": {
+        "en": "season; era"
+      }
+    },
+    {
+      "id": 128,
+      "tier": 2,
+      "word": "σύννεφο",
+      "pos": "noun",
+      "explanation": "Άσπρο ή γκρίζο πράγμα στον ουρανό, από όπου πέφτει η βροχή.",
+      "translations": {
+        "en": "cloud"
+      }
+    },
+    {
+      "id": 129,
+      "tier": 2,
+      "word": "αέρας",
+      "pos": "noun",
+      "explanation": "Αυτό που αναπνέουμε. Επίσης ο άνεμος.",
+      "translations": {
+        "en": "air; wind"
+      }
+    },
+    {
+      "id": 130,
+      "tier": 2,
+      "word": "χιόνι",
+      "pos": "noun",
+      "explanation": "Άσπρο, κρύο νερό που πέφτει από τον ουρανό τον χειμώνα.",
+      "translations": {
+        "en": "snow"
+      }
+    },
+    {
+      "id": 131,
+      "tier": 2,
+      "word": "ποτάμι",
+      "pos": "noun",
+      "explanation": "Νερό που τρέχει από τα βουνά προς τη θάλασσα.",
+      "translations": {
+        "en": "river"
+      }
+    },
+    {
+      "id": 132,
+      "tier": 2,
+      "word": "λίμνη",
+      "pos": "noun",
+      "explanation": "Μεγάλο νερό με στεριά γύρω γύρω.",
+      "translations": {
+        "en": "lake"
+      }
+    },
+    {
+      "id": 133,
+      "tier": 2,
+      "word": "δάσος",
+      "pos": "noun",
+      "explanation": "Μέρος με πολλά δέντρα.",
+      "translations": {
+        "en": "forest"
+      }
+    },
+    {
+      "id": 134,
+      "tier": 2,
+      "word": "πέτρα",
+      "pos": "noun",
+      "explanation": "Σκληρό κομμάτι από βράχο.",
+      "translations": {
+        "en": "stone"
+      }
+    },
+    {
+      "id": 135,
+      "tier": 2,
+      "word": "αστέρι",
+      "pos": "noun",
+      "explanation": "Λάμπει στον ουρανό τη νύχτα, μακριά από τη Γη.",
+      "translations": {
+        "en": "star"
+      }
+    },
+    {
+      "id": 136,
+      "tier": 2,
+      "word": "φύλλο",
+      "pos": "noun",
+      "explanation": "Το πράσινο μέρος του δέντρου. Επίσης ένα κομμάτι χαρτί.",
+      "translations": {
+        "en": "leaf; sheet (of paper)"
+      }
+    },
+    {
+      "id": 137,
+      "tier": 2,
+      "word": "φύση",
+      "pos": "noun",
+      "explanation": "Τα δέντρα, τα ζώα, τα βουνά και η θάλασσα, ό,τι δεν έφτιαξε ο άνθρωπος.",
+      "translations": {
+        "en": "nature"
+      }
+    },
+    {
+      "id": 138,
+      "tier": 2,
+      "word": "ζέστη",
+      "pos": "noun",
+      "explanation": "Όταν η θερμοκρασία είναι πολύ υψηλή, π.χ. τον Αύγουστο.",
+      "translations": {
+        "en": "heat, hot weather"
+      }
+    },
+    {
+      "id": 139,
+      "tier": 2,
+      "word": "κρύο",
+      "pos": "noun",
+      "explanation": "Όταν ο καιρός δεν είναι ζεστός, π.χ. τον χειμώνα.",
+      "translations": {
+        "en": "cold"
+      }
+    },
+    {
+      "id": 140,
+      "tier": 2,
+      "word": "θερμοκρασία",
+      "pos": "noun",
+      "explanation": "Πόσο ζεστό ή κρύο είναι κάτι· τη μετράμε σε βαθμούς.",
+      "translations": {
+        "en": "temperature"
+      }
+    },
+    {
+      "id": 141,
+      "tier": 2,
+      "word": "άλογο",
+      "pos": "noun",
+      "explanation": "Μεγάλο ζώο που τρέχει γρήγορα· οι άνθρωποι κάθονται πάνω του.",
+      "translations": {
+        "en": "horse"
+      }
+    },
+    {
+      "id": 142,
+      "tier": 2,
+      "word": "αγελάδα",
+      "pos": "noun",
+      "explanation": "Μεγάλο ζώο της φάρμας που μας δίνει γάλα.",
+      "translations": {
+        "en": "cow"
+      }
+    },
+    {
+      "id": 143,
+      "tier": 2,
+      "word": "πρόβατο",
+      "pos": "noun",
+      "explanation": "Ζώο με μαλλί που ζει στα χωράφια· μας δίνει γάλα και μαλλί.",
+      "translations": {
+        "en": "sheep"
+      }
+    },
+    {
+      "id": 144,
+      "tier": 2,
+      "word": "κότα",
+      "pos": "noun",
+      "explanation": "Πουλί της φάρμας που κάνει αυγά.",
+      "translations": {
+        "en": "hen"
+      }
+    },
+    {
+      "id": 145,
+      "tier": 2,
+      "word": "ποντίκι",
+      "pos": "noun",
+      "explanation": "Μικρό ζώο με μακριά ουρά· το φοβάται η γάτα. Επίσης μέρος του υπολογιστή.",
+      "translations": {
+        "en": "mouse"
+      }
+    },
+    {
+      "id": 146,
+      "tier": 2,
+      "word": "τιμή",
+      "pos": "noun",
+      "explanation": "Πόσα χρήματα κοστίζει κάτι. Επίσης ο σεβασμός.",
+      "translations": {
+        "en": "price; honour"
+      }
+    },
+    {
+      "id": 147,
+      "tier": 2,
+      "word": "μισθός",
+      "pos": "noun",
+      "explanation": "Τα χρήματα που παίρνουμε κάθε μήνα για τη δουλειά μας.",
+      "translations": {
+        "en": "salary, wage"
+      }
+    },
+    {
+      "id": 148,
+      "tier": 2,
+      "word": "εταιρεία",
+      "pos": "noun",
+      "explanation": "Επιχείρηση όπου δουλεύουν άνθρωποι για να βγάλουν χρήματα.",
+      "translations": {
+        "en": "company, firm"
+      }
+    },
+    {
+      "id": 149,
+      "tier": 2,
+      "word": "συνάντηση",
+      "pos": "noun",
+      "explanation": "Όταν άνθρωποι βρίσκονται μαζί για να μιλήσουν.",
+      "translations": {
+        "en": "meeting"
+      }
+    },
+    {
+      "id": 150,
+      "tier": 2,
+      "word": "συνέντευξη",
+      "pos": "noun",
+      "explanation": "Συζήτηση με ερωτήσεις, π.χ. για μια δουλειά ή για την τηλεόραση.",
+      "translations": {
+        "en": "interview"
+      }
+    },
+    {
+      "id": 151,
+      "tier": 2,
+      "word": "ευκαιρία",
+      "pos": "noun",
+      "explanation": "Μια καλή στιγμή για να κάνεις κάτι. Επίσης κάτι φτηνό.",
+      "translations": {
+        "en": "opportunity; bargain"
+      }
+    },
+    {
+      "id": 152,
+      "tier": 2,
+      "word": "σχέδιο",
+      "pos": "noun",
+      "explanation": "Τι σκοπεύουμε να κάνουμε. Επίσης μια ζωγραφιά με μολύβι.",
+      "translations": {
+        "en": "plan; drawing"
+      }
+    },
+    {
+      "id": 153,
+      "tier": 2,
+      "word": "απόφαση",
+      "pos": "noun",
+      "explanation": "Όταν διαλέγεις τι θα κάνεις.",
+      "translations": {
+        "en": "decision"
+      }
+    },
+    {
+      "id": 154,
+      "tier": 2,
+      "word": "αλήθεια",
+      "pos": "noun",
+      "explanation": "Αυτό που είναι σωστό και πραγματικό, όχι ψέμα.",
+      "translations": {
+        "en": "truth"
+      }
+    },
+    {
+      "id": 155,
+      "tier": 2,
+      "word": "ψέμα",
+      "pos": "noun",
+      "explanation": "Κάτι που λες και δεν είναι αλήθεια.",
+      "translations": {
+        "en": "lie"
+      }
+    },
+    {
+      "id": 156,
+      "tier": 2,
+      "word": "χαρά",
+      "pos": "noun",
+      "explanation": "Το ωραίο συναίσθημα όταν είμαστε χαρούμενοι.",
+      "translations": {
+        "en": "joy"
+      }
+    },
+    {
+      "id": 157,
+      "tier": 2,
+      "word": "φόβος",
+      "pos": "noun",
+      "explanation": "Αυτό που νιώθουμε όταν πιστεύουμε ότι θα γίνει κάτι κακό.",
+      "translations": {
+        "en": "fear"
+      }
+    },
+    {
+      "id": 158,
+      "tier": 2,
+      "word": "ελπίδα",
+      "pos": "noun",
+      "explanation": "Όταν περιμένουμε ότι θα γίνει κάτι καλό.",
+      "translations": {
+        "en": "hope"
+      }
+    },
+    {
+      "id": 159,
+      "tier": 2,
+      "word": "ησυχία",
+      "pos": "noun",
+      "explanation": "Όταν δεν υπάρχει θόρυβος.",
+      "translations": {
+        "en": "quiet, calm"
+      }
+    },
+    {
+      "id": 160,
+      "tier": 2,
+      "word": "θόρυβος",
+      "pos": "noun",
+      "explanation": "Δυνατός ήχος που ενοχλεί.",
+      "translations": {
+        "en": "noise"
+      }
+    },
+    {
+      "id": 161,
+      "tier": 2,
+      "word": "βοήθεια",
+      "pos": "noun",
+      "explanation": "Ό,τι κάνουμε για κάποιον που το χρειάζεται.",
+      "translations": {
+        "en": "help"
+      }
+    },
+    {
+      "id": 162,
+      "tier": 2,
+      "word": "ειρήνη",
+      "pos": "noun",
+      "explanation": "Όταν οι χώρες ή οι άνθρωποι δεν πολεμούν.",
+      "translations": {
+        "en": "peace"
+      }
+    },
+    {
+      "id": 163,
+      "tier": 2,
+      "word": "πόλεμος",
+      "pos": "noun",
+      "explanation": "Όταν χώρες ή ομάδες χτυπούν η μία την άλλη με όπλα.",
+      "translations": {
+        "en": "war"
+      }
+    },
+    {
+      "id": 164,
+      "tier": 2,
+      "word": "νόμος",
+      "pos": "noun",
+      "explanation": "Κανόνας που πρέπει να ακολουθούν όλοι σε μια χώρα.",
+      "translations": {
+        "en": "law"
+      }
+    },
+    {
+      "id": 165,
+      "tier": 2,
+      "word": "κυβέρνηση",
+      "pos": "noun",
+      "explanation": "Οι άνθρωποι που διοικούν μια χώρα.",
+      "translations": {
+        "en": "government"
+      }
+    },
+    {
+      "id": 166,
+      "tier": 2,
+      "word": "εφημερίδα",
+      "pos": "noun",
+      "explanation": "Χαρτιά με ειδήσεις που βγαίνουν κάθε μέρα.",
+      "translations": {
+        "en": "newspaper"
+      }
+    },
+    {
+      "id": 167,
+      "tier": 2,
+      "word": "περιοδικό",
+      "pos": "noun",
+      "explanation": "Βιβλίο με φωτογραφίες και άρθρα που βγαίνει κάθε εβδομάδα ή μήνα.",
+      "translations": {
+        "en": "magazine"
+      }
+    },
+    {
+      "id": 168,
+      "tier": 2,
+      "word": "είδηση",
+      "pos": "noun",
+      "explanation": "Κάτι καινούργιο που έγινε και το μαθαίνουμε.",
+      "translations": {
+        "en": "piece of news"
+      }
+    },
+    {
+      "id": 169,
+      "tier": 2,
+      "word": "άρθρο",
+      "pos": "noun",
+      "explanation": "Κείμενο σε εφημερίδα ή περιοδικό. Επίσης το «ο, η, το» στη γραμματική.",
+      "translations": {
+        "en": "article"
+      }
+    },
+    {
+      "id": 170,
+      "tier": 2,
+      "word": "σελίδα",
+      "pos": "noun",
+      "explanation": "Η μία πλευρά ενός φύλλου σε βιβλίο ή τετράδιο.",
+      "translations": {
+        "en": "page"
+      }
+    },
+    {
+      "id": 171,
+      "tier": 2,
+      "word": "πρόταση",
+      "pos": "noun",
+      "explanation": "Λέξεις μαζί που έχουν νόημα, π.χ. «Μένω στη Θεσσαλονίκη». Επίσης μια ιδέα που προτείνεις.",
+      "translations": {
+        "en": "sentence; proposal"
+      }
+    },
+    {
+      "id": 172,
+      "tier": 2,
+      "word": "άσκηση",
+      "pos": "noun",
+      "explanation": "Δουλειά για να μάθουμε κάτι. Επίσης η γυμναστική.",
+      "translations": {
+        "en": "exercise"
+      }
+    },
+    {
+      "id": 173,
+      "tier": 2,
+      "word": "εξέταση",
+      "pos": "noun",
+      "explanation": "Τεστ στο σχολείο. Επίσης όταν ο γιατρός ελέγχει το σώμα μας.",
+      "translations": {
+        "en": "exam; medical test"
+      }
+    },
+    {
+      "id": 174,
+      "tier": 2,
+      "word": "βαθμός",
+      "pos": "noun",
+      "explanation": "Ο αριθμός που παίρνουμε στο σχολείο για το πόσο καλά γράψαμε. Επίσης μονάδα θερμοκρασίας.",
+      "translations": {
+        "en": "grade, mark; degree"
+      }
+    },
+    {
+      "id": 175,
+      "tier": 2,
+      "word": "διάλειμμα",
+      "pos": "noun",
+      "explanation": "Λίγος χρόνος για ξεκούραση ανάμεσα σε μαθήματα ή δουλειά.",
+      "translations": {
+        "en": "break, interval"
+      }
+    },
+    {
+      "id": 176,
+      "tier": 2,
+      "word": "τμήμα",
+      "pos": "noun",
+      "explanation": "Ένα κομμάτι από κάτι μεγαλύτερο, π.χ. μιας εταιρείας ή μιας τάξης.",
+      "translations": {
+        "en": "department; section"
+      }
+    },
+    {
+      "id": 177,
+      "tier": 2,
+      "word": "μπάλα",
+      "pos": "noun",
+      "explanation": "Στρογγυλό αντικείμενο για παιχνίδια όπως το ποδόσφαιρο.",
+      "translations": {
+        "en": "ball"
+      }
+    },
+    {
+      "id": 178,
+      "tier": 2,
+      "word": "ομάδα",
+      "pos": "noun",
+      "explanation": "Άνθρωποι που κάνουν κάτι μαζί, π.χ. παίζουν ποδόσφαιρο.",
+      "translations": {
+        "en": "team; group"
+      }
+    },
+    {
+      "id": 179,
+      "tier": 2,
+      "word": "αγώνας",
+      "pos": "noun",
+      "explanation": "Παιχνίδι ανάμεσα σε δύο ομάδες ή αθλητές. Επίσης μια δύσκολη προσπάθεια.",
+      "translations": {
+        "en": "match, race; struggle"
+      }
+    },
+    {
+      "id": 180,
+      "tier": 2,
+      "word": "ποδόσφαιρο",
+      "pos": "noun",
+      "explanation": "Άθλημα όπου δύο ομάδες κλωτσούν μια μπάλα για να βάλουν γκολ.",
+      "translations": {
+        "en": "football"
+      }
+    },
+    {
+      "id": 181,
+      "tier": 2,
+      "word": "συναυλία",
+      "pos": "noun",
+      "explanation": "Όταν μουσικοί παίζουν ζωντανά μπροστά σε κόσμο.",
+      "translations": {
+        "en": "concert"
+      }
+    },
+    {
+      "id": 182,
+      "tier": 2,
+      "word": "έκθεση",
+      "pos": "noun",
+      "explanation": "Χώρος όπου βλέπουμε έργα τέχνης ή προϊόντα. Επίσης ένα κείμενο στο σχολείο.",
+      "translations": {
+        "en": "exhibition; essay"
+      }
+    },
+    {
+      "id": 183,
+      "tier": 2,
+      "word": "βόλτα",
+      "pos": "noun",
+      "explanation": "Όταν περπατάμε έξω χωρίς βιασύνη, για ευχαρίστηση.",
+      "translations": {
+        "en": "walk, stroll"
+      }
+    },
+    {
+      "id": 184,
+      "tier": 2,
+      "word": "πισίνα",
+      "pos": "noun",
+      "explanation": "Μεγάλη τρύπα με νερό για κολύμπι.",
+      "translations": {
+        "en": "swimming pool"
+      }
+    },
+    {
+      "id": 185,
+      "tier": 2,
+      "word": "φούστα",
+      "pos": "noun",
+      "explanation": "Γυναικείο ρούχο από τη μέση προς τα κάτω.",
+      "translations": {
+        "en": "skirt"
+      }
+    },
+    {
+      "id": 186,
+      "tier": 2,
+      "word": "κάλτσα",
+      "pos": "noun",
+      "explanation": "Φοράμε στο πόδι πριν από το παπούτσι.",
+      "translations": {
+        "en": "sock"
+      }
+    },
+    {
+      "id": 187,
+      "tier": 2,
+      "word": "ζακέτα",
+      "pos": "noun",
+      "explanation": "Ζεστό ρούχο που φοράμε πάνω από τη μπλούζα.",
+      "translations": {
+        "en": "cardigan, jacket"
+      }
+    },
+    {
+      "id": 188,
+      "tier": 2,
+      "word": "παλτό",
+      "pos": "noun",
+      "explanation": "Μακρύ και ζεστό ρούχο που φοράμε έξω τον χειμώνα.",
+      "translations": {
+        "en": "coat"
+      }
+    },
+    {
+      "id": 189,
+      "tier": 2,
+      "word": "καπέλο",
+      "pos": "noun",
+      "explanation": "Το φοράμε στο κεφάλι για τον ήλιο ή για το κρύο.",
+      "translations": {
+        "en": "hat"
+      }
+    },
+    {
+      "id": 190,
+      "tier": 2,
+      "word": "γραβάτα",
+      "pos": "noun",
+      "explanation": "Μακρύ στενό ύφασμα που φοράνε οι άντρες στον λαιμό με πουκάμισο.",
+      "translations": {
+        "en": "tie"
+      }
+    },
+    {
+      "id": 191,
+      "tier": 2,
+      "word": "μέγεθος",
+      "pos": "noun",
+      "explanation": "Πόσο μεγάλο ή μικρό είναι κάτι, π.χ. ένα ρούχο.",
+      "translations": {
+        "en": "size"
+      }
+    },
+    {
+      "id": 192,
+      "tier": 2,
+      "word": "απόδειξη",
+      "pos": "noun",
+      "explanation": "Χαρτί που δείχνει ότι πληρώσαμε. Επίσης κάτι που δείχνει ότι κάτι είναι αλήθεια.",
+      "translations": {
+        "en": "receipt; proof"
+      }
+    },
+    {
+      "id": 193,
+      "tier": 2,
+      "word": "αγγίζω",
+      "pos": "verb",
+      "explanation": "Ακουμπάω κάτι με το χέρι μου.",
+      "translations": {
+        "en": "to touch"
+      }
+    },
+    {
+      "id": 194,
+      "tier": 2,
+      "word": "ανάβω",
+      "pos": "verb",
+      "explanation": "Κάνω τη φωτιά ή το φως να αρχίσει, π.χ. «Ανάβω τη λάμπα».",
+      "translations": {
+        "en": "to light; to switch on"
+      }
+    },
+    {
+      "id": 195,
+      "tier": 2,
+      "word": "σβήνω",
+      "pos": "verb",
+      "explanation": "Σταματάω το φως ή τη φωτιά. Επίσης βγάζω κάτι γραμμένο με γόμα.",
+      "translations": {
+        "en": "to switch off; to rub out"
+      }
+    },
+    {
+      "id": 196,
+      "tier": 2,
+      "word": "βγάζω",
+      "pos": "verb",
+      "explanation": "Παίρνω κάτι από μέσα προς τα έξω. Επίσης «Βγάζω τα ρούχα μου».",
+      "translations": {
+        "en": "to take out; to take off"
+      }
+    },
+    {
+      "id": 197,
+      "tier": 2,
+      "word": "βάφω",
+      "pos": "verb",
+      "explanation": "Αλλάζω το χρώμα σε κάτι, π.χ. τον τοίχο ή τα μαλλιά.",
+      "translations": {
+        "en": "to paint; to dye"
+      }
+    },
+    {
+      "id": 198,
+      "tier": 2,
+      "word": "γεμίζω",
+      "pos": "verb",
+      "explanation": "Βάζω μέσα σε κάτι ώσπου να μην χωράει άλλο.",
+      "translations": {
+        "en": "to fill"
+      }
+    },
+    {
+      "id": 199,
+      "tier": 2,
+      "word": "γνωρίζω",
+      "pos": "verb",
+      "explanation": "Ξέρω κάποιον. Επίσης συναντάω κάποιον για πρώτη φορά.",
+      "translations": {
+        "en": "to know (someone); to get to know"
+      }
+    },
+    {
+      "id": 200,
+      "tier": 2,
+      "word": "δανείζω",
+      "pos": "verb",
+      "explanation": "Δίνω κάτι σε κάποιον για λίγο καιρό και μετά μου το επιστρέφει.",
+      "translations": {
+        "en": "to lend"
+      }
+    },
+    {
+      "id": 201,
+      "tier": 2,
+      "word": "διαλέγω",
+      "pos": "verb",
+      "explanation": "Παίρνω ένα από πολλά πράγματα επειδή το προτιμώ.",
+      "translations": {
+        "en": "to choose"
+      }
+    },
+    {
+      "id": 202,
+      "tier": 2,
+      "word": "διδάσκω",
+      "pos": "verb",
+      "explanation": "Βοηθάω άλλους να μάθουν κάτι, όπως ο δάσκαλος.",
+      "translations": {
+        "en": "to teach"
+      }
+    },
+    {
+      "id": 203,
+      "tier": 2,
+      "word": "διορθώνω",
+      "pos": "verb",
+      "explanation": "Κάνω σωστό κάτι που ήταν λάθος ή χαλασμένο.",
+      "translations": {
+        "en": "to correct; to fix"
+      }
+    },
+    {
+      "id": 204,
+      "tier": 2,
+      "word": "ελέγχω",
+      "pos": "verb",
+      "explanation": "Κοιτάζω αν κάτι είναι σωστό ή αν δουλεύει καλά.",
+      "translations": {
+        "en": "to check; to control"
+      }
+    },
+    {
+      "id": 205,
+      "tier": 2,
+      "word": "επιστρέφω",
+      "pos": "verb",
+      "explanation": "Γυρίζω εκεί που ήμουν πριν. Επίσης δίνω πίσω κάτι.",
+      "translations": {
+        "en": "to return, to come back"
+      }
+    },
+    {
+      "id": 206,
+      "tier": 2,
+      "word": "ζεσταίνω",
+      "pos": "verb",
+      "explanation": "Κάνω κάτι ζεστό, π.χ. το φαγητό.",
+      "translations": {
+        "en": "to warm up, to heat"
+      }
+    },
+    {
+      "id": 207,
+      "tier": 2,
+      "word": "καπνίζω",
+      "pos": "verb",
+      "explanation": "Βάζω τσιγάρο στο στόμα και βγάζω καπνό.",
+      "translations": {
+        "en": "to smoke"
+      }
+    },
+    {
+      "id": 208,
+      "tier": 2,
+      "word": "κλέβω",
+      "pos": "verb",
+      "explanation": "Παίρνω κάτι που δεν είναι δικό μου, χωρίς άδεια.",
+      "translations": {
+        "en": "to steal"
+      }
+    },
+    {
+      "id": 209,
+      "tier": 2,
+      "word": "κρύβω",
+      "pos": "verb",
+      "explanation": "Βάζω κάτι σε μέρος όπου δεν το βλέπουν οι άλλοι.",
+      "translations": {
+        "en": "to hide"
+      }
+    },
+    {
+      "id": 210,
+      "tier": 2,
+      "word": "λείπω",
+      "pos": "verb",
+      "explanation": "Δεν είμαι εκεί που πρέπει. Επίσης «μου λείπει»: θέλω κάτι που δεν έχω.",
+      "translations": {
+        "en": "to be missing; to be away"
+      }
+    },
+    {
+      "id": 211,
+      "tier": 2,
+      "word": "λύνω",
+      "pos": "verb",
+      "explanation": "Βρίσκω την απάντηση σε ένα πρόβλημα. Επίσης ανοίγω έναν κόμπο.",
+      "translations": {
+        "en": "to solve; to untie"
+      }
+    },
+    {
+      "id": 212,
+      "tier": 2,
+      "word": "μεγαλώνω",
+      "pos": "verb",
+      "explanation": "Γίνομαι πιο ψηλός ή πιο μεγάλος στην ηλικία, όπως τα παιδιά.",
+      "translations": {
+        "en": "to grow up; to grow"
+      }
+    },
+    {
+      "id": 213,
+      "tier": 2,
+      "word": "μετακομίζω",
+      "pos": "verb",
+      "explanation": "Πηγαίνω να μένω σε άλλο σπίτι.",
+      "translations": {
+        "en": "to move (house)"
+      }
+    },
+    {
+      "id": 214,
+      "tier": 2,
+      "word": "νοικιάζω",
+      "pos": "verb",
+      "explanation": "Πληρώνω για να χρησιμοποιώ κάτι που δεν είναι δικό μου, π.χ. σπίτι.",
+      "translations": {
+        "en": "to rent"
+      }
+    },
+    {
+      "id": 215,
+      "tier": 2,
+      "word": "παραγγέλνω",
+      "pos": "verb",
+      "explanation": "Ζητάω φαγητό στο εστιατόριο ή κάτι από ένα μαγαζί.",
+      "translations": {
+        "en": "to order"
+      }
+    },
+    {
+      "id": 216,
+      "tier": 2,
+      "word": "πιάνω",
+      "pos": "verb",
+      "explanation": "Παίρνω κάτι στα χέρια μου, π.χ. την μπάλα.",
+      "translations": {
+        "en": "to catch, to grab"
+      }
+    },
+    {
+      "id": 217,
+      "tier": 2,
+      "word": "ρίχνω",
+      "pos": "verb",
+      "explanation": "Στέλνω κάτι μακριά με το χέρι. Επίσης αφήνω κάτι να πέσει.",
+      "translations": {
+        "en": "to throw"
+      }
+    },
+    {
+      "id": 218,
+      "tier": 2,
+      "word": "σκουπίζω",
+      "pos": "verb",
+      "explanation": "Καθαρίζω το πάτωμα. Επίσης στεγνώνω κάτι με πετσέτα.",
+      "translations": {
+        "en": "to sweep; to wipe"
+      }
+    },
+    {
+      "id": 219,
+      "tier": 2,
+      "word": "σπρώχνω",
+      "pos": "verb",
+      "explanation": "Κάνω κάτι να πάει μπροστά με τα χέρια μου.",
+      "translations": {
+        "en": "to push"
+      }
+    },
+    {
+      "id": 220,
+      "tier": 2,
+      "word": "στρίβω",
+      "pos": "verb",
+      "explanation": "Αλλάζω κατεύθυνση, π.χ. στη γωνία του δρόμου.",
+      "translations": {
+        "en": "to turn"
+      }
+    },
+    {
+      "id": 221,
+      "tier": 2,
+      "word": "συνεχίζω",
+      "pos": "verb",
+      "explanation": "Δεν σταματάω· κάνω κάτι κι άλλο.",
+      "translations": {
+        "en": "to continue"
+      }
+    },
+    {
+      "id": 222,
+      "tier": 2,
+      "word": "φτιάχνω",
+      "pos": "verb",
+      "explanation": "Κάνω κάτι καινούργιο, π.χ. φαγητό. Επίσης επισκευάζω.",
+      "translations": {
+        "en": "to make; to fix"
+      }
+    },
+    {
+      "id": 223,
+      "tier": 2,
+      "word": "φωνάζω",
+      "pos": "verb",
+      "explanation": "Μιλάω πολύ δυνατά. Επίσης καλώ κάποιον να έρθει.",
+      "translations": {
+        "en": "to shout; to call"
+      }
+    },
+    {
+      "id": 224,
+      "tier": 2,
+      "word": "ψήνω",
+      "pos": "verb",
+      "explanation": "Μαγειρεύω στον φούρνο ή στα κάρβουνα.",
+      "translations": {
+        "en": "to bake, to grill, to roast"
+      }
+    },
+    {
+      "id": 225,
+      "tier": 2,
+      "word": "πέφτω",
+      "pos": "verb",
+      "explanation": "Πηγαίνω απότομα από πάνω προς τα κάτω, π.χ. στο πάτωμα.",
+      "translations": {
+        "en": "to fall"
+      }
+    },
+    {
+      "id": 226,
+      "tier": 2,
+      "word": "αποφασίζω",
+      "pos": "verb",
+      "explanation": "Διαλέγω τι θα κάνω, μετά από σκέψη.",
+      "translations": {
+        "en": "to decide"
+      }
+    },
+    {
+      "id": 227,
+      "tier": 2,
+      "word": "απαγορεύω",
+      "pos": "verb",
+      "explanation": "Λέω ότι δεν επιτρέπεται να γίνει κάτι.",
+      "translations": {
+        "en": "to forbid"
+      }
+    },
+    {
+      "id": 228,
+      "tier": 2,
+      "word": "αρέσω",
+      "pos": "verb",
+      "explanation": "Κάποιος με βρίσκει ωραίο. «Μου αρέσει»: το βρίσκω ωραίο.",
+      "translations": {
+        "en": "to please (μου αρέσει: I like it)"
+      }
+    },
+    {
+      "id": 229,
+      "tier": 2,
+      "word": "μοιάζω",
+      "pos": "verb",
+      "explanation": "Είμαι σχεδόν ίδιος με κάποιον άλλο.",
+      "translations": {
+        "en": "to look like, to resemble"
+      }
+    },
+    {
+      "id": 230,
+      "tier": 2,
+      "word": "μοιράζω",
+      "pos": "verb",
+      "explanation": "Δίνω ένα κομμάτι σε κάθε άνθρωπο.",
+      "translations": {
+        "en": "to share, to hand out"
+      }
+    },
+    {
+      "id": 231,
+      "tier": 2,
+      "word": "ζωγραφίζω",
+      "pos": "verb",
+      "explanation": "Φτιάχνω εικόνες με χρώματα ή μολύβι.",
+      "translations": {
+        "en": "to paint, to draw"
+      }
+    },
+    {
+      "id": 232,
+      "tier": 2,
+      "word": "μυρίζω",
+      "pos": "verb",
+      "explanation": "Καταλαβαίνω μια μυρωδιά με τη μύτη. Επίσης βγάζω μυρωδιά.",
+      "translations": {
+        "en": "to smell"
+      }
+    },
+    {
+      "id": 233,
+      "tier": 2,
+      "word": "ακυρώνω",
+      "pos": "verb",
+      "explanation": "Λέω ότι κάτι που κανονίσαμε δεν θα γίνει.",
+      "translations": {
+        "en": "to cancel"
+      }
+    },
+    {
+      "id": 234,
+      "tier": 2,
+      "word": "κλειδώνω",
+      "pos": "verb",
+      "explanation": "Κλείνω την πόρτα με κλειδί.",
+      "translations": {
+        "en": "to lock"
+      }
+    },
+    {
+      "id": 235,
+      "tier": 2,
+      "word": "οργανώνω",
+      "pos": "verb",
+      "explanation": "Ετοιμάζω κάτι με σχέδιο, π.χ. ένα πάρτι ή ένα ταξίδι.",
+      "translations": {
+        "en": "to organise"
+      }
+    },
+    {
+      "id": 236,
+      "tier": 2,
+      "word": "ξοδεύω",
+      "pos": "verb",
+      "explanation": "Δίνω χρήματα για να αγοράσω πράγματα.",
+      "translations": {
+        "en": "to spend (money)"
+      }
+    },
+    {
+      "id": 237,
+      "tier": 2,
+      "word": "κοστίζω",
+      "pos": "verb",
+      "explanation": "Έχω μια τιμή, π.χ. «Το βιβλίο κοστίζει δέκα ευρώ».",
+      "translations": {
+        "en": "to cost"
+      }
+    },
+    {
+      "id": 238,
+      "tier": 2,
+      "word": "κρυώνω",
+      "pos": "verb",
+      "explanation": "Νιώθω κρύο.",
+      "translations": {
+        "en": "to be cold, to feel cold"
+      }
+    },
+    {
+      "id": 239,
+      "tier": 2,
+      "word": "πεθαίνω",
+      "pos": "verb",
+      "explanation": "Σταματάω να ζω.",
+      "translations": {
+        "en": "to die"
+      }
+    },
+    {
+      "id": 240,
+      "tier": 2,
+      "word": "πετυχαίνω",
+      "pos": "verb",
+      "explanation": "Κάνω αυτό που ήθελα και βγαίνει καλά. Επίσης βρίσκω τον στόχο.",
+      "translations": {
+        "en": "to succeed; to hit (a target)"
+      }
+    },
+    {
+      "id": 241,
+      "tier": 2,
+      "word": "αρρωσταίνω",
+      "pos": "verb",
+      "explanation": "Γίνομαι άρρωστος.",
+      "translations": {
+        "en": "to fall ill"
+      }
+    },
+    {
+      "id": 242,
+      "tier": 2,
+      "word": "σπάω",
+      "pos": "verb",
+      "explanation": "Κάνω κάτι κομμάτια, π.χ. ένα ποτήρι.",
+      "translations": {
+        "en": "to break"
+      }
+    },
+    {
+      "id": 243,
+      "tier": 2,
+      "word": "τυπώνω",
+      "pos": "verb",
+      "explanation": "Βγάζω ένα κείμενο από τον υπολογιστή σε χαρτί.",
+      "translations": {
+        "en": "to print"
+      }
+    },
+    {
+      "id": 244,
+      "tier": 2,
+      "word": "ανεβάζω",
+      "pos": "verb",
+      "explanation": "Πηγαίνω κάτι πιο ψηλά. Επίσης βάζω μια φωτογραφία στο ίντερνετ.",
+      "translations": {
+        "en": "to raise; to upload"
+      }
+    },
+    {
+      "id": 245,
+      "tier": 2,
+      "word": "κατεβάζω",
+      "pos": "verb",
+      "explanation": "Πηγαίνω κάτι πιο χαμηλά. Επίσης παίρνω ένα αρχείο από το ίντερνετ.",
+      "translations": {
+        "en": "to bring down; to download"
+      }
+    },
+    {
+      "id": 246,
+      "tier": 2,
+      "word": "χωρίζω",
+      "pos": "verb",
+      "explanation": "Κάνω δύο ή περισσότερα κομμάτια. Επίσης σταματάω μια σχέση.",
+      "translations": {
+        "en": "to separate; to split up"
+      }
+    },
+    {
+      "id": 247,
+      "tier": 2,
+      "word": "δοκιμάζω",
+      "pos": "verb",
+      "explanation": "Κάνω κάτι για πρώτη φορά για να δω πώς είναι, π.χ. ένα φαγητό ή ένα ρούχο.",
+      "translations": {
+        "en": "to try; to taste; to try on"
+      }
+    },
+    {
+      "id": 248,
+      "tier": 2,
+      "word": "ξαπλώνω",
+      "pos": "verb",
+      "explanation": "Βάζω το σώμα μου οριζόντια, π.χ. στο κρεβάτι.",
+      "translations": {
+        "en": "to lie down"
+      }
+    },
+    {
+      "id": 249,
+      "tier": 2,
+      "word": "νικάω",
+      "pos": "verb",
+      "explanation": "Κερδίζω σε έναν αγώνα ή σε ένα παιχνίδι.",
+      "translations": {
+        "en": "to win, to beat"
+      }
+    },
+    {
+      "id": 250,
+      "tier": 2,
+      "word": "πετάω",
+      "pos": "verb",
+      "explanation": "Κινούμαι στον αέρα, όπως το πουλί. Επίσης βάζω κάτι στα σκουπίδια.",
+      "translations": {
+        "en": "to fly; to throw away"
+      }
+    },
+    {
+      "id": 251,
+      "tier": 2,
+      "word": "τραβάω",
+      "pos": "verb",
+      "explanation": "Κάνω κάτι να έρθει προς το μέρος μου.",
+      "translations": {
+        "en": "to pull"
+      }
+    },
+    {
+      "id": 252,
+      "tier": 2,
+      "word": "χαιρετάω",
+      "pos": "verb",
+      "explanation": "Λέω «γεια» σε κάποιον.",
+      "translations": {
+        "en": "to greet, to say hello"
+      }
+    },
+    {
+      "id": 253,
+      "tier": 2,
+      "word": "κουβαλάω",
+      "pos": "verb",
+      "explanation": "Κρατάω κάτι βαρύ και το πηγαίνω κάπου.",
+      "translations": {
+        "en": "to carry"
+      }
+    },
+    {
+      "id": 254,
+      "tier": 2,
+      "word": "μετράω",
+      "pos": "verb",
+      "explanation": "Λέω τους αριθμούς με τη σειρά. Επίσης βρίσκω πόσο μεγάλο είναι κάτι.",
+      "translations": {
+        "en": "to count; to measure"
+      }
+    },
+    {
+      "id": 255,
+      "tier": 2,
+      "word": "χτυπάω",
+      "pos": "verb",
+      "explanation": "Δίνω δυνατό άγγιγμα σε κάτι. Επίσης κάνει ήχο το τηλέφωνο ή η πόρτα.",
+      "translations": {
+        "en": "to hit; to knock; to ring"
+      }
+    },
+    {
+      "id": 256,
+      "tier": 2,
+      "word": "κερνάω",
+      "pos": "verb",
+      "explanation": "Πληρώνω εγώ τον καφέ ή το φαγητό κάποιου άλλου.",
+      "translations": {
+        "en": "to treat (someone to something)"
+      }
+    },
+    {
+      "id": 257,
+      "tier": 2,
+      "word": "κουνάω",
+      "pos": "verb",
+      "explanation": "Κινώ κάτι πέρα δώθε, π.χ. το χέρι μου για να χαιρετήσω.",
+      "translations": {
+        "en": "to move, to shake"
+      }
+    },
+    {
+      "id": 258,
+      "tier": 2,
+      "word": "ανησυχώ",
+      "pos": "verb",
+      "explanation": "Σκέφτομαι ότι μπορεί να γίνει κάτι κακό και δεν είμαι ήσυχος.",
+      "translations": {
+        "en": "to worry"
+      }
+    },
+    {
+      "id": 259,
+      "tier": 2,
+      "word": "εξηγώ",
+      "pos": "verb",
+      "explanation": "Λέω σε κάποιον πώς είναι κάτι, για να το καταλάβει.",
+      "translations": {
+        "en": "to explain"
+      }
+    },
+    {
+      "id": 260,
+      "tier": 2,
+      "word": "προσπαθώ",
+      "pos": "verb",
+      "explanation": "Κάνω ό,τι μπορώ για να πετύχω κάτι.",
+      "translations": {
+        "en": "to try"
+      }
+    },
+    {
+      "id": 261,
+      "tier": 2,
+      "word": "συμφωνώ",
+      "pos": "verb",
+      "explanation": "Πιστεύω το ίδιο με κάποιον άλλο.",
+      "translations": {
+        "en": "to agree"
+      }
+    },
+    {
+      "id": 262,
+      "tier": 2,
+      "word": "διαφωνώ",
+      "pos": "verb",
+      "explanation": "Δεν πιστεύω το ίδιο με κάποιον άλλο.",
+      "translations": {
+        "en": "to disagree"
+      }
+    },
+    {
+      "id": 263,
+      "tier": 2,
+      "word": "χρησιμοποιώ",
+      "pos": "verb",
+      "explanation": "Κάνω δουλειά με κάτι, π.χ. «Χρησιμοποιώ τον υπολογιστή».",
+      "translations": {
+        "en": "to use"
+      }
+    },
+    {
+      "id": 264,
+      "tier": 2,
+      "word": "ακολουθώ",
+      "pos": "verb",
+      "explanation": "Πηγαίνω πίσω από κάποιον. Επίσης κάνω ό,τι λένε οι κανόνες.",
+      "translations": {
+        "en": "to follow"
+      }
+    },
+    {
+      "id": 265,
+      "tier": 2,
+      "word": "καλώ",
+      "pos": "verb",
+      "explanation": "Λέω σε κάποιον να έρθει, π.χ. σε πάρτι. Επίσης τηλεφωνώ.",
+      "translations": {
+        "en": "to call; to invite"
+      }
+    },
+    {
+      "id": 266,
+      "tier": 2,
+      "word": "λειτουργώ",
+      "pos": "verb",
+      "explanation": "Δουλεύω σωστά, όπως μια μηχανή. Επίσης είμαι ανοιχτός, π.χ. ένα μαγαζί.",
+      "translations": {
+        "en": "to work, to function"
+      }
+    },
+    {
+      "id": 267,
+      "tier": 2,
+      "word": "συζητώ",
+      "pos": "verb",
+      "explanation": "Μιλάω με άλλους για ένα θέμα.",
+      "translations": {
+        "en": "to discuss"
+      }
+    },
+    {
+      "id": 268,
+      "tier": 2,
+      "word": "επικοινωνώ",
+      "pos": "verb",
+      "explanation": "Μιλάω ή γράφω σε κάποιον για να μάθει κάτι.",
+      "translations": {
+        "en": "to communicate, to get in touch"
+      }
+    },
+    {
+      "id": 269,
+      "tier": 2,
+      "word": "θεωρώ",
+      "pos": "verb",
+      "explanation": "Πιστεύω ότι κάτι είναι έτσι, π.χ. «Το θεωρώ σημαντικό».",
+      "translations": {
+        "en": "to consider"
+      }
+    },
+    {
+      "id": 270,
+      "tier": 2,
+      "word": "κουράζομαι",
+      "pos": "verb",
+      "explanation": "Χάνω τη δύναμή μου μετά από δουλειά και θέλω να ξεκουραστώ.",
+      "translations": {
+        "en": "to get tired"
+      }
+    },
+    {
+      "id": 271,
+      "tier": 2,
+      "word": "ξεκουράζομαι",
+      "pos": "verb",
+      "explanation": "Σταματάω τη δουλειά για να πάρω δύναμη ξανά.",
+      "translations": {
+        "en": "to rest"
+      }
+    },
+    {
+      "id": 272,
+      "tier": 2,
+      "word": "ονομάζομαι",
+      "pos": "verb",
+      "explanation": "Έχω ένα όνομα, π.χ. «Ονομάζομαι Νίκος».",
+      "translations": {
+        "en": "to be called (named)"
+      }
+    },
+    {
+      "id": 273,
+      "tier": 2,
+      "word": "λέγομαι",
+      "pos": "verb",
+      "explanation": "Έχω ένα όνομα, π.χ. «Πώς λέγεσαι;».",
+      "translations": {
+        "en": "to be called (my name is)"
+      }
+    },
+    {
+      "id": 274,
+      "tier": 2,
+      "word": "παντρεύομαι",
+      "pos": "verb",
+      "explanation": "Γίνομαι σύζυγος κάποιου, συνήθως με γάμο.",
+      "translations": {
+        "en": "to get married"
+      }
+    },
+    {
+      "id": 275,
+      "tier": 2,
+      "word": "επισκέπτομαι",
+      "pos": "verb",
+      "explanation": "Πηγαίνω να δω έναν άνθρωπο ή ένα μέρος.",
+      "translations": {
+        "en": "to visit"
+      }
+    },
+    {
+      "id": 276,
+      "tier": 2,
+      "word": "δέχομαι",
+      "pos": "verb",
+      "explanation": "Λέω «ναι» σε κάτι. Επίσης παίρνω κάτι που μου στέλνουν.",
+      "translations": {
+        "en": "to accept; to receive"
+      }
+    },
+    {
+      "id": 277,
+      "tier": 2,
+      "word": "χαίρομαι",
+      "pos": "verb",
+      "explanation": "Νιώθω χαρά.",
+      "translations": {
+        "en": "to be glad"
+      }
+    },
+    {
+      "id": 278,
+      "tier": 2,
+      "word": "ετοιμάζομαι",
+      "pos": "verb",
+      "explanation": "Κάνω ό,τι χρειάζεται για να είμαι έτοιμος, π.χ. πριν βγω.",
+      "translations": {
+        "en": "to get ready"
+      }
+    },
+    {
+      "id": 279,
+      "tier": 2,
+      "word": "ξυρίζομαι",
+      "pos": "verb",
+      "explanation": "Κόβω τα γένια από το πρόσωπό μου.",
+      "translations": {
+        "en": "to shave"
+      }
+    },
+    {
+      "id": 280,
+      "tier": 2,
+      "word": "πλένομαι",
+      "pos": "verb",
+      "explanation": "Καθαρίζω το σώμα μου με νερό και σαπούνι.",
+      "translations": {
+        "en": "to wash (oneself)"
+      }
+    },
+    {
+      "id": 281,
+      "tier": 2,
+      "word": "βιάζομαι",
+      "pos": "verb",
+      "explanation": "Θέλω να κάνω κάτι γρήγορα, γιατί δεν έχω χρόνο.",
+      "translations": {
+        "en": "to be in a hurry"
+      }
+    },
+    {
+      "id": 282,
+      "tier": 2,
+      "word": "ντρέπομαι",
+      "pos": "verb",
+      "explanation": "Δεν νιώθω άνετα μπροστά σε άλλους. Επίσης νιώθω άσχημα για κάτι που έκανα.",
+      "translations": {
+        "en": "to be shy; to be ashamed"
+      }
+    },
+    {
+      "id": 283,
+      "tier": 2,
+      "word": "ενδιαφέρομαι",
+      "pos": "verb",
+      "explanation": "Θέλω να μάθω περισσότερα για κάτι.",
+      "translations": {
+        "en": "to be interested"
+      }
+    },
+    {
+      "id": 284,
+      "tier": 2,
+      "word": "βρίσκομαι",
+      "pos": "verb",
+      "explanation": "Είμαι σε ένα μέρος, π.χ. «Βρίσκομαι στο σπίτι».",
+      "translations": {
+        "en": "to be (somewhere); to find oneself"
+      }
+    },
+    {
+      "id": 285,
+      "tier": 2,
+      "word": "αισθάνομαι",
+      "pos": "verb",
+      "explanation": "Νιώθω κάτι, π.χ. χαρά ή κούραση.",
+      "translations": {
+        "en": "to feel"
+      }
+    },
+    {
+      "id": 286,
+      "tier": 2,
+      "word": "καλός",
+      "pos": "adjective",
+      "explanation": "Που μας αρέσει ή που είναι όπως πρέπει. Επίσης ευγενικός.",
+      "translations": {
+        "en": "good; kind"
+      }
+    },
+    {
+      "id": 287,
+      "tier": 2,
+      "word": "κακός",
+      "pos": "adjective",
+      "explanation": "Που δεν είναι καλός· που κάνει άσχημα πράγματα σε άλλους.",
+      "translations": {
+        "en": "bad"
+      }
+    },
+    {
+      "id": 288,
+      "tier": 2,
+      "word": "μεγάλος",
+      "pos": "adjective",
+      "explanation": "Που έχει πολύ μέγεθος. Επίσης όχι νέος.",
+      "translations": {
+        "en": "big; old (of people)"
+      }
+    },
+    {
+      "id": 289,
+      "tier": 2,
+      "word": "μικρός",
+      "pos": "adjective",
+      "explanation": "Που δεν έχει πολύ μέγεθος. Επίσης νέος στην ηλικία.",
+      "translations": {
+        "en": "small; young"
+      }
+    },
+    {
+      "id": 290,
+      "tier": 2,
+      "word": "ψηλός",
+      "pos": "adjective",
+      "explanation": "Που φτάνει πολύ πάνω, όπως ένα βουνό ή ένας μπασκετμπολίστας.",
+      "translations": {
+        "en": "tall, high"
+      }
+    },
+    {
+      "id": 291,
+      "tier": 2,
+      "word": "κοντός",
+      "pos": "adjective",
+      "explanation": "Που δεν είναι ψηλός ή μακρύς.",
+      "translations": {
+        "en": "short"
+      }
+    },
+    {
+      "id": 292,
+      "tier": 2,
+      "word": "χοντρός",
+      "pos": "adjective",
+      "explanation": "Που έχει μεγάλο σώμα ή μεγάλο πάχος.",
+      "translations": {
+        "en": "fat; thick"
+      }
+    },
+    {
+      "id": 293,
+      "tier": 2,
+      "word": "αδύνατος",
+      "pos": "adjective",
+      "explanation": "Που έχει λεπτό σώμα. Επίσης που δεν έχει δύναμη.",
+      "translations": {
+        "en": "thin; weak"
+      }
+    },
+    {
+      "id": 294,
+      "tier": 2,
+      "word": "νέος",
+      "pos": "adjective",
+      "explanation": "Που έχει λίγα χρόνια ζωής. Επίσης καινούργιος.",
+      "translations": {
+        "en": "young; new"
+      }
+    },
+    {
+      "id": 295,
+      "tier": 2,
+      "word": "παλιός",
+      "pos": "adjective",
+      "explanation": "Που υπάρχει πολύ καιρό· όχι καινούργιος.",
+      "translations": {
+        "en": "old (of things)"
+      }
+    },
+    {
+      "id": 296,
+      "tier": 2,
+      "word": "καινούργιος",
+      "pos": "adjective",
+      "explanation": "Που μόλις φτιάχτηκε ή αγοράστηκε.",
+      "translations": {
+        "en": "new"
+      }
+    },
+    {
+      "id": 297,
+      "tier": 2,
+      "word": "ωραίος",
+      "pos": "adjective",
+      "explanation": "Που είναι ευχάριστος να τον βλέπεις ή να τον ζεις.",
+      "translations": {
+        "en": "beautiful, nice"
+      }
+    },
+    {
+      "id": 298,
+      "tier": 2,
+      "word": "άσχημος",
+      "pos": "adjective",
+      "explanation": "Που δεν είναι ωραίος.",
+      "translations": {
+        "en": "ugly; bad"
+      }
+    },
+    {
+      "id": 299,
+      "tier": 2,
+      "word": "ζεστός",
+      "pos": "adjective",
+      "explanation": "Που έχει υψηλή θερμοκρασία, π.χ. ο καφές ή ο καιρός.",
+      "translations": {
+        "en": "hot, warm"
+      }
+    },
+    {
+      "id": 300,
+      "tier": 2,
+      "word": "κρύος",
+      "pos": "adjective",
+      "explanation": "Που έχει χαμηλή θερμοκρασία, π.χ. το νερό από το ψυγείο.",
+      "translations": {
+        "en": "cold"
+      }
+    },
+    {
+      "id": 301,
+      "tier": 2,
+      "word": "γρήγορος",
+      "pos": "adjective",
+      "explanation": "Που κινείται ή κάνει κάτι σε λίγο χρόνο.",
+      "translations": {
+        "en": "fast, quick"
+      }
+    },
+    {
+      "id": 302,
+      "tier": 2,
+      "word": "αργός",
+      "pos": "adjective",
+      "explanation": "Που χρειάζεται πολύ χρόνο· όχι γρήγορος.",
+      "translations": {
+        "en": "slow"
+      }
+    },
+    {
+      "id": 303,
+      "tier": 2,
+      "word": "εύκολος",
+      "pos": "adjective",
+      "explanation": "Που γίνεται χωρίς πολλή προσπάθεια.",
+      "translations": {
+        "en": "easy"
+      }
+    },
+    {
+      "id": 304,
+      "tier": 2,
+      "word": "δύσκολος",
+      "pos": "adjective",
+      "explanation": "Που θέλει πολλή προσπάθεια· όχι εύκολος.",
+      "translations": {
+        "en": "difficult, hard"
+      }
+    },
+    {
+      "id": 305,
+      "tier": 2,
+      "word": "ακριβός",
+      "pos": "adjective",
+      "explanation": "Που κοστίζει πολλά χρήματα.",
+      "translations": {
+        "en": "expensive"
+      }
+    },
+    {
+      "id": 306,
+      "tier": 2,
+      "word": "φτηνός",
+      "pos": "adjective",
+      "explanation": "Που κοστίζει λίγα χρήματα.",
+      "translations": {
+        "en": "cheap"
+      }
+    },
+    {
+      "id": 307,
+      "tier": 2,
+      "word": "χαρούμενος",
+      "pos": "adjective",
+      "explanation": "Που νιώθει χαρά.",
+      "translations": {
+        "en": "happy, cheerful"
+      }
+    },
+    {
+      "id": 308,
+      "tier": 2,
+      "word": "λυπημένος",
+      "pos": "adjective",
+      "explanation": "Που νιώθει λύπη· όχι χαρούμενος.",
+      "translations": {
+        "en": "sad"
+      }
+    },
+    {
+      "id": 309,
+      "tier": 2,
+      "word": "κουρασμένος",
+      "pos": "adjective",
+      "explanation": "Που δεν έχει δύναμη και θέλει να ξεκουραστεί.",
+      "translations": {
+        "en": "tired"
+      }
+    },
+    {
+      "id": 310,
+      "tier": 2,
+      "word": "άρρωστος",
+      "pos": "adjective",
+      "explanation": "Που δεν είναι καλά στην υγεία του.",
+      "translations": {
+        "en": "ill, sick"
+      }
+    },
+    {
+      "id": 311,
+      "tier": 2,
+      "word": "πλούσιος",
+      "pos": "adjective",
+      "explanation": "Που έχει πολλά χρήματα.",
+      "translations": {
+        "en": "rich"
+      }
+    },
+    {
+      "id": 312,
+      "tier": 2,
+      "word": "φτωχός",
+      "pos": "adjective",
+      "explanation": "Που έχει λίγα χρήματα.",
+      "translations": {
+        "en": "poor"
+      }
+    },
+    {
+      "id": 313,
+      "tier": 2,
+      "word": "γεμάτος",
+      "pos": "adjective",
+      "explanation": "Που δεν χωράει τίποτα άλλο μέσα του.",
+      "translations": {
+        "en": "full"
+      }
+    },
+    {
+      "id": 314,
+      "tier": 2,
+      "word": "άδειος",
+      "pos": "adjective",
+      "explanation": "Που δεν έχει τίποτα μέσα.",
+      "translations": {
+        "en": "empty"
+      }
+    },
+    {
+      "id": 315,
+      "tier": 2,
+      "word": "ανοιχτός",
+      "pos": "adjective",
+      "explanation": "Που δεν είναι κλειστός. Για χρώμα: όχι σκούρο.",
+      "translations": {
+        "en": "open; light (of colour)"
+      }
+    },
+    {
+      "id": 316,
+      "tier": 2,
+      "word": "κλειστός",
+      "pos": "adjective",
+      "explanation": "Που δεν είναι ανοιχτός.",
+      "translations": {
+        "en": "closed, shut"
+      }
+    },
+    {
+      "id": 317,
+      "tier": 2,
+      "word": "καθαρός",
+      "pos": "adjective",
+      "explanation": "Που δεν έχει βρομιά.",
+      "translations": {
+        "en": "clean; clear"
+      }
+    },
+    {
+      "id": 318,
+      "tier": 2,
+      "word": "βρόμικος",
+      "pos": "adjective",
+      "explanation": "Που θέλει πλύσιμο· όχι καθαρός.",
+      "translations": {
+        "en": "dirty"
+      }
+    },
+    {
+      "id": 319,
+      "tier": 2,
+      "word": "έτοιμος",
+      "pos": "adjective",
+      "explanation": "Που έχει κάνει ό,τι χρειάζεται και μπορεί να ξεκινήσει.",
+      "translations": {
+        "en": "ready"
+      }
+    },
+    {
+      "id": 320,
+      "tier": 2,
+      "word": "σωστός",
+      "pos": "adjective",
+      "explanation": "Που δεν έχει λάθος.",
+      "translations": {
+        "en": "correct, right"
+      }
+    },
+    {
+      "id": 321,
+      "tier": 2,
+      "word": "ήσυχος",
+      "pos": "adjective",
+      "explanation": "Που δεν κάνει θόρυβο. Επίσης που δεν ανησυχεί.",
+      "translations": {
+        "en": "quiet, calm"
+      }
+    },
+    {
+      "id": 322,
+      "tier": 2,
+      "word": "ελεύθερος",
+      "pos": "adjective",
+      "explanation": "Που μπορεί να κάνει ό,τι θέλει. Επίσης που δεν έχει σχέση.",
+      "translations": {
+        "en": "free; single"
+      }
+    },
+    {
+      "id": 323,
+      "tier": 2,
+      "word": "απασχολημένος",
+      "pos": "adjective",
+      "explanation": "Που έχει πολλή δουλειά και δεν έχει χρόνο.",
+      "translations": {
+        "en": "busy"
+      }
+    },
+    {
+      "id": 324,
+      "tier": 2,
+      "word": "νόστιμος",
+      "pos": "adjective",
+      "explanation": "Που έχει ωραία γεύση.",
+      "translations": {
+        "en": "tasty, delicious"
+      }
+    },
+    {
+      "id": 325,
+      "tier": 2,
+      "word": "γλυκός",
+      "pos": "adjective",
+      "explanation": "Που έχει γεύση σαν ζάχαρη. Επίσης τρυφερός.",
+      "translations": {
+        "en": "sweet"
+      }
+    },
+    {
+      "id": 326,
+      "tier": 2,
+      "word": "αλμυρός",
+      "pos": "adjective",
+      "explanation": "Που έχει πολύ αλάτι, όπως το νερό της θάλασσας.",
+      "translations": {
+        "en": "salty"
+      }
+    },
+    {
+      "id": 327,
+      "tier": 2,
+      "word": "πικρός",
+      "pos": "adjective",
+      "explanation": "Που έχει δυνατή, άσχημη γεύση, όπως ο καφές χωρίς ζάχαρη.",
+      "translations": {
+        "en": "bitter"
+      }
+    },
+    {
+      "id": 328,
+      "tier": 2,
+      "word": "φρέσκος",
+      "pos": "adjective",
+      "explanation": "Που είναι καινούργιος και όχι παλιός, π.χ. «φρέσκο ψωμί».",
+      "translations": {
+        "en": "fresh"
+      }
+    },
+    {
+      "id": 329,
+      "tier": 2,
+      "word": "άσπρος",
+      "pos": "adjective",
+      "explanation": "Που έχει το χρώμα του χιονιού ή του γάλακτος.",
+      "translations": {
+        "en": "white"
+      }
+    },
+    {
+      "id": 330,
+      "tier": 2,
+      "word": "μαύρος",
+      "pos": "adjective",
+      "explanation": "Που έχει το χρώμα της νύχτας χωρίς φως.",
+      "translations": {
+        "en": "black"
+      }
+    },
+    {
+      "id": 331,
+      "tier": 2,
+      "word": "κόκκινος",
+      "pos": "adjective",
+      "explanation": "Που έχει το χρώμα του αίματος ή της ντομάτας.",
+      "translations": {
+        "en": "red"
+      }
+    },
+    {
+      "id": 332,
+      "tier": 2,
+      "word": "πράσινος",
+      "pos": "adjective",
+      "explanation": "Που έχει το χρώμα των φύλλων και του γρασιδιού.",
+      "translations": {
+        "en": "green"
+      }
+    },
+    {
+      "id": 333,
+      "tier": 2,
+      "word": "μπλε",
+      "pos": "adjective",
+      "explanation": "Που έχει το χρώμα του ουρανού και της θάλασσας.",
+      "translations": {
+        "en": "blue"
+      }
+    },
+    {
+      "id": 334,
+      "tier": 2,
+      "word": "κίτρινος",
+      "pos": "adjective",
+      "explanation": "Που έχει το χρώμα του λεμονιού ή του ήλιου.",
+      "translations": {
+        "en": "yellow"
+      }
+    },
+    {
+      "id": 335,
+      "tier": 2,
+      "word": "σημαντικός",
+      "pos": "adjective",
+      "explanation": "Που έχει μεγάλη αξία ή που πρέπει να τον προσέξουμε.",
+      "translations": {
+        "en": "important"
+      }
+    },
+    {
+      "id": 336,
+      "tier": 2,
+      "word": "αστείος",
+      "pos": "adjective",
+      "explanation": "Που μας κάνει να γελάμε.",
+      "translations": {
+        "en": "funny"
+      }
+    },
+    {
+      "id": 337,
+      "tier": 2,
+      "word": "βαρετός",
+      "pos": "adjective",
+      "explanation": "Που δεν έχει ενδιαφέρον και μας κουράζει.",
+      "translations": {
+        "en": "boring"
+      }
+    },
+    {
+      "id": 338,
+      "tier": 2,
+      "word": "σήμερα",
+      "pos": "adverb",
+      "explanation": "Αυτή τη μέρα, την ίδια μέρα που μιλάμε.",
+      "translations": {
+        "en": "today"
+      }
+    },
+    {
+      "id": 339,
+      "tier": 2,
+      "word": "αύριο",
+      "pos": "adverb",
+      "explanation": "Τη μέρα μετά από σήμερα.",
+      "translations": {
+        "en": "tomorrow"
+      }
+    },
+    {
+      "id": 340,
+      "tier": 2,
+      "word": "χθες",
+      "pos": "adverb",
+      "explanation": "Τη μέρα πριν από σήμερα.",
+      "translations": {
+        "en": "yesterday"
+      }
+    },
+    {
+      "id": 341,
+      "tier": 2,
+      "word": "τώρα",
+      "pos": "adverb",
+      "explanation": "Αυτή τη στιγμή.",
+      "translations": {
+        "en": "now"
+      }
+    },
+    {
+      "id": 342,
+      "tier": 2,
+      "word": "μετά",
+      "pos": "adverb",
+      "explanation": "Σε λίγο, όχι τώρα.",
+      "translations": {
+        "en": "after, later"
+      }
+    },
+    {
+      "id": 343,
+      "tier": 2,
+      "word": "πριν",
+      "pos": "adverb",
+      "explanation": "Σε χρόνο που πέρασε, πιο νωρίς από κάτι άλλο.",
+      "translations": {
+        "en": "before"
+      }
+    },
+    {
+      "id": 344,
+      "tier": 2,
+      "word": "πάντα",
+      "pos": "adverb",
+      "explanation": "Κάθε φορά, χωρίς εξαίρεση.",
+      "translations": {
+        "en": "always"
+      }
+    },
+    {
+      "id": 345,
+      "tier": 2,
+      "word": "ποτέ",
+      "pos": "adverb",
+      "explanation": "Καμία φορά.",
+      "translations": {
+        "en": "never"
+      }
+    },
+    {
+      "id": 346,
+      "tier": 2,
+      "word": "συχνά",
+      "pos": "adverb",
+      "explanation": "Πολλές φορές.",
+      "translations": {
+        "en": "often"
+      }
+    },
+    {
+      "id": 347,
+      "tier": 2,
+      "word": "εδώ",
+      "pos": "adverb",
+      "explanation": "Σε αυτό το μέρος, κοντά σε αυτόν που μιλάει.",
+      "translations": {
+        "en": "here"
+      }
+    },
+    {
+      "id": 348,
+      "tier": 2,
+      "word": "εκεί",
+      "pos": "adverb",
+      "explanation": "Σε εκείνο το μέρος, όχι εδώ.",
+      "translations": {
+        "en": "there"
+      }
+    },
+    {
+      "id": 349,
+      "tier": 2,
+      "word": "μακριά",
+      "pos": "adverb",
+      "explanation": "Σε μεγάλη απόσταση.",
+      "translations": {
+        "en": "far, far away"
+      }
+    },
+    {
+      "id": 350,
+      "tier": 2,
+      "word": "κοντά",
+      "pos": "adverb",
+      "explanation": "Σε μικρή απόσταση.",
+      "translations": {
+        "en": "near, close"
+      }
+    },
+    {
+      "id": 351,
+      "tier": 2,
+      "word": "πολύ",
+      "pos": "adverb",
+      "explanation": "Σε μεγάλο βαθμό, π.χ. «πολύ ωραίο».",
+      "translations": {
+        "en": "very; a lot"
+      }
+    },
+    {
+      "id": 352,
+      "tier": 2,
+      "word": "λίγο",
+      "pos": "adverb",
+      "explanation": "Σε μικρό βαθμό, όχι πολύ.",
+      "translations": {
+        "en": "a little"
+      }
+    },
+    {
+      "id": 353,
+      "tier": 2,
+      "word": "αρκετά",
+      "pos": "adverb",
+      "explanation": "Όσο χρειάζεται, π.χ. «Έφαγα αρκετά».",
+      "translations": {
+        "en": "enough; quite"
+      }
+    },
+    {
+      "id": 354,
+      "tier": 2,
+      "word": "μαζί",
+      "pos": "adverb",
+      "explanation": "Ο ένας με τον άλλον.",
+      "translations": {
+        "en": "together"
+      }
+    },
+    {
+      "id": 355,
+      "tier": 2,
+      "word": "μόνο",
+      "pos": "adverb",
+      "explanation": "Τίποτα άλλο, κανένας άλλος.",
+      "translations": {
+        "en": "only"
+      }
+    },
+    {
+      "id": 356,
+      "tier": 2,
+      "word": "ακόμα",
+      "pos": "adverb",
+      "explanation": "Ως τώρα, συνεχίζει. Επίσης κι άλλο.",
+      "translations": {
+        "en": "still; yet; even"
+      }
+    },
+    {
+      "id": 357,
+      "tier": 2,
+      "word": "ήδη",
+      "pos": "adverb",
+      "explanation": "Πιο νωρίς από ό,τι περιμέναμε· έχει γίνει.",
+      "translations": {
+        "en": "already"
+      }
+    },
+    {
+      "id": 358,
+      "tier": 2,
+      "word": "αργά",
+      "pos": "adverb",
+      "explanation": "Χωρίς βιασύνη. Επίσης όχι νωρίς.",
+      "translations": {
+        "en": "slowly; late"
+      }
+    },
+    {
+      "id": 359,
+      "tier": 2,
+      "word": "νωρίς",
+      "pos": "adverb",
+      "explanation": "Πριν από τη συνηθισμένη ώρα.",
+      "translations": {
+        "en": "early"
+      }
+    },
+    {
+      "id": 360,
+      "tier": 2,
+      "word": "γρήγορα",
+      "pos": "adverb",
+      "explanation": "Σε λίγο χρόνο, με ταχύτητα.",
+      "translations": {
+        "en": "quickly"
+      }
+    },
+    {
+      "id": 361,
+      "tier": 2,
+      "word": "σιγά",
+      "pos": "adverb",
+      "explanation": "Αργά. Επίσης χωρίς θόρυβο.",
+      "translations": {
+        "en": "slowly; quietly"
+      }
+    },
+    {
+      "id": 362,
+      "tier": 2,
+      "word": "καλά",
+      "pos": "adverb",
+      "explanation": "Με καλό τρόπο, π.χ. «Είμαι καλά».",
+      "translations": {
+        "en": "well"
+      }
+    },
+    {
+      "id": 363,
+      "tier": 2,
+      "word": "έξω",
+      "pos": "adverb",
+      "explanation": "Όχι μέσα στο σπίτι ή στο κτίριο.",
+      "translations": {
+        "en": "outside, out"
+      }
+    },
+    {
+      "id": 364,
+      "tier": 2,
+      "word": "μέσα",
+      "pos": "adverb",
+      "explanation": "Στο εσωτερικό ενός χώρου.",
+      "translations": {
+        "en": "inside, in"
+      }
+    },
+    {
+      "id": 365,
+      "tier": 2,
+      "word": "πάνω",
+      "pos": "adverb",
+      "explanation": "Σε πιο ψηλό σημείο.",
+      "translations": {
+        "en": "up, on top, upstairs"
+      }
+    },
+    {
+      "id": 366,
+      "tier": 2,
+      "word": "κάτω",
+      "pos": "adverb",
+      "explanation": "Σε πιο χαμηλό σημείο.",
+      "translations": {
+        "en": "down, below, downstairs"
+      }
+    }
+  ]
+}
