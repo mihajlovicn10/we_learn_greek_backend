@@ -177,13 +177,25 @@ class TransparentContentLoaderTests(APITestCase):
 
     def test_file_names(self):
         from django.core.management.base import CommandError
-        for name in ("tier-1.json", "english.json", "xx.json"):  # xx: not a supported language
+        # xx: not a supported language; ua: Ukraine's country code, the language code is uk
+        for name in ("tier-1.json", "english.json", "xx.json", "ua.json"):
             with self.subTest(name):
                 for old in (self.tmp / "transparent-words").glob("*.json"):
                     old.unlink()
                 self.write(self.copy("en"), name)
                 with self.assertRaises(CommandError):
                     self.load("--check")
+
+    def test_serbian_ukrainian_and_arabic_files_load(self):
+        for lang in ("sr", "uk", "ar"):
+            data = self.copy("en")
+            data["language"] = lang
+            for item in data["items"]:
+                item["language"] = lang
+            self.write(data, f"{lang}.json")
+        self.load()
+        for lang in ("sr", "uk", "ar"):
+            self.assertEqual(TransparentWord.objects.filter(language=lang).count(), len(self.real["en"]["items"]))
 
 
 class TransparentContentAPITests(APITestCase):

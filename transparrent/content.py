@@ -16,8 +16,9 @@ SCHEMA = "transparent/v1"
 FILE_NAME = re.compile(r"^([a-z]{2})\.json$")
 FILE_NAME_HINT = "<language code>.json, e.g. en.json"
 
-# The languages the frontend offers (src/pages/TransparentWords.jsx LANGUAGE_NAMES).
-LANGUAGES = ("en", "fr", "de", "es", "ru", "it")
+# The languages the frontend offers (src/pages/TransparentWords.jsx KNOWN_LANGUAGES). ISO 639-1
+# codes: Ukrainian is "uk" (the frontend shows it as "UA").
+LANGUAGES = ("en", "fr", "de", "es", "ru", "it", "sr", "uk", "ar")
 CATEGORIES = (
     "Arts", "Education", "Everyday", "Food", "Health",
     "Nature", "Philosophy", "Science", "Society", "Technology",
