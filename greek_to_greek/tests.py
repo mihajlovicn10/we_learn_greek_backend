@@ -133,7 +133,7 @@ class GreekToGreekContentAPITests(APITestCase):
 
     def test_filters_and_fields(self):
         self.assertEqual(self.client.get("/api/greek-to-greek/", {"tier": 1}).data["count"], 278)
-        self.assertEqual(self.client.get("/api/greek-to-greek/", {"pos": "verb"}).data["count"], 99)
+        self.assertEqual(self.client.get("/api/greek-to-greek/", {"pos": "verb", "tier": 1}).data["count"], 99)
         entry = self.client.get("/api/greek-to-greek/", {"search": "anthropos"}).data["results"][0]
         self.assertEqual(entry["word"], "άνθρωπος")
         self.assertEqual(entry["translations"], {"en": "person, human"})

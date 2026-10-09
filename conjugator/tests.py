@@ -239,8 +239,8 @@ class VerbContentAPITests(TestCase):
 
     def test_filters(self):
         self.assertEqual(self.client.get("/api/verbs/", {"tier": 1}).data["count"], 99)
-        self.assertEqual(self.client.get("/api/verbs/", {"irregular": "true"}).data["count"], 19)
-        self.assertEqual(self.client.get("/api/verbs/", {"verb_type": "B1"}).data["count"], 22)
+        self.assertEqual(self.client.get("/api/verbs/", {"irregular": "true", "tier": 1}).data["count"], 19)
+        self.assertEqual(self.client.get("/api/verbs/", {"verb_type": "B1", "tier": 1}).data["count"], 22)
 
     def test_verb_fields(self):
         verb = self.client.get("/api/verbs/", {"search": "eimai"}).data["results"][0]
