@@ -2,6 +2,8 @@
 
 Django REST API for a Greek language learning demo: verb conjugations, noun declensions, personal dictionary, Greek-to-Greek definitions, and cognate words.
 
+**Who it's for:** learners of Modern Greek, through the [We Learn Greek](https://we-learn-greek-frontend.vercel.app) web app, and developers who want a small, tested Django REST API to study or build on.
+
 ## Local setup
 
 1. Create a virtual environment and install dependencies:
@@ -104,3 +106,12 @@ ALLOWED_HOSTS=.onrender.com
 | Dictionary (auth required) | `/api/dictionary/` |
 | Greek-to-Greek | `/api/greek-to-greek/` |
 | Transparent words | `/api/transparent-words/` |
+
+## Roadmap
+
+- **Tiers 3–5 content:** nouns, verbs, Greek-to-Greek definitions and transparent words for the remaining difficulty tiers (tiers 1–2 are live).
+- **Account management:** password change and email-based reset, and account deletion.
+
+## License
+
+License: MIT. See [LICENSE](LICENSE).
